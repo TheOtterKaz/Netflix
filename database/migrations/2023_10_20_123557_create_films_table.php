@@ -26,10 +26,14 @@ return new class extends Migration
 
             $table->unsignedBigInteger('realisateur');
             $table->foreign('realisateur')->references('id')->on('personnes');
+
             $table->unsignedBigInteger('producteur');
             $table->foreign('producteur')->references('id')->on('personnes');
+
             $table->unsignedBigInteger('acteurPrinc');
             $table->foreign('acteurPrinc')->references('id')->on('personnes');
+
+            $table->timestamps();
         });
     }
     /**

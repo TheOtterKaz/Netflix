@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('prenom', 100);
             $table->string('dateNaiss', 15);
             $table->string('imagePers', 2048);
+            $table->timestamps();
         });
     }
 
