@@ -17,6 +17,7 @@ class PersonneSeeder extends Seeder
             //? Spider-Man 
             //* Acteur
             [
+                'rolePrinc' => 'Acteur',
                 'nom' => 'Moore',
                 'prenom' => 'Shameik',
                 'dateNaiss' => '1995-05-04',
@@ -25,6 +26,7 @@ class PersonneSeeder extends Seeder
 
             //* Realisateur
             [
+                'rolePrinc' => 'Réalisateur',
                 'nom' => 'E. Rodriguez',
                 'prenom' => 'Octavio',
                 'dateNaiss' => '1973-10-14',
@@ -33,6 +35,7 @@ class PersonneSeeder extends Seeder
 
             //* Producteur
             [
+                'rolePrinc' => 'Producteur',
                 'nom' => 'Arad',
                 'prenom' => 'Avi',
                 'dateNaiss' => '1948-08-01',
@@ -42,6 +45,7 @@ class PersonneSeeder extends Seeder
             //? Super Mario Bros, le film
             //* Acteur
             [
+                'rolePrinc' => 'Acteur',
                 'nom' => 'Pratt',
                 'prenom' => 'Chris',
                 'dateNaiss' => '1979-06-21',
@@ -50,6 +54,7 @@ class PersonneSeeder extends Seeder
 
             //* Realisateur
             [
+                'rolePrinc' => 'Réalisateur',
                 'nom' => 'Horvath',
                 'prenom' => 'Aaron',
                 'dateNaiss' => '1975-06-09',
@@ -58,6 +63,7 @@ class PersonneSeeder extends Seeder
 
             //* Producteur
             [
+                'rolePrinc' => 'Producteur',
                 'nom' => 'Miyamoto',
                 'prenom' => 'Shigeru',
                 'dateNaiss' => '1952-11-16',
@@ -67,6 +73,7 @@ class PersonneSeeder extends Seeder
             //? Don't look up
             //* Acteur
             [
+                'rolePrinc' => 'Acteur',
                 'nom' => 'DiCaprio',
                 'prenom' => 'Leonardo',
                 'dateNaiss' => '1974-11-11',
@@ -75,6 +82,7 @@ class PersonneSeeder extends Seeder
 
             //* Realisateur
             [
+                'rolePrinc' => 'Réalisateur',
                 'nom' => 'McKay',
                 'prenom' => 'Adam',
                 'dateNaiss' => '1968-04-17',
@@ -83,6 +91,7 @@ class PersonneSeeder extends Seeder
 
             //* Producteur 
             [
+                'rolePrinc' => 'Producteur',
                 'nom' => 'Messick',
                 'prenom' => 'Kevin',
                 'dateNaiss' => '1966-08-21',
@@ -92,6 +101,7 @@ class PersonneSeeder extends Seeder
             //? Wonder woman 1984
             //* Acteur
             [
+                'rolePrinc' => 'Acteur',
                 'nom' => 'Gabot',
                 'prenom' => 'Gal',
                 'dateNaiss' => '1985-04-30',
@@ -100,6 +110,7 @@ class PersonneSeeder extends Seeder
 
             //* Realisateur
             [
+                'rolePrinc' => 'Réalisateur',
                 'nom' => 'Jenkins',
                 'prenom' => 'Patty',
                 'dateNaiss' => '1971-07-24',
@@ -108,6 +119,7 @@ class PersonneSeeder extends Seeder
 
             //* Producteur 
             [
+                'rolePrinc' => 'Producteur',
                 'nom' => 'Geoff',
                 'prenom' => 'Johns',
                 'dateNaiss' => '1973-01-25',
@@ -117,6 +129,7 @@ class PersonneSeeder extends Seeder
             //? Inception
             //* Acteur
             [
+                'rolePrinc' => 'Acteur',
                 'nom' => 'Gordon-Levitt',
                 'prenom' => 'Joseph',
                 'dateNaiss' => '1981-02-17',
@@ -125,6 +138,7 @@ class PersonneSeeder extends Seeder
 
             //* Realisateur
             [
+                'rolePrinc' => 'Réalisateur',
                 'nom' => 'Nolan',
                 'prenom' => 'Christopher',
                 'dateNaiss' => '1970-07-30',
@@ -133,6 +147,7 @@ class PersonneSeeder extends Seeder
 
             //* Producteur
             [
+                'rolePrinc' => 'Producteur',
                 'nom' => 'Thomas',
                 'prenom' => 'Emma',
                 'dateNaiss' => '1968-07-31',
@@ -142,6 +157,7 @@ class PersonneSeeder extends Seeder
             //? Seigneur des anneaux
             //* Acteur
             [
+                'rolePrinc' => 'Acteur',
                 'nom' => 'McKellen',
                 'prenom' => 'Ian',
                 'dateNaiss' => '1939-05-25',
@@ -150,6 +166,7 @@ class PersonneSeeder extends Seeder
 
             //* Realisateur
             [
+                'rolePrinc' => 'Réalisateur',
                 'nom' => 'Jackson',
                 'prenom' => 'Peter',
                 'dateNaiss' => '1961-10-31',
@@ -158,6 +175,7 @@ class PersonneSeeder extends Seeder
 
             //* Producteur 
             [
+                'rolePrinc' => 'Producteur',
                 'nom' => 'M. Osborne',
                 'prenom' => 'Barrie',
                 'dateNaiss' => '1944-02-07',
@@ -167,6 +185,7 @@ class PersonneSeeder extends Seeder
             //? Nerve
             //* Acteur
             [
+                'rolePrinc' => 'Acteur',
                 'nom' => 'Roberts',
                 'prenom' => 'Emma',
                 'dateNaiss' => '1991-02-10',
@@ -175,6 +194,7 @@ class PersonneSeeder extends Seeder
 
             //* Realisateur
             [
+                'rolePrinc' => 'Réalisateur',
                 'nom' => 'Joost',
                 'prenom' => 'Henry',
                 'dateNaiss' => '1982-10-30',
@@ -183,6 +203,7 @@ class PersonneSeeder extends Seeder
 
             //* Producteur 
             [
+                'rolePrinc' => 'Producteur',
                 'nom' => 'Katagas',
                 'prenom' => 'Anthony',
                 'dateNaiss' => '1971-01-28',
@@ -192,6 +213,7 @@ class PersonneSeeder extends Seeder
             //? Joker
             //* Acteur
             [
+                'rolePrinc' => 'Acteur',
                 'nom' => 'Phoenix',
                 'prenom' => 'Joaquin',
                 'dateNaiss' => '1974-10-28',
@@ -200,6 +222,7 @@ class PersonneSeeder extends Seeder
 
             //* Realisateur
             [
+                'rolePrinc' => 'Réalisateur',
                 'nom' => 'Phillips',
                 'prenom' => 'Todd',
                 'dateNaiss' => '1970-12-20',
@@ -208,6 +231,7 @@ class PersonneSeeder extends Seeder
 
             //* Producteur 
             [
+                'rolePrinc' => 'Producteur',
                 'nom' => 'Cooper',
                 'prenom' => 'Bradley',
                 'dateNaiss' => '1975-01-05',
@@ -217,6 +241,7 @@ class PersonneSeeder extends Seeder
             //? Ready player one
             //* Acteur
             [
+                'rolePrinc' => 'Acteur',
                 'nom' => 'Sheridan',
                 'prenom' => 'Tye',
                 'dateNaiss' => '1996-11-11',
@@ -225,6 +250,7 @@ class PersonneSeeder extends Seeder
 
             //* Realisateur
             [
+                'rolePrinc' => 'Réalisateur',
                 'nom' => 'Spielberg',
                 'prenom' => 'Steven',
                 'dateNaiss' => '1946-12-18',
@@ -233,6 +259,7 @@ class PersonneSeeder extends Seeder
 
             //* Producteur 
             [
+                'rolePrinc' => 'Producteur',
                 'nom' => 'Farah',
                 'prenom' => 'Dan',
                 'dateNaiss' => '1979-10-28',
@@ -242,6 +269,7 @@ class PersonneSeeder extends Seeder
             //? Star wars
             //* Acteur
             [
+                'rolePrinc' => 'Acteur',
                 'nom' => 'Fisher',
                 'prenom' => 'Carrie',
                 'dateNaiss' => '1956-10-21',
@@ -250,6 +278,7 @@ class PersonneSeeder extends Seeder
 
             //* Realisateur
             [
+                'rolePrinc' => 'Réalisateur',
                 'nom' => 'Lucas',
                 'prenom' => 'George',
                 'dateNaiss' => '1944-05-14',
@@ -258,6 +287,7 @@ class PersonneSeeder extends Seeder
 
             //* Producteur 
             [
+                'rolePrinc' => 'Producteur',
                 'nom' => 'McCallum',
                 'prenom' => 'Rick',
                 'dateNaiss' => '1954-08-22',
