@@ -17,6 +17,7 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Spider-Man : Across the Spider-Verse',
                 'resume' => 'Après avoir retrouvé Gwen Stacy, Spider-Man, le sympathique héros originaire de Brooklyn, est catapulté à travers le Multivers, où il rencontre une équipe de Spider-Héros chargée d\'en protéger l\'existence.',
+                'brand' => 'Marvel',
                 'cote' => '96',
                 'rating' => 'Général',
                 'duree' => '141',
@@ -32,6 +33,7 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Super Mario Bros, le film',
                 'resume' => 'Alors qu\'ils tentent de réparer une canalisation souterraine, Mario et son frère Luigi, tous deux plombiers, se retrouvent plongés dans un nouvel univers féerique à travers un mystérieux conduit.',
+                'brand' => 'Nintendo',
                 'cote' => '59',
                 'rating' => 'Général',
                 'duree' => '92',
@@ -47,6 +49,7 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Don\'t look up',
                 'resume' => 'Deux piètres astronomes s\'embarquent dans une gigantesque tournée médiatique pour prévenir l\'humanité qu\'une comète se dirige vers la Terre et s\'apprête à la détruire.',
+                'brand' => 'n/a',
                 'cote' => '59',
                 'rating' => '18+',
                 'duree' => '143',
@@ -62,6 +65,7 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Wonder woman 1984',
                 'resume' => 'Suite des aventures de Diana Prince, alias Wonder Woman, Amazone devenue une super-héroïne dans notre monde. Après la Première guerre mondiale, direction les années 80 ! Cette fois, Wonder Woman doit affronter deux nouveaux ennemis, particulièrement redoutables : Max Lord et Cheetah.',
+                'brand' => 'Marvel',
                 'cote' => '58',
                 'rating' => 'Général',
                 'duree' => '151',
@@ -77,6 +81,7 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Inception',
                 'resume' => 'Au lieu de subtiliser un rêve, un voleur expérimenté et son équipe doivent faire l\'inverse : implanter une idée dans l\'esprit d\'un individu. S\'ils y parviennent, il pourrait s\'agir du crime parfait ...',
+                'brand' => 'n/a',
                 'cote' => '87',
                 'rating' => 'Général',
                 'duree' => '148',
@@ -92,6 +97,7 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Le seigneur des anneaux : La communauté de l\'anneau',
                 'resume' => 'Frodon le Hobbit hérite de l\'Anneau Unique, un instrument de pouvoir absolu qui permettrait à Sauron, le Seigneur des ténèbres, de régner sur la Terre du Milieu. Commence alors un vaste périple visant à la destruction de l\'objet.',
+                'brand' => 'n/a',
                 'cote' => '91',
                 'rating' => 'Général',
                 'duree' => '178',
@@ -107,6 +113,7 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Nerve',
                 'resume' => 'En participant à Nerve, un jeu qui diffuse en direct sur Internet des défis filmés, Vee et Ian décident de s\'associer pour relever des challenges de plus en plus risqués et gagner toujours plus d\'argent.',
+                'brand' => 'n/a',
                 'cote' => '67',
                 'rating' => 'Général',
                 'duree' => '96',
@@ -122,6 +129,7 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Joker',
                 'resume' => 'Le film, qui relate une histoire originale inédite sur grand écran, se focalise sur la figure emblématique de l\'ennemi juré de Batman. Il brosse le portrait d\'Arthur Fleck, un homme sans concession méprisé par la société.',
+                'brand' => 'DC',
                 'cote' => '69',
                 'rating' => '13+',
                 'duree' => '122',
@@ -137,6 +145,7 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Ready player one',
                 'resume' => '2045. Le monde est au bord du chaos. Les êtres humains se réfugient dans l\'OASIS, univers virtuel mis au point par le brillant et excentrique James Halliday. Avant de disparaître, celui-ci a décidé de léguer son immense fortune à quiconque découvrira l\'œuf de Pâques numérique qu\'il a pris soin de dissimuler dans l\'OASIS.',
+                'brand' => 'n/a',
                 'cote' => '72',
                 'rating' => 'Général',
                 'duree' => '140',
@@ -152,6 +161,7 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Star wars, Episode IV : Un nouvel espoir',
                 'resume' => 'Il y a bien longtemps, dans une galaxie très lointaine... La guerre civile fait rage entre l\'Empire galactique et l\'Alliance rebelle.',
+                'brand' => 'Star Wars',
                 'cote' => '93',
                 'rating' => 'Général',
                 'duree' => '121',
