@@ -17,7 +17,8 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Spider-Man : Across the Spider-Verse',
                 'resume' => 'Après avoir retrouvé Gwen Stacy, Spider-Man, le sympathique héros originaire de Brooklyn, est catapulté à travers le Multivers, où il rencontre une équipe de Spider-Héros chargée d\'en protéger l\'existence.',
-                'rating' => '96',
+                'cote' => '96',
+                'rating' => 'Général',
                 'duree' => '141',
                 'annee' => '2023',
                 'realisateur' => '2',
@@ -31,7 +32,8 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Super Mario Bros, le film',
                 'resume' => 'Alors qu\'ils tentent de réparer une canalisation souterraine, Mario et son frère Luigi, tous deux plombiers, se retrouvent plongés dans un nouvel univers féerique à travers un mystérieux conduit.',
-                'rating' => '59',
+                'cote' => '59',
+                'rating' => 'Général',
                 'duree' => '92',
                 'annee' => '2023',
                 'realisateur' => '5',
@@ -45,7 +47,8 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Don\'t look up',
                 'resume' => 'Deux piètres astronomes s\'embarquent dans une gigantesque tournée médiatique pour prévenir l\'humanité qu\'une comète se dirige vers la Terre et s\'apprête à la détruire.',
-                'rating' => '59',
+                'cote' => '59',
+                'rating' => '18+',
                 'duree' => '143',
                 'annee' => '2021',
                 'realisateur' => '8',
@@ -59,7 +62,8 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Wonder woman 1984',
                 'resume' => 'Suite des aventures de Diana Prince, alias Wonder Woman, Amazone devenue une super-héroïne dans notre monde. Après la Première guerre mondiale, direction les années 80 ! Cette fois, Wonder Woman doit affronter deux nouveaux ennemis, particulièrement redoutables : Max Lord et Cheetah.',
-                'rating' => '58',
+                'cote' => '58',
+                'rating' => 'Général',
                 'duree' => '151',
                 'annee' => '2020',
                 'realisateur' => '11',
@@ -73,7 +77,8 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Inception',
                 'resume' => 'Au lieu de subtiliser un rêve, un voleur expérimenté et son équipe doivent faire l\'inverse : implanter une idée dans l\'esprit d\'un individu. S\'ils y parviennent, il pourrait s\'agir du crime parfait ...',
-                'rating' => '87',
+                'cote' => '87',
+                'rating' => 'Général',
                 'duree' => '148',
                 'annee' => '2010',
                 'realisateur' => '14',
@@ -87,7 +92,8 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Le seigneur des anneaux : La communauté de l\'anneau',
                 'resume' => 'Frodon le Hobbit hérite de l\'Anneau Unique, un instrument de pouvoir absolu qui permettrait à Sauron, le Seigneur des ténèbres, de régner sur la Terre du Milieu. Commence alors un vaste périple visant à la destruction de l\'objet.',
-                'rating' => '91',
+                'cote' => '91',
+                'rating' => 'Général',
                 'duree' => '178',
                 'annee' => '2001',
                 'realisateur' => '17',
@@ -101,7 +107,8 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Nerve',
                 'resume' => 'En participant à Nerve, un jeu qui diffuse en direct sur Internet des défis filmés, Vee et Ian décident de s\'associer pour relever des challenges de plus en plus risqués et gagner toujours plus d\'argent.',
-                'rating' => '67',
+                'cote' => '67',
+                'rating' => 'Général',
                 'duree' => '96',
                 'annee' => '2016',
                 'realisateur' => '20',
@@ -115,7 +122,8 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Joker',
                 'resume' => 'Le film, qui relate une histoire originale inédite sur grand écran, se focalise sur la figure emblématique de l\'ennemi juré de Batman. Il brosse le portrait d\'Arthur Fleck, un homme sans concession méprisé par la société.',
-                'rating' => '69',
+                'cote' => '69',
+                'rating' => '13+',
                 'duree' => '122',
                 'annee' => '2019',
                 'realisateur' => '23',
@@ -129,7 +137,8 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Ready player one',
                 'resume' => '2045. Le monde est au bord du chaos. Les êtres humains se réfugient dans l\'OASIS, univers virtuel mis au point par le brillant et excentrique James Halliday. Avant de disparaître, celui-ci a décidé de léguer son immense fortune à quiconque découvrira l\'œuf de Pâques numérique qu\'il a pris soin de dissimuler dans l\'OASIS.',
-                'rating' => '72',
+                'cote' => '72',
+                'rating' => 'Général',
                 'duree' => '140',
                 'annee' => '2018',
                 'realisateur' => '26',
@@ -143,7 +152,8 @@ class FilmSeeder extends Seeder
             [                         
                 'titre' => 'Star wars, Episode IV : Un nouvel espoir',
                 'resume' => 'Il y a bien longtemps, dans une galaxie très lointaine... La guerre civile fait rage entre l\'Empire galactique et l\'Alliance rebelle.',
-                'rating' => '93',
+                'cote' => '93',
+                'rating' => 'Général',
                 'duree' => '121',
                 'annee' => '1977',
                 'realisateur' => '29',
