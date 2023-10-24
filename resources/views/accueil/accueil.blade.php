@@ -4,31 +4,34 @@
 
 @section('contenu')
 
+  <header>
+      <div class="netflixLogo">
+        <a id="logo" href="#home"><img src="/img/logo.PNG" alt="Logo Image"></a>
+      </div>      
+      <nav class="main-nav">                
+        <a href="#nouveautes">Nouveautés</a>
+        <a href="#animation">Animation</a>
+        <a href="#scifi">Science-Fiction</a>
+        <a href="#comedie">Comédie</a>
+        <a href="#action">Action & Aventure</a>
+        <a href="#thriller">Thriller</a>        
+        <a href="#fantasie">Fantasie</a>        
+        <a href="#drame">Drame</a>        
+        <a href="#plusPOP">+ Populaires</a>        
+        <a href="#moinsPOP">- Populaires</a>        
+      </nav>
+      <nav class="sub-nav">
+        <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
+        <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
+        <a href="#">Account</a>        
+      </nav>      
+    </header>
   
     <!-- MAIN CONTAINER -->
-    <!-- <section class="main-container" >
-      <div class="location" id="home">
-          <h1 id="home">Popular on Netflix</h1>
-          <div class="box">
-            <a href=""><img src="img/p1.png" alt=""></a>
-            <a href=""><img src="img/p2.png" alt=""></a>
-            <a href=""><img src="img/p3.png" alt=""></a>
-            <a href=""><img src="img/p4.png" alt=""></a>
-            <a href=""><img src="img/p5.png" alt=""></a>
-            <a href=""><img src="img/p6.png" alt=""></a>
-    
-            <a href=""><img src="img/p7.PNG" alt=""></a>
-            <a href=""><img src="img/p8.PNG" alt=""></a>
-            <a href=""><img src="img/p9.PNG" alt=""></a>
-            <a href=""><img src="img/p10.PNG" alt=""></a>
-            <a href=""><img src="img/p11.PNG" alt=""></a>
-            <a href=""><img src="img/p12.PNG" alt=""></a>        
-          </div>
-      </div> -->
-
+ 
     <section class="main-container" >
       <div class="location" id="home">
-          <h1 id="home">Nouveautés</h1>
+          <h1 id="nouveautes">Nouveautés</h1>
           <div class="box">
                  @if(count($films))
                     @foreach($films as $film)
@@ -38,7 +41,7 @@
                     @endforeach
                   @endif
           </div>
-          <h1 id="home">Films d'animation</h1>
+          <h1 id="animation">Films d'animation</h1>
           <div class="box">
                  @if(count($films))
                     @foreach($films as $film)
@@ -51,7 +54,7 @@
       </div>
 
 
-      <h1 id="myList">Films Science-Fiction</h1>
+      <h1 id="scifi">Films Science-Fiction</h1>
       <div class="box">
 
                   @if(count($films))
@@ -64,7 +67,7 @@
 
       </div>
 
-      <h1 id="tvShows">Films de comédie</h1>
+      <h1 id="comedie">Films de comédie</h1>
       <div class="box">
 
           @if(count($films))
@@ -77,7 +80,7 @@
 
       </div>
       
-      <h1 id="movies">Films d'action et aventure</h1>
+      <h1 id="action">Films d'action et aventure</h1>
       <div class="box">
           @if(count($films))
             @foreach($films as $film)
@@ -88,7 +91,7 @@
           @endif
       </div>
 
-      <h1 id="originals">Thriller</h1>
+      <h1 id="thriller">Thriller</h1>
       <div class="box">
 
           @if(count($films))
@@ -138,7 +141,7 @@
           @endif
 
       </div>
-      <h1 id="moinsPopulaires">Moins populaires</h1>
+      <h1 id="moinsPOP">Moins populaires</h1>
       <div class="box">
 
           @if(count($films))
@@ -151,52 +154,11 @@
 
       </div>
     </section>
-
-      <!-- <h1 id="myList">Trending Now</h1>
-      <div class="box">
-        <a href=""><img src="img/t1.PNG" alt=""></a>
-        <a href=""><img src="img/t2.PNG" alt=""></a>
-        <a href=""><img src="img/t3.PNG" alt=""></a>
-        <a href=""><img src="img/t4.PNG" alt=""></a>
-        <a href=""><img src="img/t5.PNG" alt=""></a>
-        <a href=""><img src="img/t6.PNG" alt=""></a>                  
-      </div> -->
-      
-      
-      <!-- <h1 id="tvShows">TV Shows</h1>
-      <div class="box">
-        <a href=""><img src="img/tv1.PNG" alt=""></a>
-        <a href=""><img src="img/tv2.PNG" alt=""></a>
-        <a href=""><img src="img/tv3.PNG" alt=""></a>
-        <a href=""><img src="img/tv4.PNG" alt=""></a>
-        <a href=""><img src="img/tv5.PNG" alt=""></a>
-        <a href=""><img src="img/tv6.PNG" alt=""></a>
-
-        <a href=""><img src="img/tv7.PNG" alt=""></a>
-        <a href=""><img src="img/tv8.PNG" alt=""></a>
-        <a href=""><img src="img/tv9.PNG" alt=""></a>
-        <a href=""><img src="img/tv10.PNG" alt=""></a>
-        <a href=""><img src="img/tv11.PNG" alt=""></a>
-        <a href=""><img src="img/tv12.PNG" alt=""></a>              
-      </div>
-       -->
-
-      <!-- <h1 id="movies">Blockbuster Action & Adventure</h1>
-      <div class="box">
-        <a href=""><img src="img/m1.PNG" alt=""></a>
-        <a href=""><img src="img/m2.PNG" alt=""></a>
-        <a href=""><img src="img/m3.PNG" alt=""></a>
-        <a href=""><img src="img/m4.PNG" alt=""></a>
-        <a href=""><img src="img/m5.PNG" alt=""></a>
-        <a href=""><img src="img/m6.PNG" alt=""></a>                
-      </div> -->
-
-      
       
     <!-- END OF MAIN CONTAINER -->
 
     <!-- LINKS -->
-    <!-- <section class="link">
+    <section class="link">
       <div class="logos">
         <a href="#"><i class="fab fa-facebook-square fa-2x logo"></i></a>
         <a href="#"><i class="fab fa-instagram fa-2x logo"></i></a>
@@ -219,7 +181,7 @@
           <li><a href="#">Contact Us</a></li>
         </ul>
       </div>
-    </section> -->
+    </section>
     <!-- END OF LINKS -->
 
 @endsection

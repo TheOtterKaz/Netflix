@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('titre', 100);            
             $table->string('resume', 500);
             $table->integer('cote');
-            $table->integer('rating');
+            $table->string('rating', 50);
             $table->integer('duree');
             $table->integer('annee');
             $table->string('type', 300);
