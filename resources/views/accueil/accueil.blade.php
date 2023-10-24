@@ -28,6 +28,16 @@
 
     <section class="main-container" >
       <div class="location" id="home">
+          <h1 id="home">Nouveautés</h1>
+          <div class="box">
+                 @if(count($films))
+                    @foreach($films as $film)
+                      @if($film->annee == '2023')
+                        <a href=""><img src="{{$film->imageFilm}}" alt=""></a>
+                      @endif
+                    @endforeach
+                  @endif
+          </div>
           <h1 id="home">Films d'animation</h1>
           <div class="box">
                  @if(count($films))
@@ -105,6 +115,30 @@
       </div>
 
       <h1 id="drame">Drame</h1>
+      <div class="box">
+
+          @if(count($films))
+            @foreach($films as $film)
+              @if($film->type == 'Drame')
+                <a href=""><img src="{{$film->imageFilm}}" alt=""></a>
+              @endif
+            @endforeach
+          @endif
+
+      </div>
+      <h1 id="plusPOP">Plus populaires</h1>
+      <div class="box">
+
+          @if(count($films))
+            @foreach($films as $film)
+              @if($film->type == 'Drame')
+                <a href=""><img src="{{$film->imageFilm}}" alt=""></a>
+              @endif
+            @endforeach
+          @endif
+
+      </div>
+      <h1 id="moinsPopulaires">Moins populaires</h1>
       <div class="box">
 
           @if(count($films))
