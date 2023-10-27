@@ -36,7 +36,9 @@
                  @if(count($films))
                     @foreach($films as $film)
                       @if($film->annee == '2023')
-                        <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
+                        <a href="{{ route('films.show', [$film]) }}">
+                          <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                        </a>
                       @endif
                     @endforeach
                   @endif
@@ -46,7 +48,9 @@
                  @if(count($films))
                     @foreach($films as $film)
                       @if($film->type == 'Animation')
-                        <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
+                        <a href="{{ route('films.show', [$film]) }}">
+                          <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                        </a>
                       @endif
                     @endforeach
                   @endif
@@ -60,7 +64,9 @@
                   @if(count($films))
                     @foreach($films as $film)
                       @if($film->type == 'Science-Fiction')
-                        <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
+                        <a href="{{ route('films.show', [$film]) }}">
+                          <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                        </a>
                       @endif
                     @endforeach
                   @endif
@@ -73,7 +79,9 @@
           @if(count($films))
             @foreach($films as $film)
               @if($film->type == 'Comédie')
-                <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
+                <a href="{{ route('films.show', [$film]) }}">
+                  <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                </a>
               @endif
             @endforeach
           @endif
@@ -85,7 +93,9 @@
           @if(count($films))
             @foreach($films as $film)
               @if($film->type == 'Action, Aventure')
-                <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
+                <a href="{{ route('films.show', [$film]) }}">
+                  <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                </a>
               @endif
             @endforeach
           @endif
@@ -97,7 +107,9 @@
           @if(count($films))
             @foreach($films as $film)
               @if($film->type == 'Thriller')
-                <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
+                <a href="{{ route('films.show', [$film]) }}">
+                  <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                </a>
               @endif
             @endforeach
           @endif
@@ -110,7 +122,9 @@
           @if(count($films))
             @foreach($films as $film)
               @if($film->type == 'Fantasie')
-                <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
+                <a href="{{ route('films.show', [$film]) }}">
+                  <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                </a>
               @endif
             @endforeach
           @endif
@@ -123,7 +137,9 @@
           @if(count($films))
             @foreach($films as $film)
               @if($film->type == 'Drame')
-                <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
+                <a href="{{ route('films.show', [$film]) }}">
+                  <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                </a>
               @endif
             @endforeach
           @endif
@@ -135,7 +151,9 @@
           @if(count($films))
             @foreach($films as $film)
               @if($film->type == 'Drame')
-                <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
+                <a href="{{ route('films.show', [$film]) }}">
+                  <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                </a>
               @endif
             @endforeach
           @endif
@@ -147,7 +165,9 @@
           @if(count($films))
             @foreach($films as $film)
               @if($film->type == 'Drame')
-                <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
+                <a href="{{ route('films.show', [$film]) }}">
+                  <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                </a>
               @endif
             @endforeach
           @endif

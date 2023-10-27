@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/netflix.css">
+    <link rel="stylesheet" href="{{asset('css/netflix.css')}}">
     <title>@yield('title')</title>
 </head>
 <body>
-    <header>
+    <!-- <header>
       <div class="netflixLogo">
         <a id="logo" href="#home"><img src="/img/logo.PNG" alt="Logo Image"></a>
       </div>      
@@ -25,7 +25,7 @@
         <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
         <a href="#">Account</a>        
       </nav>      
-    </header>
+    </header> -->
 
     @yield('contenu')
 
