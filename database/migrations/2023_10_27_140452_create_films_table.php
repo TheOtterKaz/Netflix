@@ -9,10 +9,8 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up() : void
+    public function up(): void
     {
-        Schema::dropIfExists('films');
-        
         Schema::create('films', function (Blueprint $table) {
             $table->id();
             $table->string('titre', 100);            
@@ -22,22 +20,15 @@ return new class extends Migration
             $table->string('rating', 50);
             $table->integer('duree');
             $table->integer('annee');
+            $table->foreignId('realisateur_id')->constrained('personnes');
+            $table->foreignId('producteur_id')->constrained('personnes');
             $table->string('type', 300);
             $table->string('imageFilm', 2048);
             $table->string('lienFilm', 2048);
-
-            $table->unsignedBigInteger('realisateur');
-            $table->foreign('realisateur')->references('id')->on('personnes');
-
-            $table->unsignedBigInteger('producteur');
-            $table->foreign('producteur')->references('id')->on('personnes');
-
-            $table->unsignedBigInteger('acteurPrinc');
-            $table->foreign('acteurPrinc')->references('id')->on('personnes');
-
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      */
