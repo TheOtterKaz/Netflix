@@ -13,7 +13,7 @@ class FilmSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('film')->insert([
+        DB::table('films')->insert([
             // Spiderman
             [                         
                 'titre' => 'Spider-Man : Across the Spider-Verse',
