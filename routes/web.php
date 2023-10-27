@@ -22,5 +22,8 @@ Route::get('/', function () {
 Route::get('films', 
 [AccueilsController::class, 'index']);
 
+Route::get('/films/{film}/',
+[AccueilsController::class, 'show']) ->name('films.show');
+
 Route::get('personnes',
 [PersonnesController::class, 'index']);

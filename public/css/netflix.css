@@ -188,6 +188,12 @@ footer {
   text-decoration: none;
 }
 
+.imgFilm{
+  /* height: 402px; */
+  width: 279px;
+
+}
+
 /* MEDIA QUERIES */
 
 @media(max-width: 900px) {

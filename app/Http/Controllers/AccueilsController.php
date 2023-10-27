@@ -35,10 +35,12 @@ class AccueilsController extends Controller
 
     /**
      * Display the specified resource.
+     * @param int $id
+     * @return \Illuminate\Http\Response
      */
-    public function show(string $id)
+    public function show(Film $film)
     {
-        //
+        return View('accueil.show', compact('film'));
     }
 
     /**
