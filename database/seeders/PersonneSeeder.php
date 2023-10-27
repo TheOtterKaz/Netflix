@@ -76,41 +76,10 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://th.bing.com/th/id/R.a5cb0d1e2eef6b9cbebb2f4b4b7663a0?rik=fFJYdcvqad7ETw&riu=http%3a%2f%2fimg2.wikia.nocookie.net%2f__cb20141013033032%2fssb%2fimages%2f5%2f57%2fMiyamoto1.jpg&ehk=AgbJU%2fDqlohm34mCsjPq%2fBFTHmS9jywTXh3rGVF7j8M%3d&risl=&pid=ImgRaw&r=0',
             ],
 
-        // Wonder woman 1984
-            // Acteur
-            [
-                'id' => 7,
-                'nom' => 'DiCaprio',
-                'prenom' => 'Leonardo',
-                'dateNaiss' => '1974-11-11',
-                'sexe' => 'M',
-                'imagePers' => 'https://cdn.britannica.com/65/227665-050-D74A477E/American-actor-Leonardo-DiCaprio-2016.jpg',
-            ],
-
-            // Réalisateur
-            [
-                'id' => 8,
-                'nom' => 'McKay',
-                'prenom' => 'Adam',
-                'dateNaiss' => '1968-04-17',
-                'sexe' => 'M',
-                'imagePers' => 'https://m.media-amazon.com/images/M/MV5BZmQ2ZDNkMGYtOWUzNi00N2Q3LTk1MDItODFlNDJkMTZkMjFmXkEyXkFqcGdeQXVyMjMxNzg4Mjk@._V1_.jpg',
-            ],
-
-            // Producteur
-            [
-                'id' => 9,
-                'nom' => 'Messick',
-                'prenom' => 'Kevin',
-                'dateNaiss' => '1966-08-21',
-                'sexe' => 'M',
-                'imagePers' => 'https://m.media-amazon.com/images/M/MV5BNWVlYzczNzEtNmU5ZS00YTdhLWIyYzAtNDFmYjU0NWE1ZmFiXkEyXkFqcGdeQXVyNTI5NjIyMw@@._V1_.jpg',
-            ],
-
         // Don't look up
             // Acteur
             [
-                'id' => 10,
+                'id' => 7,
                 'nom' => 'Gabot',
                 'prenom' => 'Gal',
                 'dateNaiss' => '1985-04-30',
@@ -120,7 +89,7 @@ class PersonneSeeder extends Seeder
 
             // Réalisateur
             [
-                'id' => 11,
+                'id' => 8,
                 'nom' => 'Jenkins',
                 'prenom' => 'Patty',
                 'dateNaiss' => '1971-07-24',
@@ -130,12 +99,43 @@ class PersonneSeeder extends Seeder
 
             // Producteur
             [
-                'id' => 12,
+                'id' => 9,
                 'nom' => 'Geoff',
                 'prenom' => 'Johns',
                 'dateNaiss' => '1973-01-25',
                 'sexe' => 'M',
                 'imagePers' => 'https://static.dc.com/dc/files/default_images/Geoff-Johns_Talent_c2e22012_mj_1500_597910e7771fb8.23126772.jpg?w=1200',
+            ],
+            
+        // Wonder woman 1984
+            // Acteur
+            [
+                'id' => 10,
+                'nom' => 'DiCaprio',
+                'prenom' => 'Leonardo',
+                'dateNaiss' => '1974-11-11',
+                'sexe' => 'M',
+                'imagePers' => 'https://cdn.britannica.com/65/227665-050-D74A477E/American-actor-Leonardo-DiCaprio-2016.jpg',
+            ],
+
+            // Réalisateur
+            [
+                'id' => 11,
+                'nom' => 'McKay',
+                'prenom' => 'Adam',
+                'dateNaiss' => '1968-04-17',
+                'sexe' => 'M',
+                'imagePers' => 'https://m.media-amazon.com/images/M/MV5BZmQ2ZDNkMGYtOWUzNi00N2Q3LTk1MDItODFlNDJkMTZkMjFmXkEyXkFqcGdeQXVyMjMxNzg4Mjk@._V1_.jpg',
+            ],
+
+            // Producteur
+            [
+                'id' => 12,
+                'nom' => 'Messick',
+                'prenom' => 'Kevin',
+                'dateNaiss' => '1966-08-21',
+                'sexe' => 'M',
+                'imagePers' => 'https://m.media-amazon.com/images/M/MV5BNWVlYzczNzEtNmU5ZS00YTdhLWIyYzAtNDFmYjU0NWE1ZmFiXkEyXkFqcGdeQXVyNTI5NjIyMw@@._V1_.jpg',
             ],
 
         // Inception

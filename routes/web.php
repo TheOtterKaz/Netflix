@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccueilsController;
 use App\Http\Controllers\PersonnesController;
+use App\Http\Controllers\FilmsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +21,10 @@ Route::get('/', function () {
 });
 
 Route::get('films', 
-[AccueilsController::class, 'index']);
+[FilmsController::class, 'index']);
 
 Route::get('/films/{film}/',
-[AccueilsController::class, 'show']) ->name('films.show');
+[FilmsController::class, 'show']) ->name('films.show');
 
 Route::get('personnes',
 [PersonnesController::class, 'index']);

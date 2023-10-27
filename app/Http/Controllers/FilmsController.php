@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Film;
 
-class AccueilsController extends Controller
+class FilmsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index() : View
+    public function index()
     {
         $films = Film::all();
-        return View('accueil.accueil', compact('films'));
+        return View('films.index', compact('films'));
     }
 
     /**
@@ -35,12 +36,10 @@ class AccueilsController extends Controller
 
     /**
      * Display the specified resource.
-     * @param int $id
-     * @return \Illuminate\Http\Response
      */
-    public function show(Film $film)
+    public function show(string $id)
     {
-        return View('accueil.show', compact('film'));
+        //
     }
 
     /**
