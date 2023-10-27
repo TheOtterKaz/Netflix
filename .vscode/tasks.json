@@ -1,0 +1,37 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label"     : "newGitClone",
+            "dependsOrder": "sequence",
+            "dependsOn"   : [
+                "env",
+                "installComp",
+                "key",
+                "insertDonnees"
+            ]
+        },
+        {
+            "label"     : "installComp",
+            "type"      : "shell",
+            "command"   : "composer install"
+        },
+        {
+            "label"     : "key",
+            "type"      : "shell",
+            "command"   : "php artisan key:generate"
+        },
+        {
+            "label"     : "insertDonnees",
+            "type"      : "shell",
+            "command"   : "php artisan migrate:refresh --seed"
+        },
+        {
+            "label": "env",
+            "type":"shell",
+            "command": "cp .env.example .env"
+        }
+    ]
+}
