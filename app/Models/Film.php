@@ -20,4 +20,10 @@ class Film extends Model
     {
         return $this->belongsTo(Personne::class);
     }
+
+    // Fonction acteurs
+    public function acteurs()
+    {
+        return $this->belongsToMany(Personne::class);
+    }
 }

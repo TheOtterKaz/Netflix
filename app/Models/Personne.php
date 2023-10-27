@@ -20,4 +20,10 @@ class Personne extends Model
     {
         return $this->hasMany(Film::class, 'producteur_id');
     }
+
+    // Fonction acteurs films
+    public function acteursfilms()
+    {
+        return $this->hasMany(FilmPersonne::class);
+    }
 }
