@@ -9,16 +9,16 @@
         <a id="logo" href="#home"><img src="/img/logo.PNG" alt="Logo Image"></a>
       </div>      
       <nav class="main-nav">                
-        <a href="#nouveautes">Nouveautés</a>
-        <a href="#animation">Animation</a>
-        <a href="#scifi">Science-Fiction</a>
-        <a href="#comedie">Comédie</a>
-        <a href="#action">Action & Aventure</a>
-        <a href="#thriller">Thriller</a>        
-        <a href="#fantasie">Fantasie</a>        
-        <a href="#drame">Drame</a>        
-        <a href="#plusPOP">+ Populaires</a>        
-        <a href="#moinsPOP">- Populaires</a>        
+        <a href="#nouveautes" class="text-truncate d-block">Nouveautés</a>
+        <a href="#animation" class="text-truncate d-block">Animation</a>
+        <a href="#scifi" class="text-truncate d-block">Science-Fiction</a>
+        <a href="#comedie" class="text-truncate d-block">Comédie</a>
+        <a href="#action" class="text-truncate d-block">Action & Aventure</a>
+        <a href="#thriller" class="text-truncate d-block">Thriller</a>        
+        <a href="#fantasie" class="text-truncate d-block">Fantasie</a>        
+        <a href="#drame" class="text-truncate d-block">Drame</a>        
+        <a href="#plusPOP" class="text-truncate d-block">+ Populaires</a>        
+        <a href="#moinsPOP" class="text-truncate d-block">- Populaires</a>        
       </nav>
       <nav class="sub-nav">
         <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
@@ -31,22 +31,22 @@
  
     <section class="main-container" >
       <div class="location" id="home">
-          <h1 id="nouveautes">Nouveautés</h1>
+          <h1 id="nouveautes" class="fs-3  text-truncate d-block">Nouveautés</h1>
           <div class="box">
                  @if(count($films))
                     @foreach($films as $film)
                       @if($film->annee == '2023')
-                        <a href=""><img src="{{$film->imageFilm}}" alt=""></a>
+                        <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
                       @endif
                     @endforeach
                   @endif
           </div>
-          <h1 id="animation">Films d'animation</h1>
+          <h1 id="animation" class="fs-3  text-truncate d-block">Animation</h1>
           <div class="box">
                  @if(count($films))
                     @foreach($films as $film)
                       @if($film->type == 'Animation')
-                        <a href=""><img src="{{$film->imageFilm}}" alt=""></a>
+                        <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
                       @endif
                     @endforeach
                   @endif
@@ -54,100 +54,100 @@
       </div>
 
 
-      <h1 id="scifi">Films Science-Fiction</h1>
+      <h1 id="scifi" class="fs-3 text-truncate d-block">Science-Fiction</h1>
       <div class="box">
 
                   @if(count($films))
                     @foreach($films as $film)
                       @if($film->type == 'Science-Fiction')
-                        <a href=""><img src="{{$film->imageFilm}}" alt=""></a>
+                        <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
                       @endif
                     @endforeach
                   @endif
 
       </div>
 
-      <h1 id="comedie">Films de comédie</h1>
+      <h1 id="comedie" class="fs-3 text-truncate d-block">Comédie</h1>
       <div class="box">
 
           @if(count($films))
             @foreach($films as $film)
               @if($film->type == 'Comédie')
-                <a href=""><img src="{{$film->imageFilm}}" alt=""></a>
+                <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
               @endif
             @endforeach
           @endif
 
       </div>
       
-      <h1 id="action">Films d'action et aventure</h1>
+      <h1 id="action" class="fs-3 text-truncate d-block">Films d'action et aventure</h1>
       <div class="box">
           @if(count($films))
             @foreach($films as $film)
               @if($film->type == 'Action, Aventure')
-                <a href=""><img src="{{$film->imageFilm}}" alt=""></a>
+                <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
               @endif
             @endforeach
           @endif
       </div>
 
-      <h1 id="thriller">Thriller</h1>
+      <h1 id="thriller" class="fs-3 text-truncate d-block">Thriller</h1>
       <div class="box">
 
           @if(count($films))
             @foreach($films as $film)
               @if($film->type == 'Thriller')
-                <a href=""><img src="{{$film->imageFilm}}" alt=""></a>
+                <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
               @endif
             @endforeach
           @endif
 
       </div>
 
-      <h1 id="fantasie">Fantasie</h1>
+      <h1 id="fantasie" class="fs-3 text-truncate d-block">Fantasie</h1>
       <div class="box">
 
           @if(count($films))
             @foreach($films as $film)
               @if($film->type == 'Fantasie')
-                <a href=""><img src="{{$film->imageFilm}}" alt=""></a>
+                <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
               @endif
             @endforeach
           @endif
 
       </div>
 
-      <h1 id="drame">Drame</h1>
+      <h1 id="drame" class="fs-3 text-truncate d-block">Drame</h1>
       <div class="box">
 
           @if(count($films))
             @foreach($films as $film)
               @if($film->type == 'Drame')
-                <a href=""><img src="{{$film->imageFilm}}" alt=""></a>
+                <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
               @endif
             @endforeach
           @endif
 
       </div>
-      <h1 id="plusPOP">Plus populaires</h1>
+      <h1 id="plusPOP" class="fs-3 text-truncate d-block">Plus populaires</h1>
       <div class="box">
 
           @if(count($films))
             @foreach($films as $film)
               @if($film->type == 'Drame')
-                <a href=""><img src="{{$film->imageFilm}}" alt=""></a>
+                <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
               @endif
             @endforeach
           @endif
 
       </div>
-      <h1 id="moinsPOP">Moins populaires</h1>
+      <h1 id="moinsPOP" class="fs-3 text-truncate d-block">Moins populaires</h1>
       <div class="box">
 
           @if(count($films))
             @foreach($films as $film)
               @if($film->type == 'Drame')
-                <a href=""><img src="{{$film->imageFilm}}" alt=""></a>
+                <a href=""><img src="{{$film->imageFilm}}" alt="" class="imgFilm"></a>
               @endif
             @endforeach
           @endif
