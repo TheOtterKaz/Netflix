@@ -4,34 +4,48 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label"     : "newGitClone",
+            "label": "newGitClone",
             "dependsOrder": "sequence",
-            "dependsOn"   : [
+            "dependsOn": [
                 "env",
                 "installComp",
                 "key",
-                "insertDonnees"
+                "insertDonnees",
+                "startServer"
             ]
         },
         {
-            "label"     : "installComp",
-            "type"      : "shell",
-            "command"   : "composer install"
+            "label": "installComp",
+            "type": "shell",
+            "command": "composer install"
         },
         {
-            "label"     : "key",
-            "type"      : "shell",
-            "command"   : "php artisan key:generate"
+            "label": "key",
+            "type": "shell",
+            "command": "php artisan key:generate"
         },
         {
-            "label"     : "insertDonnees",
-            "type"      : "shell",
-            "command"   : "php artisan migrate:refresh --seed"
+            "label": "insertDonnees",
+            "type": "shell",
+            "command": "php artisan migrate:refresh --seed"
         },
         {
             "label": "env",
-            "type":"shell",
+            "type": "shell",
             "command": "cp .env.example .env"
+        },
+        {
+            "label": "startServer",
+            "type": "shell",
+            "command": "php artisan serve",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": false,
+                "clear": true
+            }
         }
     ]
 }
