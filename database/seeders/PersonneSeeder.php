@@ -32,7 +32,7 @@ class PersonneSeeder extends Seeder
                 'prenom' => 'Octavio',
                 'dateNaiss' => '1973-10-14',
                 'sexe' => 'M',
-                'imagePers' => 'https://th.bing.com/th/id/OIP.gAwZPIziBTBE-wGcIkecgAHaOG?pid=ImgDet&rs=1',
+                'imagePers' => 'https://www.mafab.hu/static/profiles/2020p/308/10/1914444.jpg',
             ],
 
             // Producteur
@@ -146,7 +146,7 @@ class PersonneSeeder extends Seeder
                 'prenom' => 'Joseph',
                 'dateNaiss' => '1981-02-17',
                 'sexe' => 'M',
-                'imagePers' => 'https://static.wikia.nocookie.net/batman/images/7/72/Joseph_Gordon_Levitt.jpg/revision/latest?cb=20111030010135',
+                'imagePers' => 'https://th.bing.com/th/id/R.9f1f667d666e88c0de6e549458986ffc?rik=87cOzVPqHDWL1w&pid=ImgRaw&r=0',
             ],
 
             // Réalisateur
@@ -156,7 +156,7 @@ class PersonneSeeder extends Seeder
                 'prenom' => 'Christopher',
                 'dateNaiss' => '1970-07-30',
                 'sexe' => 'M',
-                'imagePers' => 'https://people.com/thmb/7lgnSJi5gGLOIJsdj8P6BVxHDfY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(674x429:676x431)/christopher-nolan-dc23745902014fb6ae107bb65a10c384.jpg',
+                'imagePers' => 'https://th.bing.com/th/id/OIP.5AldPiky1d1BheyEaduezgHaLD?pid=ImgDet&rs=1',
             ],            
 
             // Producteur
