@@ -14,20 +14,99 @@ class PersonneSeeder extends Seeder
     public function run(): void
     {
         DB::table('personnes')->insert([ 
-        // Spider man
-            // Acteur
+                // Acteurs
             [
                 'id' => 1,
-                'nom' => 'Moore',
-                'prenom' => 'Shameik',
-                'dateNaiss' => '1995-05-04',
+                'nom' => 'Pratt',
+                'prenom' => 'Chris',
+                'dateNaiss' => '1979-06-21',
                 'sexe' => 'M',
-                'imagePers' => 'https://m.media-amazon.com/images/M/MV5BMjAwNDU2OTc5M15BMl5BanBnXkFtZTgwOTk0ODMyNDE@._V1_.jpg',
+                'imagePers' => 'https://m.media-amazon.com/images/M/MV5BNzg3MTgwOTgzMV5BMl5BanBnXkFtZTgwODIxMTUwMjE@._V1_.jpg',
+            ],
+            [
+                'id' => 2,
+                'nom' => 'Hemsworth',
+                'prenom' => 'Chris',
+                'dateNaiss' => '1983-08-11',
+                'sexe' => 'M',
+                'imagePers' => 'https://th.bing.com/th/id/OIP.HYUy_OVYqYC8IFOPovh6JwHaLH?pid=ImgDet&rs=1',
+            ],
+            [
+                'id' => 3,
+                'nom' => 'Downey Jr.',
+                'prenom' => 'Robert',
+                'dateNaiss' => '1965-04-04',
+                'sexe' => 'M',
+                'imagePers' => 'https://image.tmdb.org/t/p/original/5A7vGrVJcOLdfow1i9GoXN85Q16.jpg',
+            ],
+            [
+                'id' => 4,
+                'nom' => 'Johansson',
+                'prenom' => 'Scarlett',
+                'dateNaiss' => '1984-11-22',
+                'sexe' => 'F',
+                'imagePers' => 'https://th.bing.com/th/id/R.26f3fef10758d13faca2a67bb1302faf?rik=U2b7jISZIrssSA&pid=ImgRaw&r=0',
+            ],
+            [
+                'id' => 5,
+                'nom' => 'McKellen',
+                'prenom' => 'Ian',
+                'dateNaiss' => '1939-05-25',
+                'sexe' => 'M',
+                'imagePers' => 'https://ilarge.lisimg.com/image/904308/1118full-ian-mckellen.jpg',
+            ],
+            [
+                'id' => 6,
+                'nom' => 'Evans',
+                'prenom' => 'Chris',
+                'dateNaiss' => '1981-06-13',
+                'sexe' => 'M',
+                'imagePers' => 'https://th.bing.com/th/id/R.6dec495bd80ace89ab3f028d75595317?rik=HesKxR5NVSV9bw&pid=ImgRaw&r=0',
+            ],
+            [
+                'id' => 7,
+                'nom' => 'Rudd',
+                'prenom' => 'Paul',
+                'dateNaiss' => '1969-04-06',
+                'sexe' => 'M',
+                'imagePers' => 'https://www.themoviedb.org/t/p/original/8eTtJ7XVXY0BnEeUaSiTAraTIXd.jpg',
+            ],
+            [
+                'id' => 8,
+                'nom' => 'Cumberbatch',
+                'prenom' => 'Benedict',
+                'dateNaiss' => '1976-07-19',
+                'sexe' => 'M',
+                'imagePers' => 'https://image.tmdb.org/t/p/original/6g6hInkWkpw6emVZgUBCxui95D9.jpg',
+            ],
+            [
+                'id' => 9,
+                'nom' => 'Holland',
+                'prenom' => 'Tom',
+                'dateNaiss' => '1996-06-01',
+                'sexe' => 'M',
+                'imagePers' => 'https://i.pinimg.com/originals/0a/95/bf/0a95bf904b32195f97c27ad8d20a1590.jpg',
+            ],
+            [
+                'id' => 10,
+                'nom' => 'Boseman',
+                'prenom' => 'Chadwick',
+                'dateNaiss' => '1976-11-29',
+                'sexe' => 'M',
+                'imagePers' => 'https://th.bing.com/th/id/R.044f54d1cba7dec97309e0ef5033b479?rik=9wOJ%2fRURiCSe8w&pid=ImgRaw&r=0',
+            ],
+            [
+                'id' => 11,
+                'nom' => 'L. Jackson',
+                'prenom' => 'Samuel',
+                'dateNaiss' => '1948-12-21',
+                'sexe' => 'M',
+                'imagePers' => 'https://th.bing.com/th/id/R.9b333c95c0cae0ef7d89ce99227123ae?rik=EZUS%2blZ0PQLIIw&pid=ImgRaw&r=0',
             ],
 
             // Réalisateur
             [
-                'id' => 2,
+                'id' => 3,
                 'nom' => 'E. Rodriguez',
                 'prenom' => 'Octavio',
                 'dateNaiss' => '1973-10-14',
@@ -37,7 +116,7 @@ class PersonneSeeder extends Seeder
 
             // Producteur
             [
-                'id' => 3,
+                'id' => 4,
                 'nom' => 'Arad',
                 'prenom' => 'Avi',
                 'dateNaiss' => '1948-08-01',
@@ -45,285 +124,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://th.bing.com/th/id/OIP.pmuLzADIFNQzwb2qkHcRMgHaLH?pid=ImgDet&rs=1',
             ],
 
-        // Super mario bros
-            // Acteur
-            [
-                'id' => 4,
-                'nom' => 'Pratt',
-                'prenom' => 'Chris',
-                'dateNaiss' => '1979-06-21',
-                'sexe' => 'M',
-                'imagePers' => 'https://www.monstersandcritics.com/wp-content/uploads/2019/03/chris-pratt.jpg',
-            ],
-
-            // Réalisateur
-            [
-                'id' => 5,
-                'nom' => 'Horvath',
-                'prenom' => 'Aaron',
-                'dateNaiss' => '1975-06-09',
-                'sexe' => 'M',
-                'imagePers' => 'https://th.bing.com/th/id/OIP.q5OaZI0uly85ycmUo7HzzQAAAA?pid=ImgDet&rs=1',
-            ],
-
-            // Producteur
-            [
-                'id' => 6,
-                'nom' => 'Miyamoto',
-                'prenom' => 'Shigeru',
-                'dateNaiss' => '1952-11-16',
-                'sexe' => 'M',
-                'imagePers' => 'https://th.bing.com/th/id/R.a5cb0d1e2eef6b9cbebb2f4b4b7663a0?rik=fFJYdcvqad7ETw&riu=http%3a%2f%2fimg2.wikia.nocookie.net%2f__cb20141013033032%2fssb%2fimages%2f5%2f57%2fMiyamoto1.jpg&ehk=AgbJU%2fDqlohm34mCsjPq%2fBFTHmS9jywTXh3rGVF7j8M%3d&risl=&pid=ImgRaw&r=0',
-            ],
-
-        // Don't look up
-            // Acteur
-            [
-                'id' => 7,
-                'nom' => 'Gabot',
-                'prenom' => 'Gal',
-                'dateNaiss' => '1985-04-30',
-                'sexe' => 'F',
-                'imagePers' => 'https://m.media-amazon.com/images/M/MV5BNzgxYTA2OTUtYmE0ZC00ZTc0LWJjY2QtOTIzMTJhNGUyZjBlXkEyXkFqcGdeQXVyMTg4NDI0NDM@._V1_FMjpg_UX1000_.jpg',
-            ],
-
-            // Réalisateur
-            [
-                'id' => 8,
-                'nom' => 'Jenkins',
-                'prenom' => 'Patty',
-                'dateNaiss' => '1971-07-24',
-                'sexe' => 'F',
-                'imagePers' => 'https://m.media-amazon.com/images/M/MV5BMTg4NDA4NTQ5MF5BMl5BanBnXkFtZTgwOTA0Nzc0MzE@._V1_.jpg',
-            ],
-
-            // Producteur
-            [
-                'id' => 9,
-                'nom' => 'Geoff',
-                'prenom' => 'Johns',
-                'dateNaiss' => '1973-01-25',
-                'sexe' => 'M',
-                'imagePers' => 'https://static.dc.com/dc/files/default_images/Geoff-Johns_Talent_c2e22012_mj_1500_597910e7771fb8.23126772.jpg?w=1200',
-            ],
-            
-        // Wonder woman 1984
-            // Acteur
-            [
-                'id' => 10,
-                'nom' => 'DiCaprio',
-                'prenom' => 'Leonardo',
-                'dateNaiss' => '1974-11-11',
-                'sexe' => 'M',
-                'imagePers' => 'https://cdn.britannica.com/65/227665-050-D74A477E/American-actor-Leonardo-DiCaprio-2016.jpg',
-            ],
-
-            // Réalisateur
-            [
-                'id' => 11,
-                'nom' => 'McKay',
-                'prenom' => 'Adam',
-                'dateNaiss' => '1968-04-17',
-                'sexe' => 'M',
-                'imagePers' => 'https://m.media-amazon.com/images/M/MV5BZmQ2ZDNkMGYtOWUzNi00N2Q3LTk1MDItODFlNDJkMTZkMjFmXkEyXkFqcGdeQXVyMjMxNzg4Mjk@._V1_.jpg',
-            ],
-
-            // Producteur
-            [
-                'id' => 12,
-                'nom' => 'Messick',
-                'prenom' => 'Kevin',
-                'dateNaiss' => '1966-08-21',
-                'sexe' => 'M',
-                'imagePers' => 'https://m.media-amazon.com/images/M/MV5BNWVlYzczNzEtNmU5ZS00YTdhLWIyYzAtNDFmYjU0NWE1ZmFiXkEyXkFqcGdeQXVyNTI5NjIyMw@@._V1_.jpg',
-            ],
-
-        // Inception
-            // Acteur
-            [
-                'id' => 13,
-                'nom' => 'Gordon-Levitt',
-                'prenom' => 'Joseph',
-                'dateNaiss' => '1981-02-17',
-                'sexe' => 'M',
-                'imagePers' => 'https://th.bing.com/th/id/R.9f1f667d666e88c0de6e549458986ffc?rik=87cOzVPqHDWL1w&pid=ImgRaw&r=0',
-            ],
-
-            // Réalisateur
-            [
-                'id' => 14,
-                'nom' => 'Nolan',
-                'prenom' => 'Christopher',
-                'dateNaiss' => '1970-07-30',
-                'sexe' => 'M',
-                'imagePers' => 'https://th.bing.com/th/id/OIP.5AldPiky1d1BheyEaduezgHaLD?pid=ImgDet&rs=1',
-            ],            
-
-            // Producteur
-            [
-                'id' => 15,
-                'nom' => 'Thomas',
-                'prenom' => 'Emma',
-                'dateNaiss' => '1968-07-31',
-                'sexe' => 'F',
-                'imagePers' => 'https://image.tmdb.org/t/p/w500/6GemtNCy856iLho6WRsFASxQTAp.jpg',
-            ],
-
-        // Seigneur des anneaux
-            // Acteur
-            [
-                'id' => 16,
-                'nom' => 'McKellen',
-                'prenom' => 'Ian',
-                'dateNaiss' => '1939-05-25',
-                'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/SDCC13_-_Ian_McKellen.jpg/240px-SDCC13_-_Ian_McKellen.jpg',
-            ],
-
-            // Réalisateur
-            [
-                'id' => 17,
-                'nom' => 'Jackson',
-                'prenom' => 'Peter',
-                'dateNaiss' => '1961-10-31',
-                'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Peter_Jackson_SDCC_2014.jpg/220px-Peter_Jackson_SDCC_2014.jpg',
-            ],            
-
-            // Producteur
-            [
-                'id' => 18,
-                'nom' => 'M. Osborne',
-                'prenom' => 'Barrie',
-                'dateNaiss' => '1944-02-07',
-                'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Barrie_Osborne_%28cropped%29.jpg/220px-Barrie_Osborne_%28cropped%29.jpg',
-            ],
-
-        // Nerve
-            // Acteur
-            [
-                'id' => 19,
-                'nom' => 'Roberts',
-                'prenom' => 'Emma',
-                'dateNaiss' => '1991-02-10',
-                'sexe' => 'F',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Emma_Robert_2016_Comic_Con.jpg/220px-Emma_Robert_2016_Comic_Con.jpg',
-            ],
-
-            // Réalisateur
-            [
-                'id' => 20,
-                'nom' => 'Joost',
-                'prenom' => 'Henry',
-                'dateNaiss' => '1982-10-30',
-                'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Henry_Joost_at_2016_San_Diego_Comic-Con_%28cropped%29.jpg/220px-Henry_Joost_at_2016_San_Diego_Comic-Con_%28cropped%29.jpg',
-            ],            
-
-            // Producteur
-            [
-                'id' => 21,
-                'nom' => 'Katagas',
-                'prenom' => 'Anthony',
-                'dateNaiss' => '1971-01-28',
-                'sexe' => 'M',
-                'imagePers' => 'https://resizing.flixster.com/kiEYdHwnxKv-xYcLvjKf46QRzo4=/218x280/v2/https://flxt.tmsimg.com/assets/202323_v9_ba.jpg',
-            ],
-
-        // Joker
-            // Acteur
-            [
-                'id' => 22,
-                'nom' => 'Phoenix',
-                'prenom' => 'Joaquin',
-                'dateNaiss' => '1974-10-28',
-                'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Joaquin_Phoenix-2196_%28cropped%29.jpg/220px-Joaquin_Phoenix-2196_%28cropped%29.jpg',
-            ],
-
-            // Réalisateur
-            [
-                'id' => 23,
-                'nom' => 'Phillips',
-                'prenom' => 'Todd',
-                'dateNaiss' => '1970-12-20',
-                'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Todd_Phillips_%2829486703114%29.jpg/220px-Todd_Phillips_%2829486703114%29.jpg',
-            ],            
-
-            // Producteur
-            [
-                'id' => 24,
-                'nom' => 'Cooper',
-                'prenom' => 'Bradley',
-                'dateNaiss' => '1975-01-05',
-                'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Bradley_Cooper_avp_2014_2.jpg/240px-Bradley_Cooper_avp_2014_2.jpg',
-            ],
-
-        // Ready player one
-            // Acteur
-            [
-                'id' => 25,
-                'nom' => 'Sheridan',
-                'prenom' => 'Tye',
-                'dateNaiss' => '1996-11-11',
-                'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Tye_Sheridan_by_Gage_Skidmore_%28cropped%29.jpg/220px-Tye_Sheridan_by_Gage_Skidmore_%28cropped%29.jpg',
-            ],
-
-            // Réalisateur
-            [
-                'id' => 26,
-                'nom' => 'Spielberg',
-                'prenom' => 'Steven',
-                'dateNaiss' => '1946-12-18',
-                'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/MKr25402_Steven_Spielberg_%28Berlinale_2023%29.jpg/260px-MKr25402_Steven_Spielberg_%28Berlinale_2023%29.jpg',
-            ],            
-
-            // Producteur
-            [
-                'id' => 27,
-                'nom' => 'Farah',
-                'prenom' => 'Dan',
-                'dateNaiss' => '1979-10-28',
-                'sexe' => 'M',
-                'imagePers' => 'https://m.media-amazon.com/images/M/MV5BNDY4ZDA2NGUtYzI3My00NmFiLTg2YzYtYzQxOTAwMTVkMGY2XkEyXkFqcGdeQXVyNTA5NjU5MzY@._V1_FMjpg_UX1000_.jpg',
-            ],
-
-        // Star wars
-            // Acteur
-            [
-                'id' => 28,
-                'nom' => 'Fisher',
-                'prenom' => 'Carrie',
-                'dateNaiss' => '1956-10-21',
-                'sexe' => 'F',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Carrie_Fisher_2013.jpg/220px-Carrie_Fisher_2013.jpg',
-
-            ],
-
-            // Réalisateur
-            [
-                'id' => 29,
-                'nom' => 'Lucas',
-                'prenom' => 'George',
-                'dateNaiss' => '1944-05-14',
-                'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/George_Lucas_cropped_2009.jpg/290px-George_Lucas_cropped_2009.jpg',
-            ],            
-
-            // Producteur
-            [
-                'id' => 30,
-                'nom' => 'McCallum',
-                'prenom' => 'Rick',
-                'dateNaiss' => '1954-08-22',
-                'sexe' => 'M',
-                'imagePers' => 'https://www.hollywoodreporter.com/wp-content/uploads/2013/06/rick_mccallum.jpg',
-            ],
+        
         ]);
     }
 }
