@@ -4,28 +4,40 @@
 
 @section('contenu')
 
-<div class="row">
-            <div class="netflixLogo d-flex align-items-center justify-content-center col-1 p-2">
-                <a id="logo" href="{{ route('films.index') }}"><img src="/img/logo.PNG" alt="Logo Image"></a>
-            </div>      
-            <nav class="main-nav col-11 d-flex align-items-center justify-content-evenly">                
-                <a href="#nouveautes"   class="text-truncate d-block">Nouveautés</a>
-                <a href="#animation"    class="text-truncate d-block">Animation</a>
-                <a href="#scifi"        class="text-truncate d-block">Science-Fiction</a>
-                <a href="#comedie"      class="text-truncate d-block">Comédie</a>
-                <a href="#action"       class="text-truncate d-block">Action & Aventure</a>
-                <a href="#thriller"     class="text-truncate d-block">Thriller</a>        
-                <a href="#fantasie"     class="text-truncate d-block">Fantasie</a>        
-                <a href="#drame"        class="text-truncate d-block">Drame</a>        
-                <a href="#plusPOP"      class="text-truncate d-block">+ Populaires</a>        
-                <a href="#moinsPOP"     class="text-truncate d-block">- Populaires</a>        
-            </nav>
-            <!-- <nav class="sub-nav">
-                <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
-                <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
-                <a href="#">Account</a>        
-            </nav>       -->
-</div>
+    <header class="row d-flex justify-content-evenly ">
+        <div class="netflixLogo col-1 d-flex align-items-center justify-content-center p-0">
+          <a id="logo" href="{{ route('films.index') }}"><img src="/img/logo.PNG" alt="Logo Image"></a>
+        </div>      
+        <nav class="main-nav d-flex align-items-center col-9 p-0 m-0">                
+          <a href="#nouveautes" class="text-truncate d-block">Nouveautés</a>
+          <a href="#animation" class="text-truncate d-block">Animation</a>
+          <a href="#scifi" class="text-truncate d-block">Science-Fiction</a>
+          <a href="#comedie" class="text-truncate d-block">Comédie</a>
+          <a href="#action" class="text-truncate d-block">Action & Aventure</a>
+          <a href="#thriller" class="text-truncate d-block">Thriller</a>        
+          <a href="#fantasie" class="text-truncate d-block">Fantasie</a>        
+          <a href="#drame" class="text-truncate d-block">Drame</a>        
+          <a href="#plusPOP" class="text-truncate d-block">+ Populaires</a>        
+          <a href="#moinsPOP" class="text-truncate d-block">- Populaires</a>        
+        </nav>
+        <nav class="sub-nav col-1 d-flex align-items-center justify-content-evenly flex-row p-0 m-0">
+          <a href="#" class="d-flex align-items-center">
+            <span class="material-symbols-outlined">
+              search
+            </span>
+          </a>
+          <a href="#" class="d-flex align-items-center">
+          <span class="material-symbols-outlined">
+            circle_notifications
+          </span>
+          </a>
+          <a href="#" class="d-flex align-items-center"> 
+            <span class="material-symbols-outlined">
+               account_circle 
+              </span> 
+            </a>        
+        </nav>      
+    </header>
 
 
 <!-- Main conteneur -->
@@ -51,7 +63,7 @@
             </div>
         </div> -->
 
-        <div class="card m-5 p-0 bg-secondary-subtle" style="max-width: 900px;">
+        <div class="card m-5 p-0 bg-secondary-subtle border border-0" style="max-width: 900px;">
         <div class="row g-0">
             <div class="col-md-4">
             <img src="{{$film->imageFilm}}" class="img-fluid rounded-start" alt="...">

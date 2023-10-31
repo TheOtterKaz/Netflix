@@ -19,7 +19,7 @@ html, body {
 }
 
 img {
-  max-width: 100%;
+  /* max-width: 100%; */
 }
 
 h1 {
@@ -37,7 +37,7 @@ h1 {
 
 /* HEADER */
 header {
-  padding: 20px 20px 0 20px;
+  padding: 20px 20px 20px 20px;
   position: fixed;
   top: 0;
   display: grid;  
@@ -48,6 +48,7 @@ header {
   background-color: var(--primary);
   width: 100%;
   margin-bottom: 0px;  
+  z-index: 5;
 }
 
 /* .netflixLogo {
@@ -125,6 +126,7 @@ header {
   -ms-transform: scale(1.4);
   -webkit-transform: scale(1.4);  
   transform: scale(1.4);
+
 }
 
 .box img {
@@ -190,7 +192,7 @@ footer {
 
 .imgFilm{
   /* height: 402px; */
-  width: 279px;
+  /* width: 279px; */
 
 }
 
