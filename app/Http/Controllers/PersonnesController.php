@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Personne;
+use App\Models\Film;
 
 class PersonnesController extends Controller
 {
@@ -14,7 +15,12 @@ class PersonnesController extends Controller
     public function index()
     {
         $personnes = Personne::all();
-        return View('personnes.index', compact('personnes'));
+        
+        $films = Film::all();
+        
+        return View('personnes.index', compact('personnes', 'films'));
+
+        
     }
 
     /**

@@ -45,11 +45,11 @@
 
           <h1 id="realisateurs">Réalisateurs</h1>
           <div class="box">
-                 @if(count($personnes))
-                    @foreach($personnes as $personne)
-                        @if($personne->rolePrinc == 'Réalisateur')
-                            <a href=""><img src="{{$personne->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;"></a>
-                        @endif
+                
+
+                 @if(count($films))
+                    @foreach($films as $film)
+                      <a href=""><img src="{{$film->realisateur->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;"></a>
                     @endforeach
                   @endif
           </div>
