@@ -6,7 +6,7 @@
 
     <header>
       <div class="netflixLogo">
-        <a id="logo" href="#home"><img src="/img/logo.PNG" alt="Logo Image"></a>
+        <a id="logo" href="{{ route('films.index') }}"><img src="/img/logo.PNG" alt="Logo Image"></a>
       </div>      
       <nav class="main-nav">                
         <a href="#tous">Tous</a>
@@ -22,47 +22,46 @@
     </header>
 
     <section class="main-container" >
-      <div class="location" id="home">
-          <h1 id="tous">Tous</h1>
-          <div class="box">
-                 @if(count($personnes))
+        <div class="location" id="home">
+            
+            <h1 id="tous">Tous</h1>
+            <div class="box">
+                @if(count($personnes))
                     @foreach($personnes as $personne)
                         <a href="" style="overflow-x: hidden;"><img src="{{$personne->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;"></a>
                     @endforeach
-                  @endif
-          </div>
+                @endif
+            </div>
 
-          <h1 id="acteurs">Acteurs</h1>
-          <div class="box">
-                 @if(count($personnes))
+            <h1 id="acteurs">Acteurs</h1>
+            <div class="box">
+                @if(count($personnes))
                     @foreach($personnes as $personne)
                         @if($personne->rolePrinc == 'Acteur')
                             <a href=""><img src="{{$personne->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;"></a>
                         @endif
                     @endforeach
-                  @endif
-          </div>
+                @endif
+            </div>
 
-          <h1 id="realisateurs">Réalisateurs</h1>
-          <div class="box">
-                
-
-                 @if(count($realisateurs))
+            <h1 id="realisateurs">Réalisateurs</h1>
+            <div class="box">
+                @if(count($realisateurs))
                     @foreach($realisateurs as $realisateur)
-                      <a href=""><img src="{{$realisateur->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;"></a>
+                        <a href=""><img src="{{$realisateur->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;"></a>
                     @endforeach
-                  @endif
-          </div>
+                @endif
+            </div>
 
-          <h1 id="producteurs">Producteurs</h1>
-          <div class="box">
-                 @if(count($producteurs))
-                    @foreach($producteurs as $producteur)
-                            <a href=""><img src="{{$producteur->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;"></a>
-                    @endforeach
-                  @endif
-          </div>
-      </div>
+            <h1 id="producteurs">Producteurs</h1>
+            <div class="box">
+                    @if(count($producteurs))
+                        @foreach($producteurs as $producteur)
+                                <a href=""><img src="{{$producteur->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;"></a>
+                        @endforeach
+                    @endif
+            </div>
+        </div>
     </section>
 
 @endsection

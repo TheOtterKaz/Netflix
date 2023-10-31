@@ -8,7 +8,7 @@
     <div class="col-12">
       <header>
         <div class="netflixLogo">
-          <a id="logo" href="#home"><img src="/img/logo.PNG" alt="Logo Image"></a>
+          <a id="logo" href="{{ route('films.index') }}"><img src="/img/logo.PNG" alt="Logo Image"></a>
         </div>      
         <nav class="main-nav">                
           <a href="#nouveautes" class="text-truncate d-block">Nouveautés</a>

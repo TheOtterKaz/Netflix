@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AccueilsController;
 use App\Http\Controllers\PersonnesController;
 use App\Http\Controllers\FilmsController;
 
@@ -21,10 +20,10 @@ Route::get('/', function () {
 });
 
 Route::get('films', 
-[FilmsController::class, 'index']);
+[FilmsController::class, 'index']) ->name('films.index');
 
 Route::get('/films/{film}/',
 [FilmsController::class, 'show']) ->name('films.show');
 
 Route::get('personnes',
-[PersonnesController::class, 'index']);
+[PersonnesController::class, 'index']) ->name('personnes.index');

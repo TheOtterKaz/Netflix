@@ -5,10 +5,10 @@
 @section('contenu')
 
 <div class="row">
-            <div class="netflixLogo d-flex align-items-center justify-content-center col-2 p-2">
-                <a id="logo" href="#home"><img src="/img/logo.PNG" alt="Logo Image"></a>
+            <div class="netflixLogo d-flex align-items-center justify-content-center col-1 p-2">
+                <a id="logo" href="{{ route('films.index') }}"><img src="/img/logo.PNG" alt="Logo Image"></a>
             </div>      
-            <nav class="main-nav col-xl-10 d-flex align-items-center justify-content-evenly">                
+            <nav class="main-nav col-11 d-flex align-items-center justify-content-evenly">                
                 <a href="#nouveautes"   class="text-truncate d-block">Nouveautés</a>
                 <a href="#animation"    class="text-truncate d-block">Animation</a>
                 <a href="#scifi"        class="text-truncate d-block">Science-Fiction</a>
@@ -51,7 +51,7 @@
             </div>
         </div> -->
 
-        <div class="card m-5 p-0" style="max-width: 540px;">
+        <div class="card m-5 p-0 bg-secondary-subtle" style="max-width: 900px;">
         <div class="row g-0">
             <div class="col-md-4">
             <img src="{{$film->imageFilm}}" class="img-fluid rounded-start" alt="...">
@@ -60,12 +60,19 @@
             <div class="card-body">
                 <h5 class="card-title">{{$film->titre}}</h5>
                 <p class="card-text">{{$film->resume}}</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                <table>
+                <table class="w-100 text-dark">
                     <tr>
-                        <th class="text-primary">Réalisateur : </th>
-                        <td class="text-primary">{{$film->realisateur->nom}}, {{$film->realisateur->prenom}}</td>
-                    </tr>    
+                        <th>Réalisateur</th>
+                        <td class="d-flex align-items-center">{{$film->realisateur->nom}}, {{$film->realisateur->prenom}}</td>
+                    </tr> 
+                    <tr>
+                        <th>Producteur</th>
+                        <td class="d-flex align-items-center">{{$film->producteur->nom}}, {{$film->producteur->prenom}}</td>
+                    </tr>
+                    <tr>
+                        <th>Acteurs</th>
+
+                    </tr>
 
                 </table>
             </div>

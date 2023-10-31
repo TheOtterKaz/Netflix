@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,13 +11,13 @@
   <div class="container-fluid">
 
     @yield('contenu')
-    
+
     <footer class="row">
       <div class="col-12">
         <div id="boxLiens">
-          <a href="http://127.0.0.1:8000/films">Page Films</a>
+          <a href="{{ route('films.index')}}">Page Films</a>
           <p> - </p>
-          <a href="http://127.0.0.1:8000/personnes">Page Personnes</a>
+          <a href="{{ route('personnes.index')}}">Page Personnes</a>
         </div>
   
         <p>&copy 1997-2018 Netflix, Inc.</p>
