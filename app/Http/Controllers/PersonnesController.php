@@ -16,9 +16,10 @@ class PersonnesController extends Controller
     {
         $personnes = Personne::all();
         
-        $films = Film::all();
+        $realisateurs = Personne::join('films', 'personnes.id', '=', 'films.realisateur_id')     ->select('personnes.*')     ->distinct()     ->get();
+        $producteurs = Personne::join('films', 'personnes.id', '=', 'films.producteur_id')     ->select('personnes.*')     ->distinct()     ->get();
         
-        return View('personnes.index', compact('personnes', 'films'));
+        return View('personnes.index', compact('personnes', 'realisateurs', 'producteurs'));
 
         
     }

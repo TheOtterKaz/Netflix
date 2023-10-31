@@ -47,20 +47,18 @@
           <div class="box">
                 
 
-                 @if(count($films))
-                    @foreach($films as $film)
-                      <a href=""><img src="{{$film->realisateur->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;"></a>
+                 @if(count($realisateurs))
+                    @foreach($realisateurs as $realisateur)
+                      <a href=""><img src="{{$realisateur->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;"></a>
                     @endforeach
                   @endif
           </div>
 
           <h1 id="producteurs">Producteurs</h1>
           <div class="box">
-                 @if(count($personnes))
-                    @foreach($personnes as $personne)
-                        @if($personne->rolePrinc == 'Producteur')
-                            <a href=""><img src="{{$personne->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;"></a>
-                        @endif
+                 @if(count($producteurs))
+                    @foreach($producteurs as $producteur)
+                            <a href=""><img src="{{$producteur->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;"></a>
                     @endforeach
                   @endif
           </div>
