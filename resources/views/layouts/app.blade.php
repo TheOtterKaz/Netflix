@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/netflix.css')}}">
     <title>@yield('title')</title>
@@ -11,13 +12,13 @@
   <div class="container-fluid">
 
     @yield('contenu')
-    
-    <footer class="row">
-      <div class="col-12">
+
+    <footer class="row ">
+      <div class="col-12 d-flex align-items-center justify-content-center flex-column">
         <div id="boxLiens">
-          <a href="http://127.0.0.1:8000/films">Page Films</a>
+          <a href="{{ route('films.index')}}">Page Films</a>
           <p> - </p>
-          <a href="http://127.0.0.1:8000/personnes">Page Personnes</a>
+          <a href="{{ route('personnes.index')}}">Page Personnes</a>
         </div>
   
         <p>&copy 1997-2018 Netflix, Inc.</p>

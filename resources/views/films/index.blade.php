@@ -4,13 +4,13 @@
 
 @section('contenu')
 
-  <div class="row">
-    <div class="col-12">
-      <header>
-        <div class="netflixLogo">
-          <a id="logo" href="#home"><img src="/img/logo.PNG" alt="Logo Image"></a>
+  <!-- <div class="row"> -->
+    <!-- <div class="col-12"> -->
+      <header class="row d-flex justify-content-evenly ">
+        <div class="netflixLogo col-1 d-flex align-items-center justify-content-center p-0">
+          <a id="logo" href="{{ route('films.index') }}"><img src="/img/logo.PNG" alt="Logo Image"></a>
         </div>      
-        <nav class="main-nav">                
+        <nav class="main-nav d-flex align-items-center col-9 p-0 m-0">                
           <a href="#nouveautes" class="text-truncate d-block">Nouveautés</a>
           <a href="#animation" class="text-truncate d-block">Animation</a>
           <a href="#scifi" class="text-truncate d-block">Science-Fiction</a>
@@ -22,14 +22,26 @@
           <a href="#plusPOP" class="text-truncate d-block">+ Populaires</a>        
           <a href="#moinsPOP" class="text-truncate d-block">- Populaires</a>        
         </nav>
-        <nav class="sub-nav">
-          <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
-          <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
-          <a href="#">Account</a>        
+        <nav class="sub-nav col-1 d-flex align-items-center justify-content-evenly flex-row p-0 m-0">
+          <a href="#" class="d-flex align-items-center">
+            <span class="material-symbols-outlined">
+              search
+            </span>
+          </a>
+          <a href="#" class="d-flex align-items-center">
+          <span class="material-symbols-outlined">
+            circle_notifications
+          </span>
+          </a>
+          <a href="#" class="d-flex align-items-center"> 
+            <span class="material-symbols-outlined">
+               account_circle 
+              </span> 
+            </a>        
         </nav>      
       </header>
-    </div>
-  </div>
+    <!-- </div> -->
+  <!-- </div> -->
 
   
   
@@ -43,20 +55,26 @@
                     @foreach($films as $film)
                       @if($film->annee == '2023')
                         <a href="{{ route('films.show', [$film]) }}">
-                          <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                          <div class="card border border-0 p-0 m-0 g-0">
+                            <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
+                          </div>
                         </a>
                       @endif
                     @endforeach
                   @endif
           </div>
+
+
           <h1 id="animation" class="fs-3  text-truncate d-block">Animation</h1>
           <div class="box">
                  @if(count($films))
                     @foreach($films as $film)
                       @if($film->type == 'Animation')
-                        <a href="{{ route('films.show', [$film]) }}">
-                          <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
-                        </a>
+                      <a href="{{ route('films.show', [$film]) }}">
+                        <div class="card border border-0 p-0 m-0 g-0">
+                          <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
+                        </div>
+                      </a>
                       @endif
                     @endforeach
                   @endif
@@ -71,7 +89,9 @@
                     @foreach($films as $film)
                       @if($film->type == 'Science-Fiction')
                         <a href="{{ route('films.show', [$film]) }}">
-                          <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                          <div class="card border border-0 p-0 m-0 g-0">
+                            <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
+                          </div>
                         </a>
                       @endif
                     @endforeach
@@ -86,7 +106,9 @@
             @foreach($films as $film)
               @if($film->type == 'Comédie')
                 <a href="{{ route('films.show', [$film]) }}">
-                  <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                  <div class="card border border-0 p-0 m-0 g-0">
+                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
+                  </div>
                 </a>
               @endif
             @endforeach
@@ -100,7 +122,9 @@
             @foreach($films as $film)
               @if($film->type == 'Action, Aventure')
                 <a href="{{ route('films.show', [$film]) }}">
-                  <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                  <div class="card border border-0 p-0 m-0 g-0">
+                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
+                  </div>
                 </a>
               @endif
             @endforeach
@@ -114,7 +138,9 @@
             @foreach($films as $film)
               @if($film->type == 'Thriller')
                 <a href="{{ route('films.show', [$film]) }}">
-                  <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                  <div class="card border border-0 p-0 m-0 g-0">
+                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
+                  </div>
                 </a>
               @endif
             @endforeach
@@ -129,7 +155,9 @@
             @foreach($films as $film)
               @if($film->type == 'Fantasie')
                 <a href="{{ route('films.show', [$film]) }}">
-                  <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                  <div class="card border border-0 p-0 m-0 g-0">
+                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
+                  </div>
                 </a>
               @endif
             @endforeach
@@ -144,13 +172,17 @@
             @foreach($films as $film)
               @if($film->type == 'Drame')
                 <a href="{{ route('films.show', [$film]) }}">
-                  <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                  <div class="card border border-0 p-0 m-0 g-0">
+                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
+                  </div>
                 </a>
               @endif
             @endforeach
           @endif
 
       </div>
+
+
       <h1 id="plusPOP" class="fs-3 text-truncate d-block">Plus populaires</h1>
       <div class="box">
 
@@ -158,13 +190,17 @@
             @foreach($films as $film)
               @if($film->type == 'Drame')
                 <a href="{{ route('films.show', [$film]) }}">
-                  <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                  <div class="card border border-0 p-0 m-0 g-0">
+                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
+                  </div>
                 </a>
               @endif
             @endforeach
           @endif
 
       </div>
+
+
       <h1 id="moinsPOP" class="fs-3 text-truncate d-block">Moins populaires</h1>
       <div class="box">
 
@@ -172,13 +208,17 @@
             @foreach($films as $film)
               @if($film->type == 'Drame')
                 <a href="{{ route('films.show', [$film]) }}">
-                  <img src="{{$film->imageFilm}}" alt="" class="imgFilm">
+                  <div class="card border border-0 p-0 m-0 g-0">
+                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
+                  </div>
                 </a>
               @endif
             @endforeach
           @endif
 
       </div>
+
+
     </section>
       
     <!-- END OF MAIN CONTAINER -->
