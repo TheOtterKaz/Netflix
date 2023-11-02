@@ -45,7 +45,7 @@ class PersonneSeeder extends Seeder
                 'prenom' => 'Scarlett',
                 'dateNaiss' => '1984-11-22',
                 'sexe' => 'F',
-                'imagePers' => 'https://th.bing.com/th/id/R.26f3fef10758d13faca2a67bb1302faf?rik=U2b7jISZIrssSA&pid=ImgRaw&r=0',
+                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Scarlett_Johansson_by_Gage_Skidmore_2_%28cropped%2C_2%29.jpg/800px-Scarlett_Johansson_by_Gage_Skidmore_2_%28cropped%2C_2%29.jpg',
             ],
             [
                 'id' => 5,
@@ -239,7 +239,7 @@ class PersonneSeeder extends Seeder
                 'prenom' => 'Anthony',
                 'dateNaiss' => '1970-02-03',
                 'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Anthony_and_Joe_Russo_by_Gage_Skidmore.jpg/1920px-Anthony_and_Joe_Russo_by_Gage_Skidmore.jpg',
+                'imagePers' => 'https://m.media-amazon.com/images/M/MV5BMTc2NjM5MTM0Ml5BMl5BanBnXkFtZTgwMTY3ODczNjM@._V1_.jpg',
             ],
 
             // Producteur
@@ -273,7 +273,7 @@ class PersonneSeeder extends Seeder
                 'prenom' => 'Amy',
                 'dateNaiss' => '1958-03-25',
                 'sexe' => 'F',
-                'imagePers' => 'https://static.wikia.nocookie.net/marvelcinematicuniverse/images/9/91/Amy_Pascal.jpg/revision/latest?cb=20211214180620',
+                'imagePers' => 'https://m.media-amazon.com/images/M/MV5BMjMwMTA4MjMwNV5BMl5BanBnXkFtZTgwMDM5ODY2MzE@._V1_.jpg',
             ],
             [ 
                 'id' => 33,
