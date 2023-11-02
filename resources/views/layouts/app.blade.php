@@ -21,7 +21,7 @@
           <a href="{{ route('personnes.index')}}">Page Personnes</a>
         </div>
   
-        <p>&copy 1997-2018 Netflix, Inc.</p>
+        <p>&copy 1987-2023 Netflix, Inc.</p>
         <p>Maé Grenier & Mathis Grondin, 2023</p>
       </div>
     </footer>

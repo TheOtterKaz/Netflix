@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('titre', 100);            
             $table->string('resume', 500);
             $table->string('brand', 250);
+            $table->string('collection', 250);
             $table->integer('cote');
             $table->string('rating', 50);
             $table->integer('duree');

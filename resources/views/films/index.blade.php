@@ -14,15 +14,16 @@
 
         <nav class="main-nav d-flex align-items-center col-9 p-0 m-0">                
             <a href="#nouveautes"   class="text-truncate d-block">Nouveautés</a>
-            <a href="#animation"    class="text-truncate d-block">Animation</a>
-            <a href="#scifi"        class="text-truncate d-block">Science-Fiction</a>
-            <a href="#comedie"      class="text-truncate d-block">Comédie</a>
-            <a href="#action"       class="text-truncate d-block">Action & Aventure</a>
-            <a href="#thriller"     class="text-truncate d-block">Thriller</a>        
-            <a href="#fantasie"     class="text-truncate d-block">Fantasie</a>        
-            <a href="#drame"        class="text-truncate d-block">Drame</a>        
-            <a href="#plusPOP"      class="text-truncate d-block">+ Populaires</a>        
-            <a href="#moinsPOP"     class="text-truncate d-block">- Populaires</a>        
+            <a href="#gardiens"    class="text-truncate d-block">Les Gardiens de la galaxie</a>
+            <a href="#thor"        class="text-truncate d-block">Thor</a>
+            <a href="#avengers"      class="text-truncate d-block">Avengers</a>
+            <a href="#ironman"       class="text-truncate d-block">Ironman</a>
+            <a href="#captame"     class="text-truncate d-block">Capitaine America</a>        
+            <a href="#spiderman"     class="text-truncate d-block">Spiderman</a>               
+            <a href="#antman"     class="text-truncate d-block">Ant-man</a>        
+            <a href="#docstrange"     class="text-truncate d-block">Doctor Strange</a>        
+            <a href="#blackpanth"        class="text-truncate d-block">Black Panther</a>        
+            <a href="#autre"     class="text-truncate d-block">Autres</a>        
         </nav>
 
         <nav class="sub-nav col-1 d-flex align-items-center justify-content-evenly flex-row p-0 m-0">
@@ -70,11 +71,12 @@
             </div>
 
 
-            <h1 id="animation" class="fs-3  text-truncate d-block">Animation</h1>
+        <!-- gardiens de la galaxie -->
+            <h1 id="gardiens" class="fs-3  text-truncate d-block">Les Gardiens de la galaxie</h1>
             <div class="box">
                 @if(count($films))
                     @foreach($films as $film)
-                        @if($film->type == 'Animation')
+                        @if($film->collection == 'Gardiens de la galaxie')
                             <a href="{{ route('films.show', [$film]) }}">
                                 <div class="card border border-0 p-0 m-0 g-0">
                                     <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
@@ -85,11 +87,12 @@
                 @endif
             </div>
 
-            <h1 id="scifi" class="fs-3 text-truncate d-block">Science-Fiction</h1>
+        <!-- thor -->
+            <h1 id="thor" class="fs-3 text-truncate d-block">Thor</h1>
             <div class="box">
                 @if(count($films))
                     @foreach($films as $film)
-                        @if($film->type == 'Science-Fiction')
+                        @if($film->collection == 'Thor')
                             <a href="{{ route('films.show', [$film]) }}">
                                 <div class="card border border-0 p-0 m-0 g-0">
                                     <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
@@ -100,11 +103,12 @@
                 @endif
             </div>
 
-            <h1 id="comedie" class="fs-3 text-truncate d-block">Comédie</h1>
+        <!-- avengers -->
+            <h1 id="avengers" class="fs-3 text-truncate d-block">Avengers</h1>
             <div class="box">
                 @if(count($films))
                     @foreach($films as $film)
-                        @if($film->type == 'Comédie')
+                        @if($film->collection == 'Avengers')
                             <a href="{{ route('films.show', [$film]) }}">
                                 <div class="card border border-0 p-0 m-0 g-0">
                                     <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
@@ -115,11 +119,12 @@
                 @endif
             </div>    
 
-            <h1 id="action" class="fs-3 text-truncate d-block">Films d'action et aventure</h1>
+        <!-- ironman -->
+            <h1 id="ironman" class="fs-3 text-truncate d-block">Ironman</h1>
             <div class="box">
                 @if(count($films))
                     @foreach($films as $film)
-                        @if($film->type == 'Action, Aventure')
+                        @if($film->collection == 'Ironman')
                             <a href="{{ route('films.show', [$film]) }}">
                                 <div class="card border border-0 p-0 m-0 g-0">
                                     <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
@@ -130,11 +135,12 @@
                 @endif
             </div>
             
-            <h1 id="thriller" class="fs-3 text-truncate d-block">Thriller</h1>
+        <!-- capitaine america -->
+            <h1 id="captame" class="fs-3 text-truncate d-block">Capitaine America</h1>
             <div class="box">
                 @if(count($films))
                     @foreach($films as $film)
-                        @if($film->type == 'Thriller')
+                        @if($film->collection == 'Capitaine America')
                             <a href="{{ route('films.show', [$film]) }}">
                                 <div class="card border border-0 p-0 m-0 g-0">
                                     <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
@@ -145,22 +151,15 @@
                 @endif
             </div>
 
+      </div>   
 
-      </div>
-
-
-      
-
-
-      
-
-
-      <h1 id="fantasie" class="fs-3 text-truncate d-block">Fantasie</h1>
+    <!-- spiderman -->
+      <h1 id="spiderman" class="fs-3 text-truncate d-block">Spiderman</h1>
       <div class="box">
 
           @if(count($films))
             @foreach($films as $film)
-              @if($film->type == 'Fantasie')
+              @if($film->collection == 'Spiderman')
                 <a href="{{ route('films.show', [$film]) }}">
                   <div class="card border border-0 p-0 m-0 g-0">
                     <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
@@ -172,12 +171,13 @@
 
       </div>
 
-      <h1 id="drame" class="fs-3 text-truncate d-block">Drame</h1>
+    <!-- antman -->
+      <h1 id="antman" class="fs-3 text-truncate d-block">Ant-man</h1>
       <div class="box">
 
           @if(count($films))
             @foreach($films as $film)
-              @if($film->type == 'Drame')
+              @if($film->collection == 'Ant-man')
                 <a href="{{ route('films.show', [$film]) }}">
                   <div class="card border border-0 p-0 m-0 g-0">
                     <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
@@ -189,13 +189,13 @@
 
       </div>
 
-
-      <h1 id="plusPOP" class="fs-3 text-truncate d-block">Plus populaires</h1>
+    <!-- doctor strange -->
+      <h1 id="docstrange" class="fs-3 text-truncate d-block">Doctor Strange</h1>
       <div class="box">
 
           @if(count($films))
             @foreach($films as $film)
-              @if($film->type == 'Drame')
+              @if($film->collection == 'Doctor Strange')
                 <a href="{{ route('films.show', [$film]) }}">
                   <div class="card border border-0 p-0 m-0 g-0">
                     <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
@@ -207,13 +207,31 @@
 
       </div>
 
-
-      <h1 id="moinsPOP" class="fs-3 text-truncate d-block">Moins populaires</h1>
+    <!-- black panther -->
+      <h1 id="blackpanth" class="fs-3 text-truncate d-block">Black Panther</h1>
       <div class="box">
 
           @if(count($films))
             @foreach($films as $film)
-              @if($film->type == 'Drame')
+              @if($film->collection == 'Black Panther')
+                <a href="{{ route('films.show', [$film]) }}">
+                  <div class="card border border-0 p-0 m-0 g-0">
+                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
+                  </div>
+                </a>
+              @endif
+            @endforeach
+          @endif
+
+      </div>
+
+    <!-- autre -->
+      <h1 id="autre" class="fs-3 text-truncate d-block">Autres</h1>
+      <div class="box">
+
+          @if(count($films))
+            @foreach($films as $film)
+              @if($film->collection == 'Autre')
                 <a href="{{ route('films.show', [$film]) }}">
                   <div class="card border border-0 p-0 m-0 g-0">
                     <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
@@ -231,7 +249,7 @@
     <!-- END OF MAIN CONTAINER -->
 
     <!-- LINKS -->
-    <section class="link">
+    <!-- <section class="link">
       <div class="logos">
         <a href="#"><i class="fab fa-facebook-square fa-2x logo"></i></a>
         <a href="#"><i class="fab fa-instagram fa-2x logo"></i></a>
@@ -254,7 +272,7 @@
           <li><a href="#">Contact Us</a></li>
         </ul>
       </div>
-    </section>
+    </section> -->
     <!-- END OF LINKS -->
 
 @endsection

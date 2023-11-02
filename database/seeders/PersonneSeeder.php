@@ -49,14 +49,6 @@ class PersonneSeeder extends Seeder
             ],
             [
                 'id' => 5,
-                'nom' => 'McKellen',
-                'prenom' => 'Ian',
-                'dateNaiss' => '1939-05-25',
-                'sexe' => 'M',
-                'imagePers' => 'https://ilarge.lisimg.com/image/904308/1118full-ian-mckellen.jpg',
-            ],
-            [
-                'id' => 6,
                 'nom' => 'Evans',
                 'prenom' => 'Chris',
                 'dateNaiss' => '1981-06-13',
@@ -64,7 +56,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://th.bing.com/th/id/R.6dec495bd80ace89ab3f028d75595317?rik=HesKxR5NVSV9bw&pid=ImgRaw&r=0',
             ],
             [
-                'id' => 7,
+                'id' => 6,
                 'nom' => 'Rudd',
                 'prenom' => 'Paul',
                 'dateNaiss' => '1969-04-06',
@@ -72,7 +64,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://www.themoviedb.org/t/p/original/8eTtJ7XVXY0BnEeUaSiTAraTIXd.jpg',
             ],
             [
-                'id' => 8,
+                'id' => 7,
                 'nom' => 'Cumberbatch',
                 'prenom' => 'Benedict',
                 'dateNaiss' => '1976-07-19',
@@ -80,7 +72,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://image.tmdb.org/t/p/original/6g6hInkWkpw6emVZgUBCxui95D9.jpg',
             ],
             [
-                'id' => 9,
+                'id' => 8,
                 'nom' => 'Holland',
                 'prenom' => 'Tom',
                 'dateNaiss' => '1996-06-01',
@@ -88,7 +80,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://i.pinimg.com/originals/0a/95/bf/0a95bf904b32195f97c27ad8d20a1590.jpg',
             ],
             [
-                'id' => 10,
+                'id' => 9,
                 'nom' => 'Boseman',
                 'prenom' => 'Chadwick',
                 'dateNaiss' => '1976-11-29',
@@ -96,7 +88,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://th.bing.com/th/id/R.044f54d1cba7dec97309e0ef5033b479?rik=9wOJ%2fRURiCSe8w&pid=ImgRaw&r=0',
             ],
             [
-                'id' => 11,
+                'id' => 10,
                 'nom' => 'L. Jackson',
                 'prenom' => 'Samuel',
                 'dateNaiss' => '1948-12-21',
@@ -106,7 +98,7 @@ class PersonneSeeder extends Seeder
     
             // Réalisateurs
             [
-                'id' => 12,
+                'id' => 11,
                 'nom' => 'Gunn',
                 'prenom' => 'James',
                 'dateNaiss' => '1966-08-05',
@@ -114,7 +106,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/James_Gunn_%2828557194032%29_%28cropped%29.jpg/800px-James_Gunn_%2828557194032%29_%28cropped%29.jpg',
             ],
             [
-                'id' => 13,
+                'id' => 12,
                 'nom' => 'Taylor',
                 'prenom' => 'Alan',
                 'dateNaiss' => '1959-01-13',
@@ -122,7 +114,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/5/54/Alan_Taylor_2013_crop.jpg',
             ],
             [
-                'id' => 14,
+                'id' => 13,
                 'nom' => 'Waititi',
                 'prenom' => 'Taika',
                 'dateNaiss' => '1975-08-16',
@@ -130,7 +122,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Taika_Waititi_by_Gage_Skidmore_2.jpg/800px-Taika_Waititi_by_Gage_Skidmore_2.jpg',
             ],
             [
-                'id' => 15,
+                'id' => 14,
                 'nom' => 'Whedon',
                 'prenom' => 'Joss',
                 'dateNaiss' => '1964-06-23',
@@ -138,7 +130,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Joss_Whedon_by_Gage_Skidmore_8.jpg/800px-Joss_Whedon_by_Gage_Skidmore_8.jpg',
             ],
             [
-                'id' => 16,
+                'id' => 15,
                 'nom' => 'Coogler',
                 'prenom' => 'Ryan',
                 'dateNaiss' => '1986-05-23',
@@ -146,7 +138,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Ryan_Coogler_%2836203771036%29_2.jpg/800px-Ryan_Coogler_%2836203771036%29_2.jpg',
             ],
             [
-                'id' => 17,
+                'id' => 16,
                 'nom' => 'Raimi',
                 'prenom' => 'Sam',
                 'dateNaiss' => '1959-10-23',
@@ -154,7 +146,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sam_Raimi_by_Gage_Skidmore_2.jpg/800px-Sam_Raimi_by_Gage_Skidmore_2.jpg',
             ],
             [
-                'id' => 18,
+                'id' => 17,
                 'nom' => 'Derrickson',
                 'prenom' => 'Scott',
                 'dateNaiss' => '1966-07-16',
@@ -162,7 +154,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Scott_Derrickson_by_Gage_Skidmore_%28cropped%29.jpg/800px-Scott_Derrickson_by_Gage_Skidmore_%28cropped%29.jpg',
             ],
             [
-                'id' => 19,
+                'id' => 18,
                 'nom' => 'Reed',
                 'prenom' => 'Peyton',
                 'dateNaiss' => '1964-07-03',
@@ -170,7 +162,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Peyton_Reed_at_the_World_Premiere_of_Marvel%27s_Ant-Man_-AntMan_-AntManPremiere_-_DSC_0392_%2819115946619%29.jpg/800px-Peyton_Reed_at_the_World_Premiere_of_Marvel%27s_Ant-Man_-AntMan_-AntManPremiere_-_DSC_0392_%2819115946619%29.jpg',
             ],
             [
-                'id' => 20,
+                'id' => 19,
                 'nom' => 'Story',
                 'prenom' => 'Tim',
                 'dateNaiss' => '1970-03-13',
@@ -178,31 +170,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://images.mubicdn.net/images/cast_member/36399/cache-157641-1467606243/image-w856.jpg?size=800x',
             ],
             [
-                'id' => 21,
-                'nom' => 'Mangold',
-                'prenom' => 'James',
-                'dateNaiss' => '1963-12-16',
-                'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/James_Mangold_Press_Conference_Logan_Berlinale_2017_03.jpg/800px-James_Mangold_Press_Conference_Logan_Berlinale_2017_03.jpg',
-            ],
-            [
-                'id' => 22,
-                'nom' => 'Ratner',
-                'prenom' => 'Brett',
-                'dateNaiss' => '1969-03-28',
-                'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Brett_Ratner_2012_Shankbone.JPG/800px-Brett_Ratner_2012_Shankbone.JPG',
-            ],
-            [
-                'id' => 23,
-                'nom' => 'Singer',
-                'prenom' => 'Bryan',
-                'dateNaiss' => '1965-09-17',
-                'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Brian_Singer_%22International_Competition_Jury%22_at_Opening_Ceremony_of_the_28th_Tokyo_International_Film_Festival_%2822427114066%29_%28cropped%29.jpg/800px-Brian_Singer_%22International_Competition_Jury%22_at_Opening_Ceremony_of_the_28th_Tokyo_International_Film_Festival_%2822427114066%29_%28cropped%29.jpg',
-            ],
-            [
-                'id' => 24,
+                'id' => 20,
                 'nom' => 'Boden',
                 'prenom' => 'Anna',
                 'dateNaiss' => '1979-10-20',
@@ -210,7 +178,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Ryan-fleck-anne-boden.jpg/800px-Ryan-fleck-anne-boden.jpg',
             ],
             [
-                'id' => 25,
+                'id' => 21,
                 'nom' => 'Shortland',
                 'prenom' => 'Cate',
                 'dateNaiss' => '1958-08-10',
@@ -218,7 +186,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/5/55/Cate_Shortland_by_Gage_Skidmore_%28cropped%29.jpg',
             ],
             [
-                'id' => 26,
+                'id' => 22,
                 'nom' => 'Watts',
                 'prenom' => 'Jon',
                 'dateNaiss' => '1981-06-28',
@@ -226,7 +194,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Jon_Watts_by_Gage_Skidmore_2.jpg/800px-Jon_Watts_by_Gage_Skidmore_2.jpg',
             ],
             [
-                'id' => 27,
+                'id' => 23,
                 'nom' => 'Black',
                 'prenom' => 'Shane',
                 'dateNaiss' => '1961-12-16',
@@ -234,7 +202,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Shane_Black_by_Gage_Skidmore.jpg/800px-Shane_Black_by_Gage_Skidmore.jpg',
             ],
             [
-                'id' => 28,
+                'id' => 24,
                 'nom' => 'Russo',
                 'prenom' => 'Anthony',
                 'dateNaiss' => '1970-02-03',
@@ -244,7 +212,7 @@ class PersonneSeeder extends Seeder
 
             // Producteur
             [ 
-                'id' => 29,
+                'id' => 25,
                 'nom' => 'Feige',
                 'prenom' => 'Kevin',
                 'dateNaiss' => '1973-06-02',
@@ -252,7 +220,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Kevin_Feige_%2848462887397%29_%28cropped%29.jpg/800px-Kevin_Feige_%2848462887397%29_%28cropped%29.jpg',
             ],
             [ 
-                'id' => 30,
+                'id' => 26,
                 'nom' => 'Branagh',
                 'prenom' => 'Kenneth',
                 'dateNaiss' => '1960-12-10',
@@ -260,7 +228,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/KennethBranaghApr2011.jpg/800px-KennethBranaghApr2011.jpg',
             ],
             [ 
-                'id' => 31,
+                'id' => 27,
                 'nom' => 'Favreau',
                 'prenom' => 'Jon',
                 'dateNaiss' => '1966-10-19',
@@ -268,7 +236,7 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Jon_Favreau_2016.jpeg/800px-Jon_Favreau_2016.jpeg',
             ],
             [ 
-                'id' => 32,
+                'id' => 28,
                 'nom' => 'Pascal',
                 'prenom' => 'Amy',
                 'dateNaiss' => '1958-03-25',
@@ -276,37 +244,13 @@ class PersonneSeeder extends Seeder
                 'imagePers' => 'https://m.media-amazon.com/images/M/MV5BMjMwMTA4MjMwNV5BMl5BanBnXkFtZTgwMDM5ODY2MzE@._V1_.jpg',
             ],
             [ 
-                'id' => 33,
-                'nom' => 'Shuler Donner',
-                'prenom' => 'Lauren',
-                'dateNaiss' => '1949-06-23',
-                'sexe' => 'F',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Lauren_Shuler_Donner_by_Gage_Skidmore.jpg',
-            ],
-            [ 
-                'id' => 34,
-                'nom' => 'Kinberg',
-                'prenom' => 'Simon',
-                'dateNaiss' => '1973-08-02',
-                'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Simon_Kinberg_by_Gage_Skidmore.jpg/800px-Simon_Kinberg_by_Gage_Skidmore.jpg',
-            ],
-            [ 
-                'id' => 35,
+                'id' => 29,
                 'nom' => 'Eichinger',
                 'prenom' => 'Bernd',
                 'dateNaiss' => '1949-04-11',
                 'sexe' => 'M',
                 'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/8/8d/Eichinger_Bernd_%28cropped%29.jpg',
-            ],
-            [ 
-                'id' => 36,
-                'nom' => 'Jackman',
-                'prenom' => 'Hugh',
-                'dateNaiss' => '1968-10-12',
-                'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/7/77/Logan_Japan_Premiere_Red_Carpet-_Hugh_Jackman_%2838445328406%29_%28rotated%29.jpg',
-            ],               
+            ],             
         ]);
     }
 }
