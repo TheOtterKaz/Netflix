@@ -27,3 +27,9 @@ Route::get('/films/{film}/',
 
 Route::get('personnes',
 [PersonnesController::class, 'index']) ->name('personnes.index');
+
+Route::get('/personnes/creation',
+[PersonnesController::class, 'create']) ->name('personnes.create');
+
+Route::post('/personnes',
+[PersonnesController::class, 'store']) ->name('personnes.store');

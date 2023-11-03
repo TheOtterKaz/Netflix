@@ -26,14 +26,19 @@ class PersonnesController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     * 
+     * @return \Illuminate\View\View
      */
     public function create()
     {
-        //
+        return View('personnes.create');
     }
 
     /**
      * Store a newly created resource in storage.
+     * 
+     * @param \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {

@@ -38,13 +38,13 @@ h1 {
 /* HEADER */
 header {
   padding: 20px 20px 20px 20px;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
-  display: grid;  
-  grid-gap:5px;
-  grid-template-columns: 1fr 4fr 1fr;
-  grid-template-areas: 
-   "nt mn mn sb . . . "; 
+  /* display: grid;   */
+  /* grid-gap:5px; */
+  /* grid-template-columns: 1fr 4fr 1fr; */
+  /* grid-template-areas:  */
+   /* "nt mn mn sb . . . ";  */
   background-color: var(--primary);
   width: 100%;
   margin-bottom: 0px;  

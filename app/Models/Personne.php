@@ -9,6 +9,8 @@ class Personne extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nom', 'prenom', 'dateNaiss', 'sexe', 'imagePers'];
+
     // Fonction films réalisés
     public function filmsRealises()
     {

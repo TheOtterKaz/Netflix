@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr-ca">
+<html lang="fr-ca" class="h-100">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="{{asset('css/netflix.css')}}">
     <title>@yield('title')</title>
 </head>
-<body>
-  <div class="container-fluid">
+<body class="h-100">
+  <div class="container-fluid h-100 w-100">
 
     @yield('contenu')
 
-    <footer class="row ">
+    <footer class="row d-flex align-items-center">
       <div class="col-12 d-flex align-items-center justify-content-center flex-column">
         <div id="boxLiens">
           <a href="{{ route('films.index')}}">Page Films</a>
