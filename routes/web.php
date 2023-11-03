@@ -30,7 +30,3 @@ Route::get('/films/{film}/',
 
 Route::get('personnes',
 [PersonnesController::class, 'index']) ->name('personnes.index');
-
-
-Route::post('/films',
-[FilmsController::class, 'store']) ->name('films.store');

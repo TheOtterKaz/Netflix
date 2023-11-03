@@ -11,6 +11,8 @@ class Personne extends Model
     protected $fillable = ['titre', 'resume', 'brand', 'collection', 'cote', 'rating', 
                             'duree', 'annee', 'realisateur_id', 'producteur_id', 'type', 'imageFilm', 'lienFilm'];
 
+    protected $fillable = ['nom', 'prenom', 'dateNaiss', 'sexe', 'imagePers'];
+
     // Fonction films réalisés
     public function filmsRealises()
     {

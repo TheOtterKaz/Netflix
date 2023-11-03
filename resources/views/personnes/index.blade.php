@@ -3,7 +3,7 @@
 @section('title', 'Page accueil Netflix')
 
 @section('contenu')
-<header class="row d-flex justify-content-evenly ">
+<header class="row d-flex fixed-top justify-content-evenly ">
 
     <div class="netflixLogo col-1 d-flex align-items-center justify-content-center p-0">
         <a id="logo" href="{{ route('films.index') }}">
@@ -35,6 +35,12 @@
         <a href="#" class="d-flex align-items-center"> 
             <span class="material-symbols-outlined">
                 account_circle 
+            </span> 
+        </a>
+
+        <a href="{{route('personnes.create')}}" class="d-flex align-items-center"> 
+            <span class="material-symbols-outlined">
+                add
             </span> 
         </a>        
 
