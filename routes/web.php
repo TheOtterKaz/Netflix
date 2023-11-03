@@ -36,3 +36,6 @@ Route::get('personnes/creation',
 
 Route::post('/personnes',
 [PersonnesController::class, 'store'])->name('personnes.store');
+
+Route::post('/films',
+[FilmsController::class, 'store'])->name('films.store');
