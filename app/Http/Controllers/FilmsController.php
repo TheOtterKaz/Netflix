@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Film;
+use App\Models\Personne;
+use \Illuminate\Support\Facades\Log;
 
 class FilmsController extends Controller
 {
@@ -23,15 +25,25 @@ class FilmsController extends Controller
      */
     public function create()
     {
-        //
+        $personnes = Personne::all();
+        return View('films.create', compact('personnes'));
     }
 
     /**
      * Store a newly created resource in storage.
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $film = new Film($request->all());
+            $film->save();
+        }
+        catch(\Throwable $e){
+            Log::debug($e);
+        }
+        return redirect()->route('films.index');
     }
 
     /**
@@ -64,5 +76,45 @@ class FilmsController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function storeFilmRealisateur(Request $request){
+        try{
+            $film = Film::find($request->film_id);
+            $realisateur = Film::find($request->realisateur_id);
+            
+            if($realisateur->filmsRealises->contains($film)){
+                Log::debug('Le film est déjà associé à ce réalisateur');
+            }
+            else{
+                $realisateur->filmsRealises()->attach($film);
+                $realisateur->save();
+            }
+        }
+        catch(\Throwable $e){
+            Log::debug($e);
+            return redirect()->route('films.index');
+        }
+        return redirect()->route('films.index');
+    }
+
+    public function storeFilmProducteur(Request $request){
+        try{
+            $film = Film::find($request->film_id);
+            $producteur = Film::find($request->producteur_id);
+            
+            if($producteur->filmsProduits->contains($film)){
+                Log::debug('Le film est déjà associé à ce producteur');
+            }
+            else{
+                $producteur->filmsProduits()->attach($film);
+                $producteur->save();
+            }
+        }
+        catch(\Throwable $e){
+            Log::debug($e);
+            return redirect()->route('films.index');
+        }
+        return redirect()->route('films.index');
     }
 }

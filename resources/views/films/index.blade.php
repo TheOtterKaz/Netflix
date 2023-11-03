@@ -28,6 +28,12 @@
 
         <nav class="sub-nav col-1 d-flex align-items-center justify-content-evenly flex-row p-0 m-0">
 
+        <a href="{{route('films.create')}}" class="d-flex align-items-center">
+            <span class="material-symbols-outlined">
+                add
+            </span>
+</a>  
+
             <a href="#" class="d-flex align-items-center">
                 <span class="material-symbols-outlined">
                     search
