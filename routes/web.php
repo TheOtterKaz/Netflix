@@ -32,4 +32,4 @@ Route::get('personnes',
 [PersonnesController::class, 'index']) ->name('personnes.index');
 
 Route::get('personnes/creation',
-[PersonnesController::class, 'index']) ->name('personnes.create');
+[PersonnesController::class, 'create']) ->name('personnes.create');
