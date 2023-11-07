@@ -196,6 +196,38 @@ footer {
 
 }
 
+.btn-vert{
+  background-color: rgb(32, 123, 54);
+}
+
+.btn-jaune{
+  background-color: rgb(249, 197, 57);
+}
+
+.btn-bleu{
+  background-color: rgb(18, 89, 139);
+}
+
+.btn-rouge{
+  background-color: #dc2026;
+}
+.btn-vert p{
+  color: white;
+  font-size: 1.5em;
+}
+.btn-jaune p{
+  color: white;
+  font-size: 1.5em;
+}
+.btn-bleu p{
+  color: white;
+  font-size: 1.5em;
+}
+.btn-rouge p{
+  color: white;
+  font-size: 1.5em;
+}
+
 /* MEDIA QUERIES */
 
 @media(max-width: 900px) {

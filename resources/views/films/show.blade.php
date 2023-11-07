@@ -69,25 +69,28 @@
             <img src="{{$film->imageFilm}}" class="img-fluid rounded-start" alt="...">
             </div>
             <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">{{$film->titre}}</h5>
-                <p class="card-text">{{$film->resume}}</p>
-                <table class="w-100 text-dark">
-                    <tr>
-                        <th>Réalisateur</th>
-                        <td class="d-flex align-items-center">{{$film->realisateur->nom}}, {{$film->realisateur->prenom}}</td>
-                    </tr> 
-                    <tr>
-                        <th>Producteur</th>
-                        <td class="d-flex align-items-center">{{$film->producteur->nom}}, {{$film->producteur->prenom}}</td>
-                    </tr>
-                    <tr>
-                        <th>Acteurs</th>
+                <div class="card-body">
+                    <h5 class="card-title">{{$film->titre}}</h5>
+                    <p class="card-text">{{$film->resume}}</p>
+                    <table class="w-100 text-dark">
+                        <tr>
+                            <th>Réalisateur</th>
+                            <td class="d-flex align-items-center">{{$film->realisateur->nom}}, {{$film->realisateur->prenom}}</td>
+                        </tr> 
+                        <tr>
+                            <th>Producteur</th>
+                            <td class="d-flex align-items-center">{{$film->producteur->nom}}, {{$film->producteur->prenom}}</td>
+                        </tr>
+                        <tr>
+                            <th>Acteurs</th>
 
-                    </tr>
+                        </tr>
 
-                </table>
-            </div>
+                    </table>
+                </div>
+                <div class="card-footer">
+                    <a href="{{route('films.edit', [$film])}}" class="btn btn-warning">aaaa</a>
+                </div>
             </div>
         </div>
         </div>

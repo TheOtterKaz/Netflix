@@ -25,6 +25,10 @@ Route::get('films',
 Route::get('/films/creation',
 [FilmsController::class, 'create']) ->name('films.create');
 
+
+Route::get('/films/{film}/modifier',
+[FilmsController::class, 'edit']) ->name('films.edit');
+
 Route::get('/films/{film}/',
 [FilmsController::class, 'show']) ->name('films.show');
 
