@@ -19,18 +19,20 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
-// Films
 Route::get('films', 
 [FilmsController::class, 'index']) ->name('films.index');
 
-Route::get('/films/creation',
-[FilmsController::class, 'create']) ->name('films.create');
+    //* Création
+        Route::get('/films/creation',
+        [FilmsController::class, 'create']) ->name('films.create');
 
-Route::get('/films/{film}/modifier',
-[FilmsController::class, 'edit']) ->name('films.edit');
+    //* Modification
+        Route::get('/films/{film}/modifier',
+        [FilmsController::class, 'edit']) ->name('films.edit');
 
-Route::get('/films/{film}/',
-[FilmsController::class, 'show']) ->name('films.show');
+    //* Affichage zoom
+        Route::get('/films/{film}/',
+        [FilmsController::class, 'show']) ->name('films.show');
 
 Route::post('/films',
 [FilmsController::class, 'store'])->name('films.store');
@@ -39,18 +41,22 @@ Route::post('/films',
 Route::get('personnes',
 [PersonnesController::class, 'index']) ->name('personnes.index');
 
-Route::get('personnes/creation',
-[PersonnesController::class, 'create']) ->name('personnes.create');
+    //* Création
+        Route::get('personnes/creation',
+        [PersonnesController::class, 'create']) ->name('personnes.create');
 
-Route::get('/personnes/{personne}/modifier',
-[PersonnesController::class, 'edit']) ->name('personnes.edit');
+    //* Modification
+        Route::get('/personnes/{personne}/modifier',
+        [PersonnesController::class, 'edit']) ->name('personnes.edit');
 
 Route::get('/personnes/{personne}',
 [PersonnesController::class, 'show']) ->name('personnes.show');
 
-Route::delete('/personnes/{personne}',
-[PersonnesController::class, 'destroy']) ->name('personnes.destroy');
+//? : Store
 
-Route::post('/personnes',
-[PersonnesController::class, 'store'])->name('personnes.store');
+    //* Personnes
+        Route::post('/personnes',
+        [PersonnesController::class, 'store'])->name('personnes.store');
 
+Route::post('/films',
+[FilmsController::class, 'store'])->name('films.store');
