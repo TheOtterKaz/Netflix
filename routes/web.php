@@ -25,7 +25,6 @@ Route::get('films',
 Route::get('/films/creation',
 [FilmsController::class, 'create']) ->name('films.create');
 
-
 Route::get('/films/{film}/modifier',
 [FilmsController::class, 'edit']) ->name('films.edit');
 
@@ -37,6 +36,12 @@ Route::get('personnes',
 
 Route::get('personnes/creation',
 [PersonnesController::class, 'create']) ->name('personnes.create');
+
+Route::get('/personnes/{personne}/modifier',
+[PersonnesController::class, 'edit']) ->name('personnes.edit');
+
+Route::get('/personnes/{personne}',
+[PersonnesController::class, 'show']) ->name('personnes.show');
 
 Route::post('/personnes',
 [PersonnesController::class, 'store'])->name('personnes.store');

@@ -20,6 +20,12 @@
 
     <nav class="sub-nav col-1 d-flex align-items-center justify-content-evenly flex-row p-0 m-0">
 
+        <a href="{{route('personnes.create')}}" class="d-flex align-items-center"> 
+            <span class="material-symbols-outlined">
+                add
+            </span> 
+        </a>     
+
         <a href="#" class="d-flex align-items-center">
             <span class="material-symbols-outlined">
                 search
@@ -37,13 +43,6 @@
                 account_circle 
             </span> 
         </a>
-
-        <a href="{{route('personnes.create')}}" class="d-flex align-items-center"> 
-            <span class="material-symbols-outlined">
-                add
-            </span> 
-        </a>        
-
     </nav>      
 </header>
 
@@ -54,7 +53,7 @@
         <div class="box">
             @if(count($personnes))
                 @foreach($personnes as $personne)
-                    <a href="" style="overflow-x: hidden;">
+                    <a href="{{ route('personnes.show', [$personne]) }}" style="overflow-x: hidden;">
                         <img src="{{$personne->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;">
                     </a>
                 @endforeach
@@ -63,13 +62,11 @@
 
         <h1 id="acteurs">Acteurs</h1>
         <div class="box">
-            @if(count($personnes))
-                @foreach($personnes as $personne)
-                    @if($personne->rolePrinc == 'Acteur')
-                        <a href="">
-                            <img src="{{$personne->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;">
-                        </a>
-                    @endif
+            @if(count($acteurs))
+                @foreach($acteurs as $acteur)                    
+                        <a href="{{ route('personnes.show', [$acteur]) }}" style="overflow-x: hidden;">
+                            <img src="{{$acteur->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;">
+                        </a>                   
                 @endforeach
             @endif
         </div>
@@ -78,7 +75,7 @@
         <div class="box">
             @if(count($realisateurs))
                 @foreach($realisateurs as $realisateur)
-                    <a href="">
+                    <a href="{{ route('personnes.show', [$realisateur]) }}" style="overflow-x: hidden;">
                         <img src="{{$realisateur->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;">
                     </a>
                 @endforeach
@@ -89,7 +86,7 @@
         <div class="box">
             @if(count($producteurs))
                 @foreach($producteurs as $producteur)
-                    <a href="">
+                    <a href="{{ route('personnes.show', [$producteur]) }}" style="overflow-x: hidden;">
                         <img src="{{$producteur->imagePers}}" alt="" style="height:230px; width:205px; overflow-x: hidden;">
                     </a>
                 @endforeach
