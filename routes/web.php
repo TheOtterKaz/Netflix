@@ -19,6 +19,7 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
+// Films
 Route::get('films', 
 [FilmsController::class, 'index']) ->name('films.index');
 
@@ -31,6 +32,10 @@ Route::get('/films/{film}/modifier',
 Route::get('/films/{film}/',
 [FilmsController::class, 'show']) ->name('films.show');
 
+Route::post('/films',
+[FilmsController::class, 'store'])->name('films.store');
+
+// Personnes
 Route::get('personnes',
 [PersonnesController::class, 'index']) ->name('personnes.index');
 
@@ -43,8 +48,9 @@ Route::get('/personnes/{personne}/modifier',
 Route::get('/personnes/{personne}',
 [PersonnesController::class, 'show']) ->name('personnes.show');
 
+Route::delete('/personnes/{personne}',
+[PersonnesController::class, 'destroy']) ->name('personnes.destroy');
+
 Route::post('/personnes',
 [PersonnesController::class, 'store'])->name('personnes.store');
 
-Route::post('/films',
-[FilmsController::class, 'store'])->name('films.store');

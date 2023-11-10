@@ -72,6 +72,12 @@ class PersonnesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try{
+            $personne = Personne::findorFail($id);
+
+            //Si un acteur est attaché à un film, on ne peut pas le supprimer
+            
+            
+        }
     }
 }

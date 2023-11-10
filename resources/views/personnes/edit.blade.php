@@ -90,6 +90,11 @@
                     <div class="col-5">
                         <a href="{{ route('personnes.index') }}" class="btn btn-primary">Retour</a>
                         <a href="" class="btn btn-warning">Modifier</a>
+                        <form method="POST" action="{{route('personnes.destroy', [$personne->id])}}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                        </form>
                     </div>
                 </div>
             </div>
