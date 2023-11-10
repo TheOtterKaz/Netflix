@@ -4,7 +4,7 @@
 
 @section('contenu')
 
-<header class="row d-flex justify-content-evenly ">
+<header class="row d-flex justify-content-between ">
         <div class="netflixLogo col-1 d-flex align-items-center justify-content-center p-0">
           <a id="logo" href="{{ route('films.index') }}"><img src="/img/logo.PNG" alt="Logo Image"></a>
         </div>      
@@ -31,7 +31,7 @@
     <!-- Main Container -->
 <div class="row d-flex align-items-center justify-content-center">
     <div class="offset col-2"></div>
-        <div class="card m-5 p-0 bg-secondary-subtle border border-0" style="max-width: 900px;">
+        <div class="card mt-5 p-0 bg-secondary-subtle border border-0" style="max-width: 900px;">
             <div class="row g-0">
 
                 <div class="col-md-4">
@@ -49,9 +49,23 @@
                     </div>    
                 </div>
 
-                <div class="card-footer">
-                    <a href="{{ route('personnes.index') }}" class="btn btn-primary">Retour</a>
-                    <a href="{{ route('personnes.edit', [$personne]) }}" class="btn btn-warning">Modifier</a>
+                <div class="card-footer d-flex flex-row align-items-center justify-content-evenly ">
+                    <a href="{{ route('personnes.index') }}" class="btn btn-primary d-flex flex-column">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                        <span>Retour</span>
+                    </a>
+                    <a href="{{ route('personnes.edit', [$personne]) }}" class="btn btn-warning d-flex flex-column">
+                        <span class="material-symbols-outlined">edit</span>
+                        <span>Modifier</span>
+                    </a>
+                    <form mehtod="POST" action="{{route('personnes.destroy', [$personne->id]) }}" class="d-flex align-items-center m-0">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger d-flex flex-column">
+                            <span class="material-symbols-outlined">delete</span>
+                            <span>Supprimer</span>
+                        </button>
+                    </form>
                 </div>
 
             </div>
