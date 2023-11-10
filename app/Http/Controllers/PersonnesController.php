@@ -18,10 +18,8 @@ class PersonnesController extends Controller
         
         $realisateurs = Personne::join('films', 'personnes.id', '=', 'films.realisateur_id')     ->select('personnes.*')     ->distinct()     ->get();
         $producteurs = Personne::join('films', 'personnes.id', '=', 'films.producteur_id')     ->select('personnes.*')     ->distinct()     ->get();
-        
-        return View('personnes.index', compact('personnes', 'realisateurs', 'producteurs'));
-
-        
+        $acteurs = Personne::join('film_personne', 'personnes.id', '=', 'film_personne.personne_id')     ->select('personnes.*')     ->distinct()     ->get();
+        return View('personnes.index', compact('personnes', 'realisateurs', 'producteurs', 'acteurs'));        
     }
 
     /**
@@ -48,17 +46,17 @@ class PersonnesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Personne $personne)
     {
-        //
+        return View('personnes.show', compact('personne'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Personne $personne)
     {
-        //
+        return View('personnes.edit', compact('personne'));
     }
 
     /**

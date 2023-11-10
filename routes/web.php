@@ -25,13 +25,11 @@ Route::get('/', function () {
         Route::get('films', 
         [FilmsController::class, 'index']) ->name('films.index');
 
-    //* Formulaire création 
-        Route::get('/films/creation',
-        [FilmsController::class, 'create']) ->name('films.create');
+Route::get('/films/creation',
+[FilmsController::class, 'create']) ->name('films.create');
 
-    //* Formulaire modification 
-        Route::get('/films/{film}/modifier',
-        [FilmsController::class, 'edit']) ->name('films.edit');
+Route::get('/films/{film}/modifier',
+[FilmsController::class, 'edit']) ->name('films.edit');
 
     //* Affichage zoom
         Route::get('/films/{film}/',
@@ -43,6 +41,12 @@ Route::get('personnes',
 
 Route::get('personnes/creation',
 [PersonnesController::class, 'create']) ->name('personnes.create');
+
+Route::get('/personnes/{personne}/modifier',
+[PersonnesController::class, 'edit']) ->name('personnes.edit');
+
+Route::get('/personnes/{personne}',
+[PersonnesController::class, 'show']) ->name('personnes.show');
 
 Route::post('/personnes',
 [PersonnesController::class, 'store'])->name('personnes.store');
