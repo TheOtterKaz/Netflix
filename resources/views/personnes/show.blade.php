@@ -58,17 +58,21 @@
                         <span class="material-symbols-outlined">edit</span>
                         <span>Modifier</span>
                     </a>
-                    <form mehtod="POST" action="{{route('personnes.destroy', [$personne->id]) }}" class="d-flex align-items-center m-0">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger d-flex flex-column">
-                            <span class="material-symbols-outlined">delete</span>
-                            <span>Supprimer</span>
-                        </button>
-                    </form>
+
+                    <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+
                 </div>
 
             </div>
         </div>   
     <div class="offset col-2">
+
+    <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+            Hello, world! This is a toast message.
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
 </div>
