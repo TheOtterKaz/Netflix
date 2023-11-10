@@ -25,31 +25,42 @@ Route::get('/', function () {
         Route::get('films', 
         [FilmsController::class, 'index']) ->name('films.index');
 
-Route::get('/films/creation',
-[FilmsController::class, 'create']) ->name('films.create');
+    //* Création
+        Route::get('/films/creation',
+        [FilmsController::class, 'create']) ->name('films.create');
 
-Route::get('/films/{film}/modifier',
-[FilmsController::class, 'edit']) ->name('films.edit');
+    //* Modification
+        Route::get('/films/{film}/modifier',
+        [FilmsController::class, 'edit']) ->name('films.edit');
 
     //* Affichage zoom
         Route::get('/films/{film}/',
         [FilmsController::class, 'show']) ->name('films.show');
 
 //? Personnes
-Route::get('personnes',
-[PersonnesController::class, 'index']) ->name('personnes.index');
+    
+    //* Index (vue Globale)
+        Route::get('personnes',
+        [PersonnesController::class, 'index']) ->name('personnes.index');
 
-Route::get('personnes/creation',
-[PersonnesController::class, 'create']) ->name('personnes.create');
+    //* Création
+        Route::get('personnes/creation',
+        [PersonnesController::class, 'create']) ->name('personnes.create');
 
-Route::get('/personnes/{personne}/modifier',
-[PersonnesController::class, 'edit']) ->name('personnes.edit');
+    //* Modification
+        Route::get('/personnes/{personne}/modifier',
+        [PersonnesController::class, 'edit']) ->name('personnes.edit');
 
-Route::get('/personnes/{personne}',
-[PersonnesController::class, 'show']) ->name('personnes.show');
+    //* Affichage zoom
+        Route::get('/personnes/{personne}',
+        [PersonnesController::class, 'show']) ->name('personnes.show');
 
-Route::post('/personnes',
-[PersonnesController::class, 'store'])->name('personnes.store');
+//? : Store
 
-Route::post('/films',
-[FilmsController::class, 'store'])->name('films.store');
+    //* Personnes
+        Route::post('/personnes',
+        [PersonnesController::class, 'store'])->name('personnes.store');
+
+    //* Films
+        Route::post('/films',
+        [FilmsController::class, 'store'])->name('films.store');
