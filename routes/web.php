@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
+
+
 Route::get('films', 
 [FilmsController::class, 'index']) ->name('films.index');
 
@@ -60,3 +62,12 @@ Route::get('/personnes/{personne}',
 
 Route::post('/films',
 [FilmsController::class, 'store'])->name('films.store');
+
+
+
+
+
+
+
+Route::delete('/personnes/{id}',
+[PersonnesController::class, 'destroy'])->name('personnes.destroy');

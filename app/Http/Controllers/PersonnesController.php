@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Personne;
 use App\Models\Film;
+use Illuminate\Support\Facades\Log;
 
 class PersonnesController extends Controller
 {
@@ -75,9 +76,15 @@ class PersonnesController extends Controller
         try{
             $personne = Personne::findorFail($id);
 
-            //Si un acteur est attaché à un film, on ne peut pas le supprimer
-            
-            
+            $personne->delete();
+
+            return redirect()->route('personnes.index')->with('success', 'La personne nommée ' . $personne->nom , $personne->prenom . ' supprimée avec succès !');
         }
+        catch(\Throwable $e){
+            Log::debug($e);
+            return redirect()->route('personnes.index')->withErrors(['Impossible de supprimer cette personne !']);
+        }
+
+        return redirect()->route('personnes.index');
     }
 }
