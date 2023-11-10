@@ -51,7 +51,13 @@ class FilmsController extends Controller
      */
     public function show(Film $film)
     {
-        return View('films.show', compact('film'));
+        $acteurs = Personne::join('film_personne', 'personnes.id', '=', 'film_personne.personne_id')
+        ->where('film_personne.film_id', $film->id)
+        ->select('personnes.*')
+        // ->distinct()
+        ->get();
+
+        return View('films.show', compact('film', 'acteurs'));
     }
 
     /**

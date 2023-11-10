@@ -4,7 +4,7 @@
 
 @section('contenu')
 
-    <header class="row d-flex justify-content-evenly ">
+    <header class="row d-flex justify-content-evenly">
         <div class="netflixLogo col-1 d-flex align-items-center justify-content-center p-0">
           <a id="logo" href="{{ route('films.index') }}"><img src="/img/logo.PNG" alt="Logo Image"></a>
         </div>      
@@ -21,20 +21,14 @@
           <a href="#moinsPOP" class="text-truncate d-block">- Populaires</a>        
         </nav>
         <nav class="sub-nav col-1 d-flex align-items-center justify-content-evenly flex-row p-0 m-0">
-          <a href="#" class="d-flex align-items-center">
-            <span class="material-symbols-outlined">
-              search
-            </span>
-          </a>
-          <a href="#" class="d-flex align-items-center">
-          <span class="material-symbols-outlined">
-            circle_notifications
-          </span>
-          </a>
-          <a href="#" class="d-flex align-items-center"> 
-            <span class="material-symbols-outlined">
-               account_circle 
-              </span> 
+            <a href="#" class="d-flex align-items-center">
+                <span class="material-symbols-outlined">search</span>
+            </a>
+            <a href="#" class="d-flex align-items-center">
+                <span class="material-symbols-outlined">circle_notifications</span>
+            </a>
+            <a href="#" class="d-flex align-items-center"> 
+                <span class="material-symbols-outlined">account_circle</span> 
             </a>        
         </nav>      
     </header>
@@ -43,7 +37,7 @@
 <!-- Main conteneur -->
 
 
-    <div class="row d-flex align-items-center justify-content-center">
+    <section class="row d-flex align-items-center justify-content-center">
         <div class="offset col-2"></div>
         <!-- <div class="card col-xl-8 mt-5 mb-5">
             <div class="row p-2">
@@ -63,37 +57,47 @@
             </div>
         </div> -->
 
-        <div class="card m-5 p-0 bg-secondary-subtle border border-0" style="max-width: 900px;">
+        <div class="card p-0 bg-secondary-subtle border border-0 col-6">
         <div class="row g-0">
             <div class="col-md-4">
-            <img src="{{$film->imageFilm}}" class="img-fluid rounded-start" alt="...">
+                <img src="{{$film->imageFilm}}" class="img-fluid rounded-start" alt="...">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">{{$film->titre}}</h5>
                     <p class="card-text">{{$film->resume}}</p>
-                    <table class="w-100 text-dark">
+                    <table class="w-100 text-dark table align-middle ">
                         <tr>
                             <th>Réalisateur</th>
                             <td class="d-flex align-items-center">{{$film->realisateur->nom}}, {{$film->realisateur->prenom}}</td>
                         </tr> 
-                        <tr>
+                        <tr class="table-group-divider">
                             <th>Producteur</th>
                             <td class="d-flex align-items-center">{{$film->producteur->nom}}, {{$film->producteur->prenom}}</td>
                         </tr>
-                        <tr>
+                        <tr class="table-group-divider">
                             <th>Acteurs</th>
-
+                            @foreach($acteurs as $acteur)
+                                <td class="d-flex align-items-center">{{ $acteur->nom }}, {{ $acteur->prenom }}</td>
+                            @endforeach
                         </tr>
-
                     </table>
                 </div>
                 <div class="card-footer">
-                    <a href="{{route('films.edit', [$film])}}" class="btn btn-warning">aaaa</a>
+                    <a href="{{route('films.edit', [$film])}}" class="btn btn-warning">
+                        <span class="material-symbols-outlined">
+                            edit
+                        </span>
+                    </a>
+                    <a href="{{route('films.edit', [$film])}}" class="btn btn-danger">
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
         </div>
 
         <div class="offset col-2"></div>
-    </div>
+    </section>

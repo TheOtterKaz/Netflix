@@ -13,45 +13,35 @@
         </div>   
 
         <nav class="main-nav d-flex align-items-center col-9 p-0 m-0">                
-            <a href="#nouveautes"   class="text-truncate d-block">Nouveautés</a>
-            <a href="#gardiens"    class="text-truncate d-block">Les Gardiens de la galaxie</a>
-            <a href="#thor"        class="text-truncate d-block">Thor</a>
-            <a href="#avengers"      class="text-truncate d-block">Avengers</a>
-            <a href="#ironman"       class="text-truncate d-block">Ironman</a>
-            <a href="#captame"     class="text-truncate d-block">Capitaine America</a>        
-            <a href="#spiderman"     class="text-truncate d-block">Spiderman</a>               
+            <a href="#nouveautes" class="text-truncate d-block">Nouveautés</a>
+            <a href="#gardiens"   class="text-truncate d-block">Les Gardiens de la galaxie</a>
+            <a href="#thor"       class="text-truncate d-block">Thor</a>
+            <a href="#avengers"   class="text-truncate d-block">Avengers</a>
+            <a href="#ironman"    class="text-truncate d-block">Ironman</a>
+            <a href="#captame"    class="text-truncate d-block">Capitaine America</a>        
+            <a href="#spiderman"  class="text-truncate d-block">Spiderman</a>               
             <a href="#antman"     class="text-truncate d-block">Ant-man</a>        
-            <a href="#docstrange"     class="text-truncate d-block">Doctor Strange</a>        
-            <a href="#blackpanth"        class="text-truncate d-block">Black Panther</a>        
-            <a href="#autre"     class="text-truncate d-block">Autres</a>        
+            <a href="#docstrange" class="text-truncate d-block">Doctor Strange</a>        
+            <a href="#blackpanth" class="text-truncate d-block">Black Panther</a>        
+            <a href="#autre"      class="text-truncate d-block">Autres</a>        
         </nav>
 
         <nav class="sub-nav col-1 d-flex align-items-center justify-content-evenly flex-row p-0 m-0">
-
-        <a href="{{route('films.create')}}" class="d-flex align-items-center">
-            <span class="material-symbols-outlined">
-                add
-            </span>
-</a>  
+            <a href="{{route('films.create')}}" class="d-flex align-items-center">
+                <span class="material-symbols-outlined">add</span>
+            </a>  
 
             <a href="#" class="d-flex align-items-center">
-                <span class="material-symbols-outlined">
-                    search
-                </span>
+                <span class="material-symbols-outlined">search</span>
             </a>
 
             <a href="#" class="d-flex align-items-center">
-                <span class="material-symbols-outlined">
-                    circle_notifications
-                </span>
+                <span class="material-symbols-outlined">circle_notifications</span>
             </a>
 
             <a href="#" class="d-flex align-items-center"> 
-                <span class="material-symbols-outlined">
-                    account_circle 
-                </span> 
+                <span class="material-symbols-outlined">account_circle</span> 
             </a> 
-
         </nav>      
     </header>
 
@@ -186,7 +176,7 @@
               @if($film->collection == 'Ant-man')
                 <a href="{{ route('films.show', [$film]) }}">
                   <div class="card border border-0 p-0 m-0 g-0">
-                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
+                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img ">
                   </div>
                 </a>
               @endif

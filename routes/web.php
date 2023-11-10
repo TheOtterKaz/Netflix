@@ -19,19 +19,25 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
-Route::get('films', 
-[FilmsController::class, 'index']) ->name('films.index');
+//? : Films
 
-Route::get('/films/creation',
-[FilmsController::class, 'create']) ->name('films.create');
+    //* Index (vue Globale) 
+        Route::get('films', 
+        [FilmsController::class, 'index']) ->name('films.index');
 
+    //* Formulaire création 
+        Route::get('/films/creation',
+        [FilmsController::class, 'create']) ->name('films.create');
 
-Route::get('/films/{film}/modifier',
-[FilmsController::class, 'edit']) ->name('films.edit');
+    //* Formulaire modification 
+        Route::get('/films/{film}/modifier',
+        [FilmsController::class, 'edit']) ->name('films.edit');
 
-Route::get('/films/{film}/',
-[FilmsController::class, 'show']) ->name('films.show');
+    //* Affichage zoom
+        Route::get('/films/{film}/',
+        [FilmsController::class, 'show']) ->name('films.show');
 
+//? Personnes
 Route::get('personnes',
 [PersonnesController::class, 'index']) ->name('personnes.index');
 
