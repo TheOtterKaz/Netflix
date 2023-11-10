@@ -116,6 +116,20 @@
                 </div>
             </div>
 
+            <div class="card-footer border border-0 bg-secondary-subtle">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="col-8 d-flex align-items-center justify-content-center">
+                        <a href="{{ route('films.index') }}" class="btn btn-primary">Retour</a>
+                        <a href="" class="btn btn-warning">Modifier</a>
+                        <form method="POST" action="{{route('films.destroy', [$film->id])}}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

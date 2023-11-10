@@ -19,8 +19,9 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
-Route::get('films', 
-[FilmsController::class, 'index']) ->name('films.index');
+// Films
+        Route::get('films', 
+        [FilmsController::class, 'index']) ->name('films.index');
 
     //* Création
         Route::get('/films/creation',
@@ -34,12 +35,13 @@ Route::get('films',
         Route::get('/films/{film}/',
         [FilmsController::class, 'show']) ->name('films.show');
 
-Route::post('/films',
-[FilmsController::class, 'store'])->name('films.store');
+    //* Suppression
+        Route::delete('/films/{film}',
+        [FilmsController::class, 'destroy']) ->name('films.destroy');    
 
 // Personnes
-Route::get('personnes',
-[PersonnesController::class, 'index']) ->name('personnes.index');
+        Route::get('personnes',
+        [PersonnesController::class, 'index']) ->name('personnes.index');
 
     //* Création
         Route::get('personnes/creation',
@@ -49,8 +51,9 @@ Route::get('personnes',
         Route::get('/personnes/{personne}/modifier',
         [PersonnesController::class, 'edit']) ->name('personnes.edit');
 
-Route::get('/personnes/{personne}',
-[PersonnesController::class, 'show']) ->name('personnes.show');
+    //* Affichage zoom    
+        Route::get('/personnes/{personne}',
+        [PersonnesController::class, 'show']) ->name('personnes.show');
 
 //? : Store
 
@@ -58,5 +61,6 @@ Route::get('/personnes/{personne}',
         Route::post('/personnes',
         [PersonnesController::class, 'store'])->name('personnes.store');
 
-Route::post('/films',
-[FilmsController::class, 'store'])->name('films.store');
+    //* Films
+        Route::post('/films',
+        [FilmsController::class, 'store'])->name('films.store');

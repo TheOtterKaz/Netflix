@@ -87,14 +87,14 @@
             
             <div class="card-footer border border-0 bg-secondary-subtle">
                 <div class="row d-flex align-items-center justify-content-center">
-                    <div class="col-5">
+                    <div class="col-8 d-flex align-items-center justify-content-center">
                         <a href="{{ route('personnes.index') }}" class="btn btn-primary">Retour</a>
                         <a href="" class="btn btn-warning">Modifier</a>
-                        <form method="POST" action="{{route('personnes.destroy', [$personne->id])}}">
+                        <!-- <form method="POST" action="{{route('personnes.destroy', [$personne->id])}}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Supprimer</button>
-                        </form>
+                        </form> -->
                     </div>
                 </div>
             </div>
