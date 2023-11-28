@@ -28,7 +28,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 65,
                 'type' => 'Action',
                 'imageFilm' => 'https://i.ytimg.com/vi_webp/piiQ7CoPB7A/movieposter_fr.webp',
-                'lienFilm' => 'https://www.youtube.com/watch?v=HbB1LC_QyK0',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x2lbogh',
             ],
 
         // 2. Thor : amour et tonnerre
@@ -44,7 +44,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 65,
                 'type' => 'Action',
                 'imageFilm' => 'https://i.ytimg.com/vi_webp/0oVZBpqcd8A/movieposter_fr.webp',
-                'lienFilm' => 'https://www.youtube.com/watch?v=0oVZBpqcd8A',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x8cx8um',
             ],
 
         // 3. Avengers : La guerre de l'infini
@@ -60,7 +60,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 65,
                 'type' => 'Action',
                 'imageFilm' => 'https://i.ytimg.com/vi_webp/OxzKb4a1Qc4/movieposter.webp',
-                'lienFilm' => 'https://www.youtube.com/watch?v=OxzKb4a1Qc4',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x6asb9x',
             ],
 
         // 4. Ironman 2
@@ -76,7 +76,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 65,
                 'type' => 'Action',
                 'imageFilm' => 'https://i.ytimg.com/vi_webp/YX-l0UhXI7A/movieposter.webp',
-                'lienFilm' => 'https://www.youtube.com/watch?v=YX-l0UhXI7A',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/xciucw',
             ],
 
         // 5. Captain America : Civil War
@@ -92,7 +92,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 65,
                 'type' => 'Action',
                 'imageFilm' => 'https://i.ytimg.com/vi_webp/kZbUlebob_k/movieposter.webp',
-                'lienFilm' => 'https://www.youtube.com/watch?v=kZbUlebob_k',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x3wzzdg',
             ],
 
         // 6. Spiderman : No way home
@@ -108,7 +108,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 65,
                 'type' => 'Action',
                 'imageFilm' => 'https://i.ytimg.com/vi_webp/yT-h9lqRkYg/movieposter.webp',
-                'lienFilm' => 'https://www.youtube.com/watch?v=yT-h9lqRkYg',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x85ofbn',
             ],
 
         // 7. Black widow
@@ -124,7 +124,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 65,
                 'type' => 'Action',
                 'imageFilm' => 'https://i.ytimg.com/vi_webp/IUtPKFkfgHQ/movieposter_fr.webp',
-                'lienFilm' => 'https://www.youtube.com/watch?v=IUtPKFkfgHQ',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x7spis',
             ],
         
         // 8. Doctor Strange dans le multivers de la folie
@@ -140,7 +140,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 65,
                 'type' => 'Action',
                 'imageFilm' => 'https://i.ytimg.com/vi/kf2ew0x1HwI/movieposter_fr-CA.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=kf2ew0x1HwI',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x88apef',
             ],
 
         // 9. Black Panther
@@ -156,7 +156,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 65,
                 'type' => 'Action',
                 'imageFilm' => 'https://i.ytimg.com/vi/QoTbGtV9Zpk/movieposter.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=QoTbGtV9Zpk',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x7vebnd',
             ],
 
     //* DC 
@@ -173,7 +173,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 66,
                 'type' => 'Action',
                 'imageFilm' => 'https://i.ytimg.com/vi/zvoifHvzdVE/movieposter_fr-FR.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=zvoifHvzdVE',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x753d8y',
             ],        
 
             // 11. Blue beetle 
@@ -189,7 +189,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 67,
                 'type' => 'Action',
                 'imageFilm' => 'https://i.ytimg.com/vi/InnDaqHu790/movieposter_fr-FR.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=InnDaqHu790',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x8jqejo',
             ],   
 
             // 12. Black Adam 
@@ -205,7 +205,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 68,
                 'type' => 'Action',
                 'imageFilm' => 'https://i.ytimg.com/vi/0G8vSTFJQRc/movieposter_fr-FR.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=0G8vSTFJQRc',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x8bi5cz',
             ],     
 
             // 13. Krypto 
@@ -221,7 +221,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 69,
                 'type' => 'Animation',
                 'imageFilm' => 'https://i.ytimg.com/vi/DQ60XY8BUFg/movieposter.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=DQ60XY8BUFg',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x8ctb5b',
             ],        
               
             // 14. Zack snyder's Justice league 
@@ -237,7 +237,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 70,
                 'type' => 'Action',
                 'imageFilm' => 'https://i.ytimg.com/vi/s8R-bxwXUL8/movieposter_fr-FR.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=s8R-bxwXUL8',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x7zxquu',
             ],          
 
             // 15. Joker 
@@ -253,7 +253,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 71,
                 'type' => 'Thriller',
                 'imageFilm' => 'https://i.ytimg.com/vi/t1xHORDrBig/movieposter.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=t1xHORDrBig',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x7wfdpg',
             ],          
 
             // 16. Wonder woman 
@@ -269,7 +269,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 47,
                 'type' => 'Action',
                 'imageFilm' => 'https://i.ytimg.com/vi/GgR25xRDj3k/movieposter_fr-FR.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=GgR25xRDj3k',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x5pdey1',
             ],          
 
             // 17. The dark knight 
@@ -285,7 +285,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 70,
                 'type' => 'Action',
                 'imageFilm' => 'https://i.ytimg.com/vi/BVITuSz390M/movieposter_fr-FR.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=BVITuSz390M',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x7s6otn',
             ],          
 
             // 18. Constantine 
@@ -301,7 +301,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 72,
                 'type' => 'Horreur',
                 'imageFilm' => 'https://i.ytimg.com/vi/KnfvzwsPIOQ/movieposter.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=KnfvzwsPIOQ',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x8cg4ll',
             ],
 
     //* Pixar
@@ -318,7 +318,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 73,
                 'type' => 'Animation',
                 'imageFilm' => 'https://i.ytimg.com/vi/4LBA45xhIrM/movieposter_fr-CA.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=4LBA45xhIrM',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x8k02kb',
             ],          
 
             // 20. Alerte rouge 
@@ -334,7 +334,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 74,
                 'type' => 'Animation',
                 'imageFilm' => 'https://i.ytimg.com/vi/CeSldJF9QxI/movieposter_fr-CA.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=CeSldJF9QxI',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x82o6r8',
             ],          
 
             // 21. Sens dessus dessous 
@@ -350,7 +350,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 75,
                 'type' => 'Animation',
                 'imageFilm' => 'https://i.ytimg.com/vi/K815y4vBxcM/movieposter.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=K815y4vBxcM',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x8dmpuw',
             ],          
 
             // 22. Brave
@@ -366,7 +366,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 58,
                 'type' => 'Animation',
                 'imageFilm' => 'https://i.ytimg.com/vi/3ikFehuo33I/movieposter.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=3ikFehuo33I',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x29jwcd',
             ],          
 
             // 23. Là-haut
@@ -382,7 +382,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 75,
                 'type' => 'Animation',
                 'imageFilm' => 'https://i.ytimg.com/vi/DwOh9kijL8o/movieposter.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=DwOh9kijL8o',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x8uuso',
             ],          
 
             // 24. Les Incroyable 
@@ -398,7 +398,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 58,
                 'type' => 'Animation',
                 'imageFilm' => 'https://i.ytimg.com/vi/kHLWbITeaJ0/movieposter.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=kHLWbITeaJ0',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x8ebp9a',
             ],          
 
             // 25. Trouver Nemo
@@ -414,7 +414,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 58,
                 'type' => 'Animation',
                 'imageFilm' => 'https://i.ytimg.com/vi/TWms-KIaQCM/movieposter_fr.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=TWms-KIaQCM',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x7rx0rv',
             ],          
 
             // 26. Monsters inc 
@@ -430,7 +430,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 58,
                 'type' => 'Animation',
                 'imageFilm' => 'https://i.ytimg.com/vi/h_yM-hkxVeI/movieposter_fr-CA.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=h_yM-hkxVeI',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x8khnws',
             ],          
 
             // 27. Histoire de jouets
@@ -446,7 +446,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 76,
                 'type' => 'Animation',
                 'imageFilm' => 'https://i.ytimg.com/vi/bB-XYeSFNEc/movieposter_fr-CA.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=bB-XYeSFNEc',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x81suln',
             ],            
 
     //? Disney
@@ -463,7 +463,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 77,
                 'type' => 'Animation',
                 'imageFilm' => 'https://upload.wikimedia.org/wikipedia/en/d/de/WishMoviePoster.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=oyRxxpD3yNw',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x8kh128',
             ],          
 
             // 29. La petite sirène
@@ -479,7 +479,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 78,
                 'type' => 'Famille',
                 'imageFilm' => 'https://i.ytimg.com/vi/ySDaz4C7GME/movieposter_fr.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=ySDaz4C7GME',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x8dmb23',
             ],          
 
             // 30. Tic et Tac, les rangers du risque : le film
@@ -495,7 +495,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 79,
                 'type' => 'Animation',
                 'imageFilm' => 'https://upload.wikimedia.org/wikipedia/en/4/46/Chip_n_Dale_Rescue_Rangers_Teaser_poster.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=F4Z0GHWHe60',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x8afq6z',
             ],          
 
             // 31. Encanto
@@ -511,7 +511,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 80,
                 'type' => 'Animation',
                 'imageFilm' => 'https://i.ytimg.com/vi/cXvDJ8s3-3U/movieposter_fr-CA.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=cXvDJ8s3-3U',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x82k2hq',
             ],          
 
             // 32. Raya et le dernier dragon
@@ -527,7 +527,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 80,
                 'type' => 'Animation',
                 'imageFilm' => 'https://i.ytimg.com/vi/RmPf28e1ab8/movieposter.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=RmPf28e1ab8',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x7yywvf',
             ],          
 
             // 33. Le roi lion 
@@ -543,7 +543,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 81,
                 'type' => 'Animation',
                 'imageFilm' => 'https://i.ytimg.com/vi/l6nIh9ZsDaQ/movieposter.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=l6nIh9ZsDaQ',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x75l80h',
             ],          
 
             // 34. Ralph brise l'internet             
@@ -559,7 +559,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 82,
                 'type' => 'Animation',
                 'imageFilm' => 'https://i.ytimg.com/vi/8okJ8VYDVic/movieposter.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=8okJ8VYDVic',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x88uy5i',
             ],          
 
             // 35. Moana 
@@ -575,7 +575,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 58,
                 'type' => 'Animation',
                 'imageFilm' => 'https://i.ytimg.com/vi/A2u37cQ1BOA/movieposter.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=A2u37cQ1BOA',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x4fzhk1',
             ],          
 
             // 36. Zootopia 
@@ -591,7 +591,7 @@ class FilmSeeder extends Seeder
                 'producteur_id' => 58,
                 'type' => 'Animation',
                 'imageFilm' => 'https://i.ytimg.com/vi/MJg3dMJuXlY/movieposter.jpg',
-                'lienFilm' => 'https://www.youtube.com/watch?v=MJg3dMJuXlY',
+                'lienFilm' => 'https://www.dailymotion.com/embed/video/x3mf6vd',
             ],           
         ]);
     }

@@ -19,14 +19,14 @@
             <div class="card card--details">
                 <div class="row">
     <!-- image  -->
-                    <div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-3">
+                    <div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-4">
 						<div class="card__cover">
 							<img src="{{$film->imageFilm}}" alt="Affiche">
 						</div>
 					</div> 
 
     <!-- infos -->
-                    <div class="col-12 col-sm-8 col-md-8 col-lg-9 col-xl-9">
+                    <div class="col-12 col-sm-8 col-md-8 col-lg-9 col-xl-7">
 						<div class="card__content">
 							<div class="card__wrap">
 								<span class="card__rate"><i class="icon ion-ios-star"></i>{{$film->cote}}</span>
@@ -64,10 +64,9 @@
 
 <!-- ¤¤¤¤¤¤¤¤¤¤¤¤¤¤ ESSAYER DARRANGER LE LECTEUR ¤¤¤¤¤¤¤¤¤¤¤¤¤¤ -->
     <!-- player -->
-			<div class="col-12 col-xl-6">
-                
-			</div>
-
+		<div class="col-12 col-xl-6">
+			<iframe style="width:500px;height:300px;position:absolute;overflow:hidden" frameborder="0" type="text/html" src="{{$film->lienFilm}}" allowfullscreen title="Dailymotion Video Player"></iframe> 
+		</div>
 
         <div class="col-12">
 		    <div class="details__wrap">
