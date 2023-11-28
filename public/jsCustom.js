@@ -8,6 +8,3 @@ if (toastTrigger) {
   })
 }
 
-var dialog = document.getElementById('leDialog');
-
-dialog.showModal();

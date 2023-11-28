@@ -39,6 +39,7 @@ class FilmsController extends Controller
         try{
             $film = new Film($request->all());
             $film->save();
+            Log::debug("Le film" . $film->titre . "a bien été ajouté");
         }
         catch(\Throwable $e){
             Log::debug($e);

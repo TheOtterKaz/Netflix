@@ -57,7 +57,7 @@
                         <input type="text" class="form-control" id='brandFilm' name="brand" placeholder="Catégorie (Ex. Marvel)" value="{{ old('brand') }}">
                     </div>
                     <div class="col-3">
-                        <input type="text" class="form-control" id='collFilm' name="coll" placeholder="Collection (Ex. Thor)" value="{{ old('coll') }}">
+                        <input type="text" class="form-control" id='collFilm' name="collection" placeholder="Collection (Ex. Thor)" value="{{ old('coll') }}">
                     </div>
                     <div class="offset col-3"></div>
                 </div>
@@ -131,7 +131,7 @@
                 <div class="row pt-3">
                     <div class="offset col-3"></div>
                     <div class="col-6">
-                    <input type="text" class="form-control" id='imageFilm' name="image" placeholder="Image du film" value="{{ old('image') }}">
+                    <input type="text" class="form-control" id='imageFilm' name="imageFilm" placeholder="Image du film" value="{{ old('image') }}">
                     </div>
                     <div class="offset col-3"></div>
                 </div>
@@ -139,7 +139,7 @@
                 <div class="row pt-3">
                     <div class="offset col-3"></div>
                     <div class="col-6">
-                    <input type="text" class="form-control" id='lienFilm' name="lien" placeholder="Lien du film" value="{{ old('lien') }}">
+                    <input type="text" class="form-control" id='lienFilm' name="lienFilm" placeholder="Lien du film" value="{{ old('lien') }}">
                     </div>
                     <div class="offset col-3"></div>
                 </div>

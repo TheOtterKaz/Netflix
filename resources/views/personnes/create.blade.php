@@ -74,30 +74,32 @@
 
                     <div class="row">
 
-                        <!-- Radio choix sexe de la personne : HOMME -->
+                    <input type="text" name="sexe" id="idSexe">
+
+                        <!-- Radio choix sexe de la personne : HOMME
                         <div class="col-4 d-flex align-items-center justify-content-center flex-column">
-                            <input type="radio" name="sexe" id="sexeM" class="btn-check" autocomplete="off">
+                            <input type="radio" name="sexe" id="sexeM" class="btn-check" autocomplete="off" v>
                             <label class="btn btn-secondary " for="sexeM">Homme</label>
-                        </div>
+                        </div> -->
 
                         <!-- Radio choix sexe de la personne : FEMME -->
-                        <div class="col-4 d-flex align-items-center justify-content-center flex-column">
+                        <!-- <div class="col-4 d-flex align-items-center justify-content-center flex-column">
                             <input type="radio" name="sexe" id="sexeF" class="btn-check" autocomplete="off">
                             <label for="sexeF" class="btn btn-secondary">Femme</label>
-                        </div>
+                        </div> -->
 
                         <!-- Radio choix sexe de la personne : AUTRE -->
-                        <div class="col-4 d-flex align-items-center justify-content-center flex-column">
+                        <!-- <div class="col-4 d-flex align-items-center justify-content-center flex-column">
                             <input type="radio" name="sexe" id="sexeA" class="btn-check">
                             <label for="sexeA" class="btn btn-secondary">Autre</label>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="row">
 
                         <!-- Input lien imagePers -->
                         <div class="col-12">
-                            <input type="text" name="inputLienIMG" id="imagePers" class="form-control" placeholder="Lien vers une image de cette personne">
+                            <input type="text" name="imagePers" id="imagePers" class="form-control" placeholder="Lien vers une image de cette personne">
                         </div>
 
                     </div>

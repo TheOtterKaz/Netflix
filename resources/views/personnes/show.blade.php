@@ -67,5 +67,4 @@
         </div>   
     <div class="offset col-2">
 
-    <dialog id="leDialog">hahah</dialog>
 </div>
