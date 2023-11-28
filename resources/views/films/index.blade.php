@@ -1,274 +1,254 @@
 @extends('layouts.app')
 
-@section('title', 'Netflix - Accueil')
-
 @section('contenu')
-
-    <header class="row d-flex justify-content-evenly ">
-
-        <div class="netflixLogo col-1 d-flex align-items-center justify-content-center p-0">
-            <a id="logo" href="{{ route('films.index') }}">
-                <img src="/img/logo.PNG" alt="Logo Image">
-            </a>
-        </div>   
-
-        <nav class="main-nav d-flex align-items-center col-9 p-0 m-0">                
-            <a href="#nouveautes" class="text-truncate d-block">Nouveautés</a>
-            <a href="#gardiens"   class="text-truncate d-block">Les Gardiens de la galaxie</a>
-            <a href="#thor"       class="text-truncate d-block">Thor</a>
-            <a href="#avengers"   class="text-truncate d-block">Avengers</a>
-            <a href="#ironman"    class="text-truncate d-block">Ironman</a>
-            <a href="#captame"    class="text-truncate d-block">Capitaine America</a>        
-            <a href="#spiderman"  class="text-truncate d-block">Spiderman</a>               
-            <a href="#antman"     class="text-truncate d-block">Ant-man</a>        
-            <a href="#docstrange" class="text-truncate d-block">Doctor Strange</a>        
-            <a href="#blackpanth" class="text-truncate d-block">Black Panther</a>        
-            <a href="#autre"      class="text-truncate d-block">Autres</a>        
-        </nav>
-
-        <nav class="sub-nav col-1 d-flex align-items-center justify-content-evenly flex-row p-0 m-0">
-            <a href="{{route('films.create')}}" class="d-flex align-items-center">
-                <span class="material-symbols-outlined">add</span>
-            </a>  
-
-            <a href="#" class="d-flex align-items-center">
-                <span class="material-symbols-outlined">search</span>
-            </a>
-
-            <a href="#" class="d-flex align-items-center">
-                <span class="material-symbols-outlined">circle_notifications</span>
-            </a>
-
-            <a href="#" class="d-flex align-items-center"> 
-                <span class="material-symbols-outlined">account_circle</span> 
-            </a> 
-        </nav>      
-    </header>
-
   
-  
-    <!-- MAIN CONTAINER -->
+<!-- MAIN CONTAINER -->
+
+  	<!-- Caroussel des nouveautés -->
+	<section class="home">
+		<!-- images background -->
+		<div class="owl-carousel home__bg">
+			<div class="item home__cover" data-bg="img/home/home__bg.jpg"></div>
+			<div class="item home__cover" data-bg="img/home/home__bg2.jpg"></div>
+			<div class="item home__cover" data-bg="img/home/home__bg3.jpg"></div>
+			<div class="item home__cover" data-bg="img/home/home__bg4.jpg"></div>
+		</div>
+		<!-- fin images background -->
+
+    <!-- caroussel des nouveautés -->
+		<div class="container">
+			<div class="row">
+  <!-- titre et boutons  -->
+				<div class="col-12">
+					<h1 class="home__title"><b>Nouveautés</b></h1>
+
+					<button class="home__nav home__nav--prev" type="button">
+						<i class="icon ion-ios-arrow-round-back"></i>
+					</button>
+					<button class="home__nav home__nav--next" type="button">
+						<i class="icon ion-ios-arrow-round-forward"></i>
+					</button>
+				</div>
+
+
+				<div class="col-12">
+					<div class="owl-carousel home__carousel">
+
+      @if(count($films))
+        @foreach($films as $film)
+          @if($film->annee == 2023)
+						<div class="item">
+	<!-- card -->
+		<div class="card card--big">
+
+			<a href="{{ route('films.show', [$film]) }}">              
+				<div class="card__cover">
+            		<img src="{{$film->imageFilm}}" alt="Affiche Film">              
+				</div>
+            </a>                
+
+          	<div class="card__content">
+            	<h3 class="card__title">{{$film->titre}}</h3>
+            	<span class="card__category">{{$film->type}}</span>
+            	<span class="card__rate"><i class="icon ion-ios-star"></i>{{$film->cote}}</span>
+          	</div>
  
-    <section class="main-container" >
-        <div class="location" id="home">
-            <h1 id="nouveautes" class="fs-3  text-truncate d-block">Nouveautés</h1>
-            <div class="box">
-                @if(count($films))
-                    @foreach($films as $film)
-                        @if($film->annee == '2023')
-                            <a href="{{ route('films.show', [$film]) }}">
-                                <div class="card border border-0 p-0 m-0 g-0">
-                                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
-                                </div>
-                            </a>
-                        @endif
-                    @endforeach
-                @endif
+		</div>
+	<!-- end card -->
+						
             </div>
-
-
-        <!-- gardiens de la galaxie -->
-            <h1 id="gardiens" class="fs-3  text-truncate d-block">Les Gardiens de la galaxie</h1>
-            <div class="box">
-                @if(count($films))
-                    @foreach($films as $film)
-                        @if($film->collection == 'Gardiens de la galaxie')
-                            <a href="{{ route('films.show', [$film]) }}">
-                                <div class="card border border-0 p-0 m-0 g-0">
-                                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
-                                </div>
-                            </a>
-                        @endif
-                    @endforeach
-                @endif
-            </div>
-
-        <!-- thor -->
-            <h1 id="thor" class="fs-3 text-truncate d-block">Thor</h1>
-            <div class="box">
-                @if(count($films))
-                    @foreach($films as $film)
-                        @if($film->collection == 'Thor')
-                            <a href="{{ route('films.show', [$film]) }}">
-                                <div class="card border border-0 p-0 m-0 g-0">
-                                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
-                                </div>
-                            </a>
-                        @endif
-                    @endforeach
-                @endif
-            </div>
-
-        <!-- avengers -->
-            <h1 id="avengers" class="fs-3 text-truncate d-block">Avengers</h1>
-            <div class="box">
-                @if(count($films))
-                    @foreach($films as $film)
-                        @if($film->collection == 'Avengers')
-                            <a href="{{ route('films.show', [$film]) }}">
-                                <div class="card border border-0 p-0 m-0 g-0">
-                                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
-                                </div>
-                            </a>
-                        @endif
-                    @endforeach
-                @endif
-            </div>    
-
-        <!-- ironman -->
-            <h1 id="ironman" class="fs-3 text-truncate d-block">Ironman</h1>
-            <div class="box">
-                @if(count($films))
-                    @foreach($films as $film)
-                        @if($film->collection == 'Ironman')
-                            <a href="{{ route('films.show', [$film]) }}">
-                                <div class="card border border-0 p-0 m-0 g-0">
-                                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
-                                </div>
-                            </a>
-                        @endif
-                    @endforeach
-                @endif
-            </div>
-            
-        <!-- capitaine america -->
-            <h1 id="captame" class="fs-3 text-truncate d-block">Capitaine America</h1>
-            <div class="box">
-                @if(count($films))
-                    @foreach($films as $film)
-                        @if($film->collection == 'Capitaine America')
-                            <a href="{{ route('films.show', [$film]) }}">
-                                <div class="card border border-0 p-0 m-0 g-0">
-                                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
-                                </div>
-                            </a>
-                        @endif
-                    @endforeach
-                @endif
-            </div>
-
-      </div>   
-
-    <!-- spiderman -->
-      <h1 id="spiderman" class="fs-3 text-truncate d-block">Spiderman</h1>
-      <div class="box">
-
-          @if(count($films))
-            @foreach($films as $film)
-              @if($film->collection == 'Spiderman')
-                <a href="{{ route('films.show', [$film]) }}">
-                  <div class="card border border-0 p-0 m-0 g-0">
-                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
-                  </div>
-                </a>
-              @endif
-            @endforeach
+      @endif
+        @endforeach
           @endif
 
-      </div>
+					</div>
+				</div>
 
-    <!-- antman -->
-      <h1 id="antman" class="fs-3 text-truncate d-block">Ant-man</h1>
-      <div class="box">
+			</div>
+		</div>
+	</section>
 
-          @if(count($films))
-            @foreach($films as $film)
-              @if($film->collection == 'Ant-man')
-                <a href="{{ route('films.show', [$film]) }}">
-                  <div class="card border border-0 p-0 m-0 g-0">
-                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img ">
-                  </div>
-                </a>
-              @endif
-            @endforeach
+  <!-- parties des onglets -->
+  <section class="content">
+    <div class="content__head">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+
+  <!-- titre du contenu -->
+            <h2 class="content__title">Films en vedette</h2>
+
+            <!-- onglets du navigateur -->
+            <ul class="nav nav-tabs content__tabs" id="content__tabs" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Marvel</a>
+							</li>
+
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">DC</a>
+							</li>
+
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Pixar</a>
+							</li>
+
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#tab-4" role="tab" aria-controls="tab-4" aria-selected="false">Disney</a>
+							</li>
+						</ul>
+
+            <!-- partie mobile des onglets -->
+            <div class="content__mobile-tabs" id="content__mobile-tabs">
+							<div class="content__mobile-tabs-btn dropdown-toggle" role="navigation" id="mobile-tabs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<input type="button" value="New items">
+								<span></span>
+							</div>
+
+							<div class="content__mobile-tabs-menu dropdown-menu" aria-labelledby="mobile-tabs">
+								<ul class="nav nav-tabs" role="tablist">
+									<li class="nav-item"><a class="nav-link active" id="1-tab" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Marvel</a></li>
+
+									<li class="nav-item"><a class="nav-link" id="2-tab" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">DC</a></li>
+
+									<li class="nav-item"><a class="nav-link" id="3-tab" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Pixar</a></li>
+
+									<li class="nav-item"><a class="nav-link" id="4-tab" data-toggle="tab" href="#tab-4" role="tab" aria-controls="tab-4" aria-selected="false">Disney</a></li>
+								</ul>
+							</div>
+						</div>
+
+
+    <div class="container">
+			<!-- content tabs -->
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="1-tab">
+					<div class="row">
+    
+<!-- card marvel -->
+      @if(count($films))
+        @foreach($films as $film)
+          @if($film->brand == 'Marvel')
+
+          <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+				<div class="card">
+					<a href="{{ route('films.show', [$film]) }}">
+						<div class="card__cover">
+                	  		<img src="{{$film->imageFilm}}" alt="Affiche">
+						</div>
+                	</a>
+
+					<div class="card__content">
+						<h3 class="card__title">{{$film->titre}}</h3>
+						<span class="card__category"><b>{{$film->type}}</b></span>
+						<span class="card__rate"><i class="icon ion-ios-star"></i>{{$film->cote}}</span>
+					</div>
+				</div>
+			</div>
+
           @endif
+        @endforeach
+      @endif 
+<!-- fin card marvel-->
 
-      </div>
+					</div>
+				</div>
 
-    <!-- doctor strange -->
-      <h1 id="docstrange" class="fs-3 text-truncate d-block">Doctor Strange</h1>
-      <div class="box">
+				<div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="2-tab">
+					<div class="row">
 
-          @if(count($films))
-            @foreach($films as $film)
-              @if($film->collection == 'Doctor Strange')
-                <a href="{{ route('films.show', [$film]) }}">
-                  <div class="card border border-0 p-0 m-0 g-0">
-                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
-                  </div>
-                </a>
-              @endif
-            @endforeach
+<!-- card DC -->
+      @if(count($films))
+        @foreach($films as $film)
+          @if($film->brand == 'DC')
+
+          <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+				<div class="card">
+					<a href="{{ route('films.show', [$film]) }}">
+						<div class="card__cover">
+                	  		<img src="{{$film->imageFilm}}" alt="Affiche">
+						</div>
+                	</a>
+
+					<div class="card__content">
+						<h3 class="card__title">{{$film->titre}}</h3>
+						<span class="card__category"><b>{{$film->type}}</b></span>
+						<span class="card__rate"><i class="icon ion-ios-star"></i>{{$film->cote}}</span>
+					</div>
+				</div>
+			</div>
+
           @endif
+        @endforeach
+      @endif 
+<!-- fin card DC-->
 
-      </div>
+					</div>
+				</div>
 
-    <!-- black panther -->
-      <h1 id="blackpanth" class="fs-3 text-truncate d-block">Black Panther</h1>
-      <div class="box">
+				<div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="3-tab">
+					<div class="row">
 
-          @if(count($films))
-            @foreach($films as $film)
-              @if($film->collection == 'Black Panther')
-                <a href="{{ route('films.show', [$film]) }}">
-                  <div class="card border border-0 p-0 m-0 g-0">
-                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
-                  </div>
-                </a>
-              @endif
-            @endforeach
+<!-- card Pixar -->
+      @if(count($films))
+        @foreach($films as $film)
+          @if($film->brand == 'Pixar')
+
+          <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+				<div class="card">
+					<a href="{{ route('films.show', [$film]) }}">
+						<div class="card__cover">
+                  			<img src="{{$film->imageFilm}}" alt="Affiche">
+						</div>
+                	</a>
+
+					<div class="card__content">
+						<h3 class="card__title">{{$film->titre}}</h3>
+						<span class="card__category"><b>{{$film->type}}</b></span>
+						<span class="card__rate"><i class="icon ion-ios-star"></i>{{$film->cote}}</span>
+					</div>
+				</div>
+			</div>
+
           @endif
+        @endforeach
+      @endif 
+<!-- fin card Pixar-->
+					</div>
+				</div>
 
-      </div>
+				<div class="tab-pane fade" id="tab-4" role="tabpanel" aria-labelledby="4-tab">
+					<div class="row">
 
-    <!-- autre -->
-      <h1 id="autre" class="fs-3 text-truncate d-block">Autres</h1>
-      <div class="box">
+<!-- card Disney -->
+      @if(count($films))
+        @foreach($films as $film)
+          @if($film->brand == 'Disney')
 
-          @if(count($films))
-            @foreach($films as $film)
-              @if($film->collection == 'Autre')
-                <a href="{{ route('films.show', [$film]) }}">
-                  <div class="card border border-0 p-0 m-0 g-0">
-                    <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
-                  </div>
-                </a>
-              @endif
-            @endforeach
+          <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+				<div class="card">
+					<a href="{{ route('films.show', [$film]) }}">
+						<div class="card__cover">
+                  			<img src="{{$film->imageFilm}}" alt="Affiche">
+						</div>
+				  	</a>
+
+					<div class="card__content">
+						<h3 class="card__title">{{$film->titre}}</h3>
+						<span class="card__category"><b>{{$film->type}}</b></span>
+						<span class="card__rate"><i class="icon ion-ios-star"></i>{{$film->cote}}</span>
+					</div>
+				</div>
+			</div>
+
           @endif
-
-      </div>
-
-
-    </section>
-      
-    <!-- END OF MAIN CONTAINER -->
-
-    <!-- LINKS -->
-    <!-- <section class="link">
-      <div class="logos">
-        <a href="#"><i class="fab fa-facebook-square fa-2x logo"></i></a>
-        <a href="#"><i class="fab fa-instagram fa-2x logo"></i></a>
-        <a href="#"><i class="fab fa-twitter fa-2x logo"></i></a>
-        <a href="#"><i class="fab fa-youtube fa-2x logo"></i></a>
-      </div>
-      <div class="sub-links">
-        <ul>
-          <li><a href="#">Audio and Subtitles</a></li>
-          <li><a href="#">Audio Description</a></li>
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">Gift Cards</a></li>
-          <li><a href="#">Media Center</a></li>
-          <li><a href="#">Investor Relations</a></li>
-          <li><a href="#">Jobs</a></li>
-          <li><a href="#">Terms of Use</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Legal Notices</a></li>
-          <li><a href="#">Corporate Information</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </div>
-    </section> -->
-    <!-- END OF LINKS -->
-
+        @endforeach
+      @endif 
+<!-- fin card Disney -->
+					</div>
+				</div>
+			</div>
+			<!-- end content tabs -->
+		</div>
+	</section>
+	<!-- end content -->
 @endsection

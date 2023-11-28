@@ -1,8 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AidesController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PersonnesController;
 use App\Http\Controllers\FilmsController;
+use App\Http\Controllers\PrixController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\UsagersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +23,6 @@ use App\Http\Controllers\FilmsController;
 Route::get('/', function () {
     return view('layouts.app');
 });
-
-
 
 // Films
         Route::get('films', 
@@ -57,20 +60,21 @@ Route::get('/', function () {
         Route::get('/personnes/{personne}',
         [PersonnesController::class, 'show']) ->name('personnes.show');
 
+
+        Route::get('prix',
+        [PrixController::class, 'index']) ->name('prix.index'); 
+
+        Route::get('aide',
+        [AidesController::class, 'index']) ->name('aide.index'); 
+
 //? : Store
 
     //* Personnes
         Route::post('/personnes',
         [PersonnesController::class, 'store'])->name('personnes.store');
 
-Route::post('/films',
-[FilmsController::class, 'store'])->name('films.store');
+        Route::post('/films',
+        [FilmsController::class, 'store'])->name('films.store');
 
-
-
-
-
-
-
-Route::delete('/personnes/{id}',
-[PersonnesController::class, 'destroy'])->name('personnes.destroy');
+        Route::delete('/personnes/{id}',
+        [PersonnesController::class, 'destroy'])->name('personnes.destroy');
