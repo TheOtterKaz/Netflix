@@ -69,6 +69,11 @@
 									<a href="{{ route('aide.index') }}" class="header__nav-link">Aide</a>
 								</li>
 
+  <!-- Onglet Aide -->
+								<li class="header__nav-item">
+									<a href="" class="header__nav-link">Admin</a>
+								</li>
+
 							</ul>
   <!-- Fin header nav -->
 
