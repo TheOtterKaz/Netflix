@@ -7,3 +7,7 @@ if (toastTrigger) {
     toastBootstrap.show()
   })
 }
+
+var dialog = document.getElementById('leDialog');
+
+dialog.showModal();
