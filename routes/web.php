@@ -70,7 +70,7 @@ Route::post('/films',
 
 
 
-Route::patch('/personnes/{id}/modifier',
+Route::patch('/personnes/{personne}/modifier',
 [PersonnesController::class, 'update'])->name('personnes.update');
 
 Route::delete('/personnes/{id}',

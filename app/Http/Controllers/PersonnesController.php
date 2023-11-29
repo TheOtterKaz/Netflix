@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PersonnesRequest;
 use Illuminate\Http\Request;
 use App\Models\Personne;
 use App\Models\Film;
@@ -73,7 +74,7 @@ class PersonnesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Personne $personne)
+    public function update(PersonnesRequest $request, Personne $personne)
     {
         try{
             $personne->nom = $request->nom;
@@ -81,6 +82,8 @@ class PersonnesController extends Controller
             $personne->id = $request->id;
             $personne->dateNaiss = $request->dateNaiss;
             $personne->sexe = $request->sexe;
+            $personne->imagePers = $personne->imagePers;
+
 
             $personne->save();
             Log::debug("La personne " . $personne->nom . " " . $personne->prenom . " a été modifiée avec succès !");

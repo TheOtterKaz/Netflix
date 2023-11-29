@@ -8,3 +8,19 @@ if (toastTrigger) {
   })
 }
 
+
+if(document.getElementById('choixNouvSexe').value == "H"){
+  document.getElementById('choixMasc').setAttribute('selected', 'selected');
+  document.getElementById('choixFem').removeAttribute('selected');
+  document.getElementById('choixAutre').removeAttribute('selected');
+}
+else if(document.getElementById('choixNouvSexe').value == "F"){
+  document.getElementById('choixMasc').removeAttribute('selected');
+  document.getElementById('choixFem').setAttribute('selected', 'selected');
+  document.getElementById('choixAutre').removeAttribute('selected');
+}
+else if(document.getElementById('choixNouvSexe').value == "A"){
+  document.getElementById('choixMasc').removeAttribute('selected');
+  document.getElementById('choixFem').removeAttribute('selected');
+  document.getElementById('choixAutre').setAttribute('selected', 'selected');
+}

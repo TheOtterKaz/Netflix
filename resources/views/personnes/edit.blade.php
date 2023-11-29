@@ -64,65 +64,34 @@
                         <div class="col-8">
                             <div class="form-floating">
                                 <input type="date" name="dateNaiss" class="form-control" id="newDateNaiss" placeholder="DateNaiss" value="{{old('dateNaiss', $personne->dateNaiss)}}">
-                                <label for="newDateNaiss">Date de naissance</label>
+                                <label for="dateNaiss">Date de naissance</label>
                             </div>
                         </div>
                     </div>
 
                     <!-- Sexe-->                    
                     <div class="row d-flex align-items-center justify-content-center">
-                            <div class="col-8 d-flex justify-content-evenly">
-                                
-                            
-                                @if ($personne->sexe == "M") 
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input border-dark border-1" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Masculin" checked>
-                                        <label class="form-check-label text-dark" for="inlineRadio1">Masculin</label>
-                                    </div>
+                        <div class="col-8">
+                            <div class="form-floating">
+                                <select name="sexe" id="choixNouvSexe" class="form-control" placeholder="Sexe" value="{{old('sexe', $personne->sexe)}}">
+                                    @if($personne->sexe == 'M' || $personne->sexe == 'H')
+                                        <option value="H" id="choixMasc" selected>Masculin</option>
+                                        <option value="F" id="choixFem">Féminin</option>
+                                        <option value="A" id="choixAutre">Autre</option>
 
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input border-dark border-1" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Feminin">
-                                        <label class="form-check-label text-dark" for="inlineRadio2">Féminin</label>
-                                    </div>
-
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input border-dark border-1" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Autre" >
-                                        <label class="form-check-label text-dark" for="inlineRadio3">Autre</label>
-                                    </div>
-
-                                @elseif ($personne->sexe == "F")
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input border-dark border-1" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Masculin">
-                                        <label class="form-check-label text-dark" for="inlineRadio1">Masculin</label>
-                                    </div>
-
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input border-dark border-1" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Feminin" checked>
-                                        <label class="form-check-label text-dark" for="inlineRadio2">Féminin</label>
-                                    </div>
-
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input border-dark border-1" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Autre" >
-                                        <label class="form-check-label text-dark" for="inlineRadio3">Autre</label>
-                                    </div>
-
-                                @elseif ($personne->sexe == "A")
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input border-dark border-1" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Masculin">
-                                        <label class="form-check-label text-dark" for="inlineRadio1">Masculin</label>
-                                    </div>
-
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input border-dark border-1" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Feminin">
-                                        <label class="form-check-label text-dark" for="inlineRadio2">Féminin</label>
-                                    </div>
-
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input border-dark border-1" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Autre" checked>
-                                        <label class="form-check-label text-dark" for="inlineRadio3">Autre</label>
-                                    </div>
-                                @endif
+                                    @elseif($personne->sexe == 'F')
+                                        <option value="H" id="choixMasc">Masculin</option>
+                                        <option value="F" id="choixFem" selected>Féminin</option>
+                                        <option value="A" id="choixAutre">Autre</option>
+                                    @else
+                                        <option value="A" id="choixAutre" selected>Autre</option>
+                                        <option value="H" id="choixMasc">Masculin</option>
+                                        <option value="F" id="choixFem">Féminin</option>
+                                    @endif
+                                </select>
+                                <label for="sexe" class="text-dark">Sexe</label>
                             </div>
+                        </div>
                     </div>  
 
                 </div>
@@ -138,14 +107,7 @@
                                 <span class="material-symbols-outlined">edit</span>
                                 <span>Modifier</span>
                             </button>
-                            <!-- <form mehtod="POST" action="{{route('personnes.destroy', [$personne->id]) }}" class="d-flex align-items-center m-0">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger d-flex flex-column align-items-center justify-content-center">
-                                    <span class="material-symbols-outlined">delete</span>
-                                    <span>Supprimer</span>
-                                </button>
-                            </form> -->
+                            
                         </div>
                     </div>                    
                 </div>
