@@ -23,6 +23,15 @@ class PersonnesController extends Controller
         return View('personnes.index', compact('personnes', 'realisateurs', 'producteurs', 'acteurs'));        
     }
 
+    public function indexAdminP()
+    {
+        $personnes = Personne::all();
+        $realisateurs = Personne::join('films', 'personnes.id', '=', 'films.realisateur_id')     ->select('personnes.*')     ->distinct()     ->get();
+        $producteurs = Personne::join('films', 'personnes.id', '=', 'films.producteur_id')     ->select('personnes.*')     ->distinct()     ->get();
+        $acteurs = Personne::join('film_personne', 'personnes.id', '=', 'film_personne.personne_id')     ->select('personnes.*')     ->distinct()     ->get();
+        return View('admin.listePers', compact('personnes', 'realisateurs', 'producteurs', 'acteurs'));
+    }
+
     /**
      * Show the form for creating a new resource.
      * 

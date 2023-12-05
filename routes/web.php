@@ -24,7 +24,7 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
-// Films
+//? Films
         Route::get('films', 
         [FilmsController::class, 'index']) ->name('films.index');
 
@@ -44,7 +44,11 @@ Route::get('/', function () {
         Route::delete('/films/{film}',
         [FilmsController::class, 'destroy']) ->name('films.destroy');    
 
-// Personnes
+    //* Liste des films ADMIN
+        Route::get('/admin/films',
+        [FilmsController::class, 'indexAdminF']) ->name('admin.listeFilms');
+
+//? Personnes
         Route::get('personnes',
         [PersonnesController::class, 'index']) ->name('personnes.index');
 
@@ -60,15 +64,20 @@ Route::get('/', function () {
         Route::get('/personnes/{personne}',
         [PersonnesController::class, 'show']) ->name('personnes.show');
 
+    //* Liste des personnes ADMIN
+        Route::get('/admin/personnes',
+        [PersonnesController::class, 'indexAdminP']) ->name('admin.listePers');
 
+//? Autres
+    //* Page des prix
         Route::get('prix',
         [PrixController::class, 'index']) ->name('prix.index'); 
 
+    //* Page de la FAQ
         Route::get('aide',
         [AidesController::class, 'index']) ->name('aide.index'); 
 
 //? : Store
-
     //* Personnes
         Route::post('/personnes',
         [PersonnesController::class, 'store'])->name('personnes.store');

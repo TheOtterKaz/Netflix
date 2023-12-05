@@ -71,7 +71,12 @@
 
   <!-- Onglet Aide -->
 								<li class="header__nav-item">
-									<a href="" class="header__nav-link">Admin</a>
+									<a href="" class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuAdmin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+
+									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuAdmin">
+										<li><a href="{{ route('admin.listeFilms') }}">Liste Films</a></li>
+										<li><a href="{{ route('admin.listePers') }}">Liste Personnes</a></li>
+									</ul>
 								</li>
 
 							</ul>

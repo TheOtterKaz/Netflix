@@ -20,6 +20,12 @@ class FilmsController extends Controller
         return View('films.index', compact('films'));
     }
 
+    public function indexAdminF()
+    {
+        $films = Film::all();
+        return View('admin.listeFilms', compact('films'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
