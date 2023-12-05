@@ -26,6 +26,6 @@ class Personne extends Model
     // Fonction acteurs films
     public function acteursfilms()
     {
-        return $this->hasMany(FilmPersonne::class);
+        return $this->belongsToMany(Film::class);
     }
 }

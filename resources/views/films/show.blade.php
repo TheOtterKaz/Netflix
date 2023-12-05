@@ -62,7 +62,7 @@
             </div>
         </div>
 
-<!-- ¤¤¤¤¤¤¤¤¤¤¤¤¤¤ ESSAYER DARRANGER LE LECTEUR ¤¤¤¤¤¤¤¤¤¤¤¤¤¤ -->
+
     <!-- player -->
 		<div class="col-12 col-xl-6">
 			<iframe style="width:500px;height:300px;position:absolute;overflow:hidden" frameborder="0" type="text/html" src="{{$film->lienFilm}}" allowfullscreen title="Dailymotion Video Player"></iframe> 

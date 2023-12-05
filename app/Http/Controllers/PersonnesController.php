@@ -49,7 +49,12 @@ class PersonnesController extends Controller
      */
     public function show(Personne $personne)
     {
-        return View('personnes.show', compact('personne'));
+        $films = Film::join('film_personne', 'films.id', '=', 'film_personne.film_id')
+        ->where('film_personne.personne_id', $personne->id)
+        ->select('films.*')
+        ->get();
+
+        return View('personnes.show', compact('personne', 'films'));
     }
 
     /**

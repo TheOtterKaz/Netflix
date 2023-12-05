@@ -318,7 +318,7 @@ class PersonneSeeder extends Seeder
                 'prenom' => 'Ginnifer',
                 'dateNaiss' => '1978-05-22',
                 'sexe' => 'F',
-                'imagePers' => 'https://static.wikia.nocookie.net/disney/images/0/01/Ginnifer_Goodwin.jpg/revision/latest?cb=20190523223718',
+                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/5/57/Ginnifer_Goodwin_by_Gage_Skidmore.jpg',
             ],
     
     //? Réalisateurs
@@ -571,7 +571,7 @@ class PersonneSeeder extends Seeder
                 'prenom' => 'Byron',
                 'dateNaiss' => '1968-05-10',
                 'sexe' => 'M',
-                'imagePers' => 'https://static.wikia.nocookie.net/disney/images/9/99/Byron_Howard.jpg/revision/latest?cb=20180816231706',
+                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/9/99/Byron_Howard.jpg',
             ],
 
             [
@@ -580,7 +580,7 @@ class PersonneSeeder extends Seeder
                 'prenom' => 'Don',
                 'dateNaiss' => '1969-03-08',
                 'sexe' => 'M',
-                'imagePers' => 'https://static.wikia.nocookie.net/walt-disney-animation-studios/images/1/1b/B97A084E-E313-4366-A7FD-D0BD853ECCE9.jpg/revision/latest?cb=20211001040831',
+                'imagePers' => 'https://m.media-amazon.com/images/M/MV5BMTc4NDg2MzkxOV5BMl5BanBnXkFtZTgwNTA4MDQwMDE@._V1_UY1200_CR585,0,630,1200_AL_.jpg',
             ],
 
             [
@@ -589,7 +589,7 @@ class PersonneSeeder extends Seeder
                 'prenom' => 'Rich',
                 'dateNaiss' => '1963-05-10',
                 'sexe' => 'M',
-                'imagePers' => 'https://static.wikia.nocookie.net/disney/images/1/19/Rich_Moore.jpg/revision/latest?cb=20180824205334',
+                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/1/19/Rich_Moore.jpg',
             ],
 
     //? Producteur
@@ -617,7 +617,7 @@ class PersonneSeeder extends Seeder
                 'prenom' => 'John',
                 'dateNaiss' => '1977-11-02',
                 'sexe' => 'M',
-                'imagePers' => 'https://static.wikia.nocookie.net/dccu/images/8/80/John_Rickard.jpg/revision/latest?cb=20230929210914',
+                'imagePers' => 'https://media.gettyimages.com/photos/executive-producer-john-rickard-speaks-onstage-at-the-frequency-panel-picture-id588430914?s=612x612',
             ],
 
             [ 
@@ -707,7 +707,7 @@ class PersonneSeeder extends Seeder
                 'prenom' => 'Peter',
                 'dateNaiss' => '1958-04-06',
                 'sexe' => 'M',
-                'imagePers' => 'https://static.wikia.nocookie.net/disney/images/f/f7/Peter_Del_Vecho.jpg/revision/latest?cb=20181108000003',
+                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/9/94/V_DelVechoHeadshot.jpg',
             ],
 
             [ 
@@ -725,7 +725,7 @@ class PersonneSeeder extends Seeder
                 'prenom' => 'David',
                 'dateNaiss' => '1952-09-12',
                 'sexe' => 'M',
-                'imagePers' => 'https://static.wikia.nocookie.net/disney/images/f/fa/David_Hoberman.jpg/revision/latest?cb=20200328132739',
+                'imagePers' => 'https://m.media-amazon.com/images/M/MV5BZGM4YTZiYTAtODVlYS00ZTYzLWExMjItZDFmMTcyMTA2OWIxXkEyXkFqcGdeQXVyMTMyMDYyNTA0._V1_UY1200_CR461,0,630,1200_AL_.jpg',
             ],
 
             [ 
@@ -752,7 +752,7 @@ class PersonneSeeder extends Seeder
                 'prenom' => 'Phil',
                 'dateNaiss' => '1971-10-26',
                 'sexe' => 'M',
-                'imagePers' => 'https://static.wikia.nocookie.net/disney/images/d/d8/Phil_Johnston.jpg/revision/latest?cb=20211025234245',
+                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/d/d8/Phil_Johnston.jpg',
             ],             
         ]);
     }

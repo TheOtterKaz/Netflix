@@ -1,74 +1,57 @@
 @extends('layouts.app')
 
-@section('title', 'Film - Zoom')
-
 @section('contenu')
 
-<header class="row d-flex justify-content-between ">
-        <div class="netflixLogo col-1 d-flex align-items-center justify-content-center p-0">
-          <a id="logo" href="{{ route('films.index') }}"><img src="/img/logo.PNG" alt="Logo Image"></a>
-        </div>      
+<!-- MAIN CONTAINER -->
+<section class="section details">
+    <!-- background -->
+    <div class="details__bg" data-bg="img/home/home__bg.jpg"></div>
+        <div class="container">
+            <div class="row">
 
-        <nav class="sub-nav col-1 d-flex align-items-center justify-content-evenly flex-row p-0 m-0">
-          <a href="#" class="d-flex align-items-center">
-            <span class="material-symbols-outlined">
-              search
-            </span>
-          </a>
-          <a href="#" class="d-flex align-items-center">
-          <span class="material-symbols-outlined">
-            circle_notifications
-          </span>
-          </a>
-          <a href="#" class="d-flex align-items-center"> 
-            <span class="material-symbols-outlined">
-               account_circle 
-              </span> 
-            </a>        
-        </nav>      
-    </header>
+    <div class="offset col-xl-3"></div>
+    <!-- contenu -->
+            <div class="col-12 col-xl-6" >
+                <div class="card card--details d-flex align-items-center justify-content-center">
+                    <div class="row">
+    <!-- image  -->
+                    <div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-5">
+						<div class="card__cover">
+							<img src="{{$personne->imagePers}}" alt="ImagePers">
+						</div>
+					</div> 
 
-    <!-- Main Container -->
-<div class="row d-flex align-items-center justify-content-center">
-    <div class="offset col-2"></div>
-        <div class="card mt-5 p-0 bg-secondary-subtle border border-0" style="max-width: 900px;">
-            <div class="row g-0">
+    <!-- infos -->
+                    <div class="col-12 col-sm-8 col-md-8 col-lg-9 col-xl-7">
+						<div class="card__content">
+                            <h1 class="details__title">{{$personne->prenom}} {{$personne->nom}}</h1>
+							
+                            <div class="card__wrap">
+							    <ul class="card__meta">
+							    	<li><span>Date de naissance :</span> <span>{{$personne->dateNaiss}}</span></li>
+							    	<li><span>Sexe : </span>{{$personne->sexe}}</span></li>
+                                    <li>
+                                    <span>Films : </span>
+									<ul>
+										@foreach($films as $film)                                        
+											<li>{{$film->titre}}</li>
+										@endforeach	  
+									</ul>
+                                </li>
+							    </ul>
+						    </div>
 
-                <div class="col-md-4">
-                    <img src="{{$personne->imagePers}}" alt="ImagePersonne" class="img-fluid rounded-start">
+                        </div> 
+                    </div>       
+					
+                    </div>
                 </div>
-                
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$personne->prenom}} {{$personne->nom}}</h5>
-                        <div class="pt-3 m-0">
-                            <p class="card-text">Date de naissance : {{$personne->dateNaiss}}</p>
-                            <p class="card-text">Sexe : {{$personne->sexe}}</p>
+            </div>   
 
-                        </div>
-                    </div>    
-                </div>
-
-                <div class="card-footer d-flex flex-row align-items-center justify-content-evenly ">
-                    <a href="{{ route('personnes.index') }}" class="btn btn-primary d-flex flex-column">
-                        <span class="material-symbols-outlined">arrow_back</span>
-                        <span>Retour</span>
-                    </a>
-                    <a href="{{ route('personnes.edit', [$personne]) }}" class="btn btn-warning d-flex flex-column">
-                        <span class="material-symbols-outlined">edit</span>
-                        <span>Modifier</span>
-                    </a>
-                    <form mehtod="POST" action="{{route('personnes.destroy', [$personne->id]) }}" class="d-flex align-items-center m-0">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger d-flex flex-column">
-                            <span class="material-symbols-outlined">delete</span>
-                            <span>Supprimer</span>
-                        </button>
-                    </form>
-                </div>
-
+    <div class="offset col-xl-3"></div>        
             </div>
-        </div>   
-    <div class="offset col-2">
-</div>
+        </div>
+    </div>
+</section>
+
+@endsection
