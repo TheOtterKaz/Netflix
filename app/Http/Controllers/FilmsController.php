@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\FilmRequest;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Film;
@@ -72,9 +73,32 @@ class FilmsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(FilmRequest $request, Film $film)
     {
-        //
+        // Log::debug($request);
+        try{
+            $film->id = $request->id;
+            $film->titre = $request->titre;
+            $film->resume = $request->resume;
+            $film->brand = $request->brand;
+            $film->collection = $request->collection;
+            $film->rating = $request->rating;
+            $film->duree = $request->duree;
+            $film->type = $request->type;
+            $film->cote = $request->cote;
+            
+
+            $film->save();
+            Log::debug("Le film" . $film->titre . "a bien été modifié");
+            return redirect()->route('films.index')->with('message', "Modification de " . $film->titre . " réussie");
+
+        }
+        catch(\Throwable $e){
+            Log::debug($e);
+            return redirect()->route('films.index')->withErrors('message', "Modification de " . $film->titre . " échouée");
+        }
+
+        return redirect()->route('films.index');
     }
 
     /**

@@ -103,10 +103,12 @@
                                 <span class="material-symbols-outlined"> arrow_back</span>
                                 <span>Retour</span>
                             </a>
+                            
                             <button type="submit" class="btn btn-warning d-flex flex-column align-items-center justify-content-center">
                                 <span class="material-symbols-outlined">edit</span>
                                 <span>Modifier</span>
                             </button>
+                            
                             
                         </div>
                     </div>                    
@@ -114,4 +116,6 @@
             </form>  
     </div>
 </div>
+
+
 @endsection

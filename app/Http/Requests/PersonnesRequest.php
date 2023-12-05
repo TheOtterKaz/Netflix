@@ -26,18 +26,18 @@ class PersonnesRequest extends FormRequest
             'prenom' => 'required|string|max:100',
             'dateNaiss' => 'required|string|max:15',
             'sexe' => 'required|string|max:1',
-            'imagePers' => 'required|string|max:2048',
+            'imagePers' => 'string|max:2048'
         ];
     }
 
     public function messages()
     {
-        [
+        return [
             'nom.required' => 'Le nom est requis',
             'prenom.required' => 'Le prénom est requis',
             'dateNaiss.required' => 'La date de naissance est requise',
             'sexe.required' => 'Le sexe est requis',
-            'imagePers.required' => 'L\'image est requise',
+            'imagePers.required' => 'L\'image est requise'
         ];
     }
 }

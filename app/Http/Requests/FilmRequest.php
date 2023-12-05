@@ -26,20 +26,21 @@ class FilmRequest extends FormRequest
             'resume' => 'required|string|max:500', 
             'brand' => 'required|string|max:250', 
             'collection' => 'required|string|max:250', 
-            'cote' => 'required|int|max:11', 
+            'cote' => 'required|integer', 
             'rating' => 'required|string|max:50',                             
-            'duree' => 'required|integer|max:11', 
-            'annee' => 'required|integer|max:11', 
-            'realisateur_id' => 'required|integer|max:20', 
-            'producteur_id' => 'required|integer|max:20', 
+            'duree' => 'required|integer', 
+            'annee' => 'required|integer', 
+            'realisateur_id' => 'integer', 
+            'producteur_id' => 'integer', 
             'type' => 'required|string|max:300', 
-            'imageFilm' => 'required|string|max:2048', 
-            'lienFilm' => 'required|string|max:2048',
+            'imageFilm' => 'string|max:2048', 
+            'lienFilm' => 'string|max:2048',
         ];
     }
 
-    public function messages(){
-        [
+    public function messages()
+    {
+        return [
             'titre.required' => 'Le titre est requis',
             'resume.required' => 'Le résumé est requis',
             'brand.required' => 'La marque est requise',

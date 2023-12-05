@@ -51,6 +51,11 @@ header {
   /* z-index: 5; */
 }
 
+dialog {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
 /* .netflixLogo {
   grid-area: nt;
   object-fit: cover;

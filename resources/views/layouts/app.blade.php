@@ -9,6 +9,67 @@
     <title>@yield('title')</title>
 </head>
 <body class="h-100">
+
+        <dialog id="dialog" class="border border-1 border-black">
+            <div class="row">
+                <div class="offset col-4"></div>
+                <div class="col-4 d-flex align-items-center justify-content-center">
+                    <h3 id="hTitre">Erreur(s)</h3>
+                </div>
+                <div class="col-4 d-flex justify-content-end">
+                    <button class="btn btn-close "></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" id="containerErrors"></div>
+            </div>
+        </dialog>
+
+    <script>
+        var dialog = document.getElementById('dialog');
+
+        function openDialog() {
+            dialog.showModal();
+
+            dialog.querySelector('.btn-close').addEventListener('click', function() {
+                dialog.close();
+            });
+        }
+        function closeDialog() {
+            dialog.close();
+            document.getElementById('containerErrors').innerHTML = "";
+        }
+
+    </script>
+
+        
+    @if(isset($errors) && count($errors) > 0)
+        
+        @foreach($errors->all() as $error)
+            <script>
+                document.getElementById('hTitre').innerHTML = "Erreur(s)";
+                document.getElementById('containerErrors').innerHTML += "<p>{{$error}}</p>";
+            </script>
+        @endforeach
+        <script>
+            openDialog();
+        </script>
+    @elseif(isset($errors) && count($errors) <= 0)
+
+        <script>
+            closeDialog();
+        </script>
+    @endif
+
+    @if(session()->has('message'))
+        <script>
+            document.getElementById('hTitre').innerHTML = "Succès";
+            document.getElementById('containerErrors').innerHTML += "<p class=\"text-wrap\">{{ session()->get('message') }}</p>";
+            openDialog();
+        </script>
+    @endif
+
+
   <div class="container-fluid h-100 w-100">
 
     @yield('contenu')
@@ -45,29 +106,10 @@
         <a href="#">Account</a>        
       </nav>      
     </header> -->
-          @if(isset($errors))
-            <script>
-              toastBootstrap.show();
-            </script>
-          @endif
 
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-          <strong class="me-auto">Liste des erreurs</strong>
-          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-          @if(isset($errors) && $errors->any())
-            @foreach($errors->all() as $error)
-              <li>{{$error}}</li>
-            @endforeach
-          @endif
-        </div>
-      </div>
-    </div>
 
-    
+
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

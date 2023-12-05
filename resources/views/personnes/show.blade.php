@@ -59,8 +59,14 @@
                         <span>Modifier</span>
                     </a>
 
-                    <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
-
+                    <form method="POST" action="{{route('personnes.destroy', [$personne->id])}}" class="m-0 p-0">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger d-flex flex-column align-items-center justify-content-center ">
+                            <span class="material-symbols-outlined">delete</span>
+                            <span>Supprimer</span>
+                        </button>
+                    </form>
                 </div>
 
             </div>

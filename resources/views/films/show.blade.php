@@ -83,17 +83,29 @@
                         </tr>
                     </table>
                 </div>
-                <div class="card-footer">
-                    <a href="{{route('films.edit', [$film])}}" class="btn btn-warning">
+                <div class="card-footer d-flex flex-row align-items-center justify-content-evenly ">
+
+                    <a href="{{ route('films.index') }}" class="btn btn-primary d-flex flex-column">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                        <span>Retour</span>
+                    </a>
+
+                    <a href="{{route('films.edit', [$film])}}" class="btn btn-warning d-flex flex-column align-items-center justify-content-center">
                         <span class="material-symbols-outlined">
                             edit
                         </span>
+                        <span>Modifier</span>
                     </a>
-                    <a href="{{route('films.edit', [$film])}}" class="btn btn-danger">
-                        <span class="material-symbols-outlined">
-                            delete
-                        </span>
-                    </a>
+
+                    <form method="POST" action="{{route('films.destroy', [$film->id])}}" class="m-0 p-0">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger d-flex flex-column align-items-center justify-content-center ">
+                            <span class="material-symbols-outlined">delete</span>
+                            <span>Supprimer</span>
+                        </button>
+                    </form>
+
                 </div>
             </div>
         </div>

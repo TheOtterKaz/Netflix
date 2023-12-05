@@ -73,5 +73,9 @@ Route::post('/films',
 Route::patch('/personnes/{personne}/modifier',
 [PersonnesController::class, 'update'])->name('personnes.update');
 
+
+Route::patch('/films/{film}/modifier',
+[FilmsController::class, 'update'])->name('films.update');
+
 Route::delete('/personnes/{id}',
 [PersonnesController::class, 'destroy'])->name('personnes.destroy');

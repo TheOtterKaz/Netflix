@@ -7,6 +7,7 @@ use App\Http\Requests\PersonnesRequest;
 use Illuminate\Http\Request;
 use App\Models\Personne;
 use App\Models\Film;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Log;
 
 class PersonnesController extends Controller
@@ -21,6 +22,7 @@ class PersonnesController extends Controller
         $realisateurs = Personne::join('films', 'personnes.id', '=', 'films.realisateur_id')     ->select('personnes.*')     ->distinct()     ->get();
         $producteurs = Personne::join('films', 'personnes.id', '=', 'films.producteur_id')     ->select('personnes.*')     ->distinct()     ->get();
         $acteurs = Personne::join('film_personne', 'personnes.id', '=', 'film_personne.personne_id')     ->select('personnes.*')     ->distinct()     ->get();
+
         return View('personnes.index', compact('personnes', 'realisateurs', 'producteurs', 'acteurs'));        
     }
 
@@ -76,18 +78,20 @@ class PersonnesController extends Controller
      */
     public function update(PersonnesRequest $request, Personne $personne)
     {
+        Log::debug($request);
         try{
             $personne->nom = $request->nom;
             $personne->prenom = $request->prenom;
             $personne->id = $request->id;
             $personne->dateNaiss = $request->dateNaiss;
             $personne->sexe = $request->sexe;
-            $personne->imagePers = $personne->imagePers;
+
+            // /* LIGNE QUI POSE PROBLÈME */$personne->imagePers = $request->imagePers;
 
 
             $personne->save();
             Log::debug("La personne " . $personne->nom . " " . $personne->prenom . " a été modifiée avec succès !");
-            return redirect()->route('personnes.index')->with('message', 'La personne nommée ' . $personne->nom , $personne->prenom . ' as été modifiée avec succès !');
+            return redirect()->route('personnes.index')->with('message', 'La personne nommée ' . $personne->nom . ', ' . $personne->prenom . ' as été modifiée avec succès !');
         }
         catch(\Throwable $e){
             Log::debug($e);
