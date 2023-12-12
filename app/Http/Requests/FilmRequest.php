@@ -33,7 +33,7 @@ class FilmRequest extends FormRequest
             'realisateur_id' => 'integer', 
             'producteur_id' => 'integer', 
             'type' => 'required|string|max:300', 
-            'imageFilm' => 'string|max:2048', 
+            'imageFilm' => 'required|image|mimes:png,jpeg,jpg,gif|max:4096', 
             'lienFilm' => 'string|max:2048',
         ];
     }
@@ -52,7 +52,8 @@ class FilmRequest extends FormRequest
             'realisateur_id.required' => 'Le réalisateur est requis',
             'producteur_id.required' => 'Le producteur est requis',
             'type.required' => 'Le type est requis',
-            'imageFilm.required' => 'L\'image est requise',
+            'imageFilm.mimes' => 'Le type d\'image n\'est pas valide (png, jpeg, jpg, gif)',
+            'imageFilm.max' => 'L\'image est trop lourde (max 4Mo)',
             'lienFilm.required' => 'Le lien est requis'
         ];
     }

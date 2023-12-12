@@ -38,6 +38,7 @@
         function closeDialog() {
             dialog.close();
             document.getElementById('containerErrors').innerHTML = "";
+            sessionStorage.removeItem('message');
         }
 
     </script>

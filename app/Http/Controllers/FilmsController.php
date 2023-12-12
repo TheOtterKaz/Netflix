@@ -9,6 +9,7 @@ use Illuminate\View\View;
 use App\Models\Film;
 use App\Models\Personne;
 use \Illuminate\Support\Facades\Log;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 class FilmsController extends Controller
 {
@@ -39,6 +40,19 @@ class FilmsController extends Controller
     {
         try{
             $film = new Film($request->all());
+
+            $uploadedImage = $request->file('imageFilm');
+            $nomFichierUnique = str_replace(' ', '_', $request->titre) . '_' . uniqid() . '.' . $uploadedImage->extension();
+
+            try{
+                $request->imageFilm->move(public_path('img/films'), $nomFichierUnique);
+                log::debug('Image téléversée, nom de l\'image : ' . $nomFichierUnique);
+            }
+            catch(FileException $e){
+                Log::error('Erreur lors du téléversement de l\image. ', [$e]);
+            }
+
+            $film->imageFilm = $nomFichierUnique;
             $film->save();
             Log::debug("Le film" . $film->titre . "a bien été ajouté");
         }
@@ -75,8 +89,10 @@ class FilmsController extends Controller
      */
     public function update(FilmRequest $request, Film $film)
     {
+        Log::debug("Début update film");
         // Log::debug($request);
         try{
+            Log::debug("RÉcup infos");
             $film->id = $request->id;
             $film->titre = $request->titre;
             $film->resume = $request->resume;
@@ -87,7 +103,22 @@ class FilmsController extends Controller
             $film->type = $request->type;
             $film->cote = $request->cote;
             
+            Log::debug("Récup image");
+            $uploadedImage = $request->file('imageFilm');
+            Log::debug("Image : " . $uploadedImage);
 
+            Log::debug("Récup nom image");
+            $nomFichierUnique = str_replace(' ', '_', $request->titre) . '_' . uniqid() . '.' . $uploadedImage->extension();
+            Log::debug("Nom image : " . $nomFichierUnique);
+            try{
+                $request->imageFilm->move(public_path('img/films'), $nomFichierUnique);
+                log::debug('Image téléversée, nom de l\'image : ' . $nomFichierUnique);
+            }
+            catch(FileException $excp){
+                Log::error('Erreur lors du téléversement de l\'image. ', [$excp]);
+            }
+
+            $film->imageFilm = $nomFichierUnique;
             $film->save();
             Log::debug("Le film" . $film->titre . "a bien été modifié");
             return redirect()->route('films.index')->with('message', "Modification de " . $film->titre . " réussie");

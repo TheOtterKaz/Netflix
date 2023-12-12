@@ -58,7 +58,13 @@
                         @if($film->annee == '2023')
                             <a href="{{ route('films.show', [$film]) }}">
                                 <div class="card border border-0 p-0 m-0 g-0">
+                                  @if (file_exists(public_path('img/films/' . $film->imageFilm)))
+                                    <img src="{{ asset('img/films/' . $film->imageFilm) }}" alt="{{ $film->titre }}" title="{{ $film->titre }}">
+                                  @else
                                     <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
+                                  @endif
+                                    <!-- <img src="{{$film->imageFilm}}" alt="" class=" g-0 border border-0 imgFilm card-img">
+                                    <img src="{{ asset('img/films/' . $film->imageFilm) }}" alt="{{ $film->titre }}" title="{{ $film->titre }}"> -->
                                 </div>
                             </a>
                         @endif

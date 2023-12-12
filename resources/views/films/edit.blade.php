@@ -23,12 +23,12 @@
 
 </header>
 
-<div class="row h-75 d-flex align-items-center justify-content-center">
-    <div class="card m-5 bg-secondary-subtle border border-0 col-6">
-        <form method="POST" action="{{route('films.update', [$film]) }}" >
-            @csrf
-            @method('PATCH')
-            <div class="card-body">
+<div class="row h-100 d-flex align-items-center justify-content-center">
+    <form method="POST" action="{{route('films.update', [$film]) }}" class="col-12 d-flex align-items-center justify-content-center h-75 w-75" enctype="multipart/form-data">
+        @csrf
+        @method('PATCH')
+        <div class="card h-75 w-75 bg-secondary-subtle border border-0 col-6">
+            <div class="card-body h-75 d-flex flex-column justify-content-evenly">
                 <div class="row d-flex align-items-center justify-content-center">
                     <div class="col-4">
                         <div class="form-floating">
@@ -87,15 +87,7 @@
                     </div>
 
                     <div class="col-7">
-                        <div class="progress" role="progressbar" aria-label="Success example" aria-valuemin="0" aria-valuemax="100" style="height: 100%">
-                            <div class="progress-bar bg-success p-2" style="width: {{$film->cote}}%">
-                                <div class="d-flex flex-row align-items-center justify-content-evenly ">
-                                    <span class="material-symbols-outlined p-0 m-0"> star_rate </span>
-                                    <h5 class="p-0 m-0">{{$film->cote}}%</h5>
-                                    <span class="material-symbols-outlined p-0 m-0"> star_rate </span>
-                                </div>
-                            </div>
-                        </div>
+                            <input type="file" name="imageFilm" id="imageFilm" class="form-control-file" placeholder="Image du film" >
                     </div>
                 </div>
 
@@ -147,7 +139,7 @@
                     </div>
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
 </div>
 @endsection
