@@ -32,7 +32,7 @@
                 <div class="row d-flex align-items-center justify-content-center">
                     <div class="col-4">
                         <div class="form-floating">
-                            <input type="number" name="id" class="form-control" id="inputID" placeholder="ID" readonly aria-readonly="true" value="{{ old('id', $film->id) }}" name="id">
+                            <input type="number" name="id" class="form-control" id="inputID" placeholder="ID" readonly aria-readonly="true" value="{{ old('id', $film->id) }}">
                             <label for="inputID">Identifiant</label>
                         </div>
                     </div>
