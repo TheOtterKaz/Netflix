@@ -114,3 +114,5 @@
 
         <div class="offset col-2"></div>
     </section>
+
+    <!-- Ajout d'un commentaire pour commit -->
