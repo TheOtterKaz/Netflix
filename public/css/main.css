@@ -468,7 +468,7 @@ ul {
   height: 40px;
   width: 40px;
   -webkit-border-radius: 4px;
-  border-radius: 4px;
+  border-radius: 50px;
   background-image: -moz-linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
   background-image: -webkit-linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
   background-image: -ms-linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
@@ -572,9 +572,8 @@ ul {
     font-size: 30px;
   }
   .header__sign-in {
-    height: 50px;
-    width: 140px;
-    margin-left: 30px;
+    height: 40px;
+    width: 50px;
   }
   .header__sign-in i {
     display: none;
@@ -599,7 +598,7 @@ ul {
 }
 @media (min-width: 1200px) {
   .header__sign-in {
-    margin-left: 45px;
+    margin-left: 20px;
   }
   .header__auth {
     margin-right: 0;

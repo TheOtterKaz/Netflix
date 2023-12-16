@@ -83,12 +83,13 @@
 
   <!-- header Connexion -->
 							<div class="header__auth">
-								<a href="{{ route('usagers.login') }}" class="header__sign-in">									
-									<span>Connexion</span>
+								<a href="{{ route('usagers.login') }}" class="header__sign-in">		
+								<img src="/img/connexion.png" alt="Connexion" style="height: 30px;"> 							
+									
 								</a>
 
-								<a href="{{ route('usagers.login') }}" class="header__sign-in">									
-									<span>Déconnexion</span>
+								<a href="" class="header__sign-in">									
+								<img src="/img/deconnexion.png" alt="Connexion" style="height: 30px;"> 
 								</a>
 							</div>
 
