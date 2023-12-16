@@ -28,7 +28,7 @@
 	<div class="container">
         <div class="row">
 			<div class="col-12 col-md-12 col-xl-12">								
-                <a href="" class="add__btn">Ajouter</a>
+                <a href="{{ route('personnes.create') }}" class="add__btn">Ajouter</a>
 			</div>
 		</div>
 	</div>
@@ -52,7 +52,12 @@
                     <!-- boutons -->            
 					<div class="card__listAdmin">
                         <a href="{{ route('personnes.edit', [$personne]) }}" class="admin__btn">Modifier</a>
-                        <a href="" class="admin__btn">Supprimer</a>
+
+						<form method="POST" action="{{route('personnes.destroy', [$personne->id])}}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="admin__btn">Supprimer</button>
+                        </form>
                     </div>							
 
 				</div>			

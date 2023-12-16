@@ -617,7 +617,7 @@ class PersonneSeeder extends Seeder
                 'prenom' => 'John',
                 'dateNaiss' => '1977-11-02',
                 'sexe' => 'M',
-                'imagePers' => 'https://media.gettyimages.com/photos/executive-producer-john-rickard-speaks-onstage-at-the-frequency-panel-picture-id588430914?s=612x612',
+                'imagePers' => 'https://resizing.flixster.com/JbgjG4hNrc7djjqLNIIPzY1hkuU=/218x280/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/691416_v9_ba.jpg',
             ],
 
             [ 
@@ -707,7 +707,7 @@ class PersonneSeeder extends Seeder
                 'prenom' => 'Peter',
                 'dateNaiss' => '1958-04-06',
                 'sexe' => 'M',
-                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/9/94/V_DelVechoHeadshot.jpg',
+                'imagePers' => 'https://upload.wikimedia.org/wikipedia/commons/0/04/Frozen_premier.jpg',
             ],
 
             [ 

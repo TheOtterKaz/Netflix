@@ -1,136 +1,74 @@
 @extends('layouts.app')
 
-@section('title', 'Film - Zoom')
-
 @section('contenu')
 
-<header class="row d-flex justify-content-between fixed-top ">
 
-    <div class="netflixLogo col-1 d-flex align-items-center justify-content-center p-0">
-        <a id="logo" href="{{ route('films.index') }}">
-            <img src="/img/logo.PNG" alt="Logo Image">
-        </a>
-    </div>      
+<body class="body">
+	<div class="sign section--bg" data-bg="img/section/section.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="sign__content">
+			<!-- Formulaire -->
+						<form method="POST" action="{{route('films.update', [$film]) }}" class="sign__form" enctype="multipart/form-data">
+                            <h3 class="section__title">Modification d'un film</h3>
+                        @csrf
+                        @method('PATCH')    
 
-    <nav class="sub-nav col-1 d-flex align-items-center justify-content-evenly flex-row p-0 m-0">
-
-        <a href="#" class="d-flex align-items-center"> 
-            <span class="material-symbols-outlined">
-                account_circle 
-            </span> 
-        </a>     
-    </nav>
-
-</header>
-
-<div class="row h-75 d-flex align-items-center justify-content-center">
-    <div class="card m-5 p-0 bg-secondary-subtle border border-0 col-6">
-        <div class="card-body">
-            <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-8">
-                    <div class="form-floating">
-                        <input type="number" class="form-control" id="inputID" placeholder="ID" readonly aria-readonly="true">
-                        <label for="inputID">Identifiant</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-8">
-                    <div class="form-floating">
-                        <input type="text" name="nouveauTitre" class="form-control" id="textNouvTitre" placeholder="Titre">
-                        <label for="textNouvTitre">Titre</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-8">
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Entrez le résumé du film" id="nouvResume"></textarea>
-                        <label for="nouvResume">Résumé du film</label>
-                    </div>
-                </div>
-            </div>
+            <!-- Identifiant ¤ Titre-->
+                            <div class="sign__group">
+                                <input type="number" name="id" class="modif__id" id="inputID" placeholder="ID" value="{{ old('id', $film->id) }}" readonly aria-readonly="true">
+                                <input type="text" name="titre" class="modif__titre" id="textNouvTitre" placeholder="Titre" value="{{ old('titre', $film->titre) }}">
+                            </div>        
             
+            <!-- Résumé -->
+							<div class="sign__group">
+                                <textarea name="resume" class="modif_textarea" placeholder="Entrez le résumé du film" id="nouvResume">{{ old('resume', $film->resume) }}</textarea>
+							</div>
             
+            <!-- Brand ¤ Type -->
+							<div class="sign__group">
+                                <input type="text" name="brand" class="modif__input" id="textNouvBrand" placeholder="Brand" value="{{ old('brand', $film->brand) }}">
+                                <input type="text" name="type" class="modif__input" id="inType" placeholder="Type" value="{{ old('type', $film->type) }}">
+							</div>
+            
+            <!-- Cote ¤ Rating -->
+							<div class="sign__group">
+                                <input type="number" name="cote" class="modif__input" id="inCote" placeholder="Cote" value="{{ old('cote', $film->cote) }}">                                
 
+                                <input type="text" name="rating" class="modif__input" id="textNouvRating" list="ratingOptions" placeholder="Rating" value="{{ old('rating', $film->rating) }}">
+                                    <datalist id="ratingOptions">
+                                        <option value="G">
+                                        <option value="13+">
+                                        <option value="16+">
+                                        <option value="18+">
+                                    </datalist>
+                                </input>     
+							</div>
 
-            <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-8">
-                    <div class="form-floating">
-                        <input type="text" name="nouvBrand" class="form-control" id="textNouvBrand" placeholder="Brand">
-                        <label for="textNouvBrand">Brand</label>
-                    </div>
-                </div>
-            </div>
+            <!-- Durée ¤ Année de sortie -->
+                            <div class="sign__group">
+                                <input type="number" name="duree" class="modif__input" id="floatingDuree" placeholder="Duree (en minutes)" min="0" value="{{ old('duree', $film->duree) }}">
+                                <input type="number" name="annee" class="modif__input" id="inAnnee" placeholder="Année de sortie" min="0" value="{{ old('annee', $film->annee) }}">
+                            </div>                                                                   
+            
+            <!-- Image -->
+                            <div class="sign__group">
+                                <input type="file" name="imageFilm" class="modif__image" id="imageFilm" placeholder="Image du film" value="{{ old('imageFilm', $film->imageFilm) }}">
+							</div>
+            
+            <!-- Boutons -->
+                            <div class="modif_btn_group">
+                                <button class="modif__btn" type="submit">Modifier</button>                                
+                                <a href="{{ route('admin.listeFilms') }}" class="modif__btn">Retour</a>                                
+                            </div>						
 
-            <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-8">
-                    <div class="form-floating">
-                        <input type="text" name="nouvCollection" class="form-control" id="textNouvCollection" placeholder="Collection">
-                        <label for="textNouvCollection">Collection</label>
-                    </div>
-                </div>
-            </div>
+						</form>
 
-            <div class="row d-flex align-items-center justify-content-center py-2">
-                <div class="col-8">
-                    <div class="progress" role="progressbar" aria-label="Success example" aria-valuemin="0" aria-valuemax="100" style="height: 100%">
-                        <div class="progress-bar bg-success p-2" style="width: {{$film->cote}}%">
-                            <div class="d-flex flex-row align-items-center justify-content-evenly ">
-                                <span class="material-symbols-outlined p-0 m-0"> star_rate </span>
-                                <h5 class="p-0 m-0">{{$film->cote}}%</h5>
-                                <span class="material-symbols-outlined p-0 m-0"> star_rate </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-8 d-flex align-items-center justify-content-evenly">
-                        <button class="btn btn-vert d-flex align-items-center justify-content-center">
-                            <!-- <img src="/img/ratingGeneral.png" class="img-fluid"> -->
-                            <p class="m-0 p-0"><b> G </b></p>
-                        </button>
-                        <button class="btn btn-jaune d-flex align-items-center justify-content-center">
-                            <!-- <img src="/img/rating13.png" class="img-fluid"> -->
-                            <p class="m-0 p-0"><b>13 +</b></p>
-                        </button>
-                        <button class="btn btn-bleu d-flex align-items-center justify-content-center">
-                            <p class="m-0 p-0"><b>16 +</b></p>
-                        </button>
-                        <button class="btn btn-rouge d-flex align-items-center justify-content-center">
-                            <p class="m-0 p-0"><b>18 +</b></p>
-                        </button>
-                </div>
-            </div>
-
-            <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-8">
-                    <div class="form-floating">
-                        <input type="number" class="form-control" id="floatingDuree" placeholder="Duree" min="0">
-                        <label for="floatingDuree">Durée du film (en minutes)</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-footer border border-0 bg-secondary-subtle">
-                <div class="row d-flex align-items-center justify-content-center">
-                    <div class="col-8 d-flex align-items-center justify-content-center">
-                        <a href="{{ route('films.index') }}" class="btn btn-primary">Retour</a>
-                        <a href="" class="btn btn-warning">Modifier</a>
-                        <form method="POST" action="{{route('films.destroy', [$film->id])}}">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Supprimer</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 @endsection

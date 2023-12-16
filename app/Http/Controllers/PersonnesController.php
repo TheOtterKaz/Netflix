@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PersonneRequest;
 use Illuminate\Http\Request;
 use App\Models\Personne;
 use App\Models\Film;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Log;
 
 class PersonnesController extends Controller
@@ -20,6 +22,7 @@ class PersonnesController extends Controller
         $realisateurs = Personne::join('films', 'personnes.id', '=', 'films.realisateur_id')     ->select('personnes.*')     ->distinct()     ->get();
         $producteurs = Personne::join('films', 'personnes.id', '=', 'films.producteur_id')     ->select('personnes.*')     ->distinct()     ->get();
         $acteurs = Personne::join('film_personne', 'personnes.id', '=', 'film_personne.personne_id')     ->select('personnes.*')     ->distinct()     ->get();
+        
         return View('personnes.index', compact('personnes', 'realisateurs', 'producteurs', 'acteurs'));        
     }
 
@@ -29,6 +32,7 @@ class PersonnesController extends Controller
         $realisateurs = Personne::join('films', 'personnes.id', '=', 'films.realisateur_id')     ->select('personnes.*')     ->distinct()     ->get();
         $producteurs = Personne::join('films', 'personnes.id', '=', 'films.producteur_id')     ->select('personnes.*')     ->distinct()     ->get();
         $acteurs = Personne::join('film_personne', 'personnes.id', '=', 'film_personne.personne_id')     ->select('personnes.*')     ->distinct()     ->get();
+        
         return View('admin.listePers', compact('personnes', 'realisateurs', 'producteurs', 'acteurs'));
     }
 
@@ -50,7 +54,17 @@ class PersonnesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $personne = new Personne($request->all());
+            $personne->save();
+            Log::debug("La personne " . $personne->nom . " " . $personne->prenom . " a été ajoutée avec succès !");
+        }
+        catch(\Throwable $e){
+            Log::debug($e);
+            $errors = "Impossible d'ajouter cette personne !";
+        }
+
+        return redirect()->route('personnes.index');
     }
 
     /**
@@ -77,9 +91,29 @@ class PersonnesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(PersonneRequest $request, Personne $personne)
     {
-        //
+        Log::debug($request);
+        try{
+            $personne->nom = $request->nom;
+            $personne->prenom = $request->prenom;
+            $personne->id = $request->id;
+            $personne->dateNaiss = $request->dateNaiss;
+            $personne->sexe = $request->sexe;
+
+            // /* LIGNE QUI POSE PROBLÈME */$personne->imagePers = $request->imagePers;
+
+
+            $personne->save();
+            Log::debug("La personne " . $personne->nom . " " . $personne->prenom . " a été modifiée avec succès !");
+            return redirect()->route('personnes.index')->with('message', 'La personne nommée ' . $personne->nom . ', ' . $personne->prenom . ' as été modifiée avec succès !');
+        }
+        catch(\Throwable $e){
+            Log::debug($e);
+            return redirect()->route('personnes.index')->withErrors(['Impossible de modifier cette personne !']);
+        }
+
+        return redirect()->route('personnes.index');
     }
 
     /**

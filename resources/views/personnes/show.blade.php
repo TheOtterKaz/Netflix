@@ -19,7 +19,14 @@
 						<div class="card__cover">
 							<img src="{{$personne->imagePers}}" alt="ImagePers">
 						</div>
+
+                          <!-- Boutons -->                         
+                             
+                             <a href="{{ route('personnes.index') }}" class="zoom__btn"><- Retour</a>                                
+                         
 					</div> 
+
+                                      
 
     <!-- infos -->
                     <div class="col-12 col-sm-8 col-md-8 col-lg-9 col-xl-7">

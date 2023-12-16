@@ -17,37 +17,37 @@ class UsagerSeeder extends Seeder
         DB::table('usagers')->insert([
 
             //Admin
-            // [
-            //     'id' => 1,
-            //     'role' => 'admin',
-            //     'nomUsager' => 'leSuperAdmin',
-            //     'nom' => 'PerAdmin',
-            //     'prenom' => 'leSu',
-            //     'email' => 'leBestAdmin01@email.com',
-            //     'password' => Hash::make('asdf1234')
-            // ],
+            [
+                'id' => 1,
+                'role' => 'admin',
+                'nomUsager' => 'leSuperAdmin',
+                'nom' => 'PerAdmin',
+                'prenom' => 'leSu',
+                'email' => 'leBestAdmin01@email.com',
+                'password' => Hash::make('asdf1234'),
+            ],
 
-            // Normal
-            // [
-            //     'id' => 2,
-            //     'role' => 'normal',
-            //     'nomUsager' => 'leNormalUser',
-            //     'nom' => 'malUser',
-            //     'prenom' => 'leNor',
-            //     'email' => 'lenormal02@email.com',
-            //     'password' => Hash::make('zxcv5678')
-            // ],
+            //Normal
+            [
+                'id' => 2,
+                'role' => 'normal',
+                'nomUsager' => 'leNormalUser',
+                'nom' => 'malUser',
+                'prenom' => 'leNor',
+                'email' => 'lenormal02@email.com',
+                'password' => Hash::make('zxcv5678'),
+            ],
 
-            // Kiddo
-            // [
-            //     'id' => 3,
-            //     'role' => 'kid',
-            //     'nomUsager' => 'leKiddoUser',
-            //     'nom' => 'doUser',
-            //     'prenom' => 'leKid',
-            //     'email' => 'lekiddo25@email.com',
-            //     'password' => Hash::make('abcd12')
-            // ],
+            //Kiddo
+            [
+                'id' => 3,
+                'role' => 'kid',
+                'nomUsager' => 'leKiddoUser',
+                'nom' => 'doUser',
+                'prenom' => 'leKid',
+                'email' => 'lekiddo25@email.com',
+                'password' => Hash::make('abcd12'),
+            ],
         ]);
     }
 }

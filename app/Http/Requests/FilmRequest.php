@@ -24,16 +24,17 @@ class FilmRequest extends FormRequest
         return [           
             'titre' => 'required|string|max:100', 
             'resume' => 'required|string|max:500', 
-            'brand' => 'required|string|max:250',  
-            'cote' => 'required|int|max:11', 
+            'brand' => 'required|string|max:250', 
+            'collection' => 'required|string|max:250', 
+            'cote' => 'required|integer', 
             'rating' => 'required|string|max:50',                             
-            'duree' => 'required|integer|max:11', 
-            'annee' => 'required|integer|max:11', 
-            'realisateur_id' => 'required|integer|max:20', 
-            'producteur_id' => 'required|integer|max:20', 
+            'duree' => 'required|integer', 
+            'annee' => 'required|integer', 
+            'realisateur_id' => 'integer', 
+            'producteur_id' => 'integer', 
             'type' => 'required|string|max:300', 
-            'imageFilm' => 'required|string|max:2048', 
-            'lienFilm' => 'required|string|max:2048',
+            'imageFilm' => 'required|image|mimes:png,jpeg,jpg,gif|max:4096', 
+            'lienFilm' => 'string|max:2048',
         ];
     }
 
@@ -42,6 +43,7 @@ class FilmRequest extends FormRequest
             'titre.required' => 'Le titre est requis',
             'resume.required' => 'Le résumé est requis',
             'brand.required' => 'La marque est requise',
+            'collection.required' => 'La collection est requise',
             'cote.required' => 'La cote est requise',
             'rating.required' => 'Le rating est requis',
             'duree.required' => 'La durée est requise',
@@ -49,7 +51,8 @@ class FilmRequest extends FormRequest
             'realisateur_id.required' => 'Le réalisateur est requis',
             'producteur_id.required' => 'Le producteur est requis',
             'type.required' => 'Le type est requis',
-            'imageFilm.required' => 'L\'image est requise',
+            'imageFilm.mimes' => 'Le type d\'image n\'est pas valide (png, jpeg, jpg, gif)',
+            'imageFilm.max' => 'L\'image est trop lourde (max 4Mo)',
             'lienFilm.required' => 'Le lien est requis'
         ];
     }

@@ -16,6 +16,12 @@ class UsagersController extends Controller
         return View('usagers.login');
     }
 
+    public function indexAdminU()
+    {
+        $usagers = Usager::all();
+        
+        return View('admin.listeUsagers', compact('usagers'));
+    }
     /**
      * affiche form de user
      */
@@ -29,7 +35,8 @@ class UsagersController extends Controller
      */
     public function create()
     {
-        //
+        $usagers = Usager::all();
+        return View('usagers.create', compact('usagers'));
     }
 
     /**
@@ -51,9 +58,9 @@ class UsagersController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Usager $usager)
     {
-        //
+        return View('usagers.edit', compact('usager'));
     }
 
     /**

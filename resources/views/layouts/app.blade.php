@@ -50,10 +50,20 @@
   <!-- header nav -->
 							<ul class="header__nav">
 
+	<!-- Onglet Admin -->
+							  <li class="header__nav-item">
+									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuHome" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+
+									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuHome">
+										<li><a href="{{ route('admin.listeFilms') }}">Liste Films</a></li>
+										<li><a href="{{ route('admin.listePers') }}">Liste Personnes</a></li>
+										<li><a href="{{ route('admin.listeUsagers') }}">Liste Usagers</a></li>
+									</ul>
+								</li>
   <!-- Onglet films -->
 								<li class="header__nav-item">
 									<a class="dropdown-toggle header__nav-link" href="{{ route('films.index') }}" role="button" id="dropdownMenuFilms">Films</a>
-
+								</li>	
   <!-- Onglet personnes -->
 								<li class="header__nav-item">
 									<a class="dropdown-toggle header__nav-link" href="{{ route('personnes.index') }}" role="button" id="dropdownMenuPers">Personnes</a>
@@ -68,29 +78,17 @@
 								<li class="header__nav-item">
 									<a href="{{ route('aide.index') }}" class="header__nav-link">Aide</a>
 								</li>
-
-  <!-- Onglet Aide -->
-								<li class="header__nav-item">
-									<a href="" class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuAdmin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
-
-									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuAdmin">
-										<li><a href="{{ route('admin.listeFilms') }}">Liste Films</a></li>
-										<li><a href="{{ route('admin.listePers') }}">Liste Personnes</a></li>
-									</ul>
-								</li>
-
 							</ul>
   <!-- Fin header nav -->
 
   <!-- header Connexion -->
 							<div class="header__auth">
-								<button class="header__search-btn" type="button">
-									<i class="icon ion-ios-search"></i>
-								</button>
-
-								<a href="" class="header__sign-in">
-									<i class="icon ion-ios-log-in"></i>
+								<a href="{{ route('usagers.login') }}" class="header__sign-in">									
 									<span>Connexion</span>
+								</a>
+
+								<a href="{{ route('usagers.login') }}" class="header__sign-in">									
+									<span>Déconnexion</span>
 								</a>
 							</div>
 
@@ -100,16 +98,12 @@
 			</div>
 		</div>
 
-<!-- ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤ A RENDRE UTILISABLE ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤ -->
-	<!-- header Recherche -->
 		<form action="#" class="header__search">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
 						<div class="header__search-content">
-							<input type="text" placeholder="Recherche pour un film">
 
-							<button type="button">Rechercher</button>
 						</div>
 					</div>
 				</div>
@@ -179,7 +173,6 @@
         </div>  
       </div>
     </footer>
-
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 	<script src="js/jquery-3.3.1.min.js"></script>

@@ -1,105 +1,64 @@
 @extends('layouts.app')
 
-@section('title', 'Film - Zoom')
-
 @section('contenu')
 
-<header class="row d-flex justify-content-between fixed-top ">
-
-    <div class="netflixLogo col-1 d-flex align-items-center justify-content-center p-0">
-        <a id="logo" href="{{ route('films.index') }}">
-            <img src="/img/logo.PNG" alt="Logo Image">
-        </a>
-    </div>      
-
-    <nav class="sub-nav col-1 d-flex align-items-center justify-content-evenly flex-row p-0 m-0">
-
-        <a href="#" class="d-flex align-items-center"> 
-            <span class="material-symbols-outlined">
-                account_circle 
-            </span> 
-        </a>     
-    </nav>
-
-</header>
-
-<div class="row h-75 d-flex align-items-center justify-content-center">
-    <div class="card m-5 p-0 bg-secondary-subtle border border-0 col-6">
-        <div class="card-body">          
-        
-            <!-- ID -->
-            <div class="row d-flex align-items-center justify-content-center">               
-                <div class="col-8">
-                    <div class="form-floating">
-                        <input type="number" class="form-control" id="inputID" placeholder="ID" readonly aria-readonly="true">
-                        <label for="inputID" class="text-dark">Identifiant</label>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Prénom -->                    
-            <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-8">
-                    <div class="form-floating">
-                        <input type="text" name="newPrenom" class="form-control" id="newPrenom" placeholder="Prenom">
-                        <label for="newPrenom" class="text-dark">Prénom</label>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Nom -->                    
-            <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-8">
-                    <div class="form-floating">
-                        <input type="text" name="newNom" class="form-control" id="newNom" placeholder="Nom">
-                        <label for="newNom" class="text-dark">Nom</label>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Date de naissance-->                    
-            <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-8">
-                    <div class="form-floating">
-                        <input type="date" name="newDateNaiss" class="form-control" id="newDateNaiss" placeholder="DateNaiss">
-                        <label for="newDateNaiss">Date de naissance</label>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sexe-->                    
-            <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-8">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input border-dark border-1" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Masculin">
-                        <label class="form-check-label text-dark" for="inlineRadio1">Masculin</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input border-dark border-1" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Feminin">
-                        <label class="form-check-label text-dark" for="inlineRadio2">Féminin</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input border-dark border-1" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Autre">
-                        <label class="form-check-label text-dark" for="inlineRadio3">Autre</label>
-                    </div>
-                </div>
-            </div>   
-            
-            <div class="card-footer border border-0 bg-secondary-subtle">
-                <div class="row d-flex align-items-center justify-content-center">
-                    <div class="col-8 d-flex align-items-center justify-content-center">
-                        <a href="{{ route('personnes.index') }}" class="btn btn-primary">Retour</a>
-                        <a href="" class="btn btn-warning">Modifier</a>
-                        <!-- <form method="POST" action="{{route('personnes.destroy', [$personne->id])}}">
+<body class="body">
+	<div class="sign section--bg" data-bg="img/section/section.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="sign__content">
+			<!-- Formulaire -->
+						<form method="POST" action="{{ route('personnes.update', [$personne]) }}" class="sign__form" enctype="multipart/form-data">
+                            <h3 class="section__title">Modification d'une personne</h3>
                             @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Supprimer</button>
-                        </form> -->
-                    </div>
-                </div>
-            </div>
+                            @method('PATCH')    
+
+            <!-- Identifiant -->
+                            <div class="sign__group">
+                                <input type="number" name="id" class="modif__input" id="inputID" placeholder="ID" value="{{ old('id', $personne->id) }}" readonly aria-readonly="true">
+                            </div> 
+
+            <!-- Prenom ¤ Nom -->
+                            <div class="sign__group">
+                                <input type="text" name="prenom" class="modif__input" id="newPrenom" placeholder="Prénom" value="{{ old('prenom', $personne->prenom) }}">
+                                <input type="text" name="nom" class="modif__input" id="newNom" placeholder="Nom" value="{{ old('nom', $personne->nom) }}">
+                            </div>      
             
-        </div>
-    </div>
-</div>
+            <!-- Date de naissance ¤ Sexe -->
+							<div class="sign__group">
+                                <input type="date" name="dateNaiss" class="modif__input" id="newDateNaiss" placeholder="Date de Naissance" value="{{ old('dateNaiss', $personne->dateNaiss) }}">
+							
+                                <select name="sexe" id="choixNouvSexe" class="modif__input" placeholder="Sexe" value="{{ old('sexe', $personne->sexe) }}">
+                                    @if($personne->sexe == 'M' || $personne->sexe == 'H')
+                                        <option value="H" id="choixMasc" selected>Masculin</option>
+                                        <option value="F" id="choixFem">Féminin</option>
+                                        <option value="A" id="choixAutre">Autre</option>
+
+                                    @elseif($personne->sexe == 'F')
+                                        <option value="H" id="choixMasc">Masculin</option>
+                                        <option value="F" id="choixFem" selected>Féminin</option>
+                                        <option value="A" id="choixAutre">Autre</option>
+                                    @else
+                                        <option value="A" id="choixAutre" selected>Autre</option>
+                                        <option value="H" id="choixMasc">Masculin</option>
+                                        <option value="F" id="choixFem">Féminin</option>
+                                    @endif
+                                </select>
+                            </div>        
+            
+            <!-- Boutons -->
+                            <div class="modif_btn_group">
+                                <button class="modif__btn" type="submit">Modifier</button>                                
+                                <a href="{{ route('admin.listePers') }}" class="modif__btn">Retour</a>                                
+                            </div>						
+
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 @endsection

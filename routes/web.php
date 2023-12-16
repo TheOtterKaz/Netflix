@@ -36,6 +36,9 @@ Route::get('/', function () {
         Route::get('/films/{film}/modifier',
         [FilmsController::class, 'edit']) ->name('films.edit');
 
+        Route::patch('/films/{film}/modifier',
+        [FilmsController::class, 'update'])->name('films.update');
+
     //* Affichage zoom
         Route::get('/films/{film}/',
         [FilmsController::class, 'show']) ->name('films.show');
@@ -60,13 +63,44 @@ Route::get('/', function () {
         Route::get('/personnes/{personne}/modifier',
         [PersonnesController::class, 'edit']) ->name('personnes.edit');
 
+        Route::patch('/personnes/{personne}/modifier',
+        [PersonnesController::class, 'update'])->name('personnes.update');
+
     //* Affichage zoom    
         Route::get('/personnes/{personne}',
         [PersonnesController::class, 'show']) ->name('personnes.show');
 
+    //* Suppression
+        Route::delete('/personnes/{id}',
+        [PersonnesController::class, 'destroy'])->name('personnes.destroy');
+
     //* Liste des personnes ADMIN
         Route::get('/admin/personnes',
         [PersonnesController::class, 'indexAdminP']) ->name('admin.listePers');
+
+//? Usagers
+    //* Connexion
+        Route::get('/usagers/login',
+        [UsagersController::class, 'showLoginForm']) ->name('usagers.login');
+
+    //* Création
+        Route::get('usagers/creation',
+        [UsagersController::class, 'create']) ->name('usagers.create');
+
+    //* Modification
+        Route::get('/usagers/{usager}/modifier',
+        [UsagersController::class, 'edit']) ->name('usagers.edit');
+
+        Route::patch('/usagers/{usager}/modifier',
+        [UsagersController::class, 'update'])->name('usagers.update');
+
+    //* Déconnexion
+        Route::get('/usagers/logout',
+        [UsagersController::class, 'logout']) ->name('usagers.logout');
+
+    //* Liste des usagers ADMIN
+        Route::get('/admin/usagers',
+        [UsagersController::class, 'indexAdminU']) ->name('admin.listeUsagers');
 
 //? Autres
     //* Page des prix
@@ -78,12 +112,11 @@ Route::get('/', function () {
         [AidesController::class, 'index']) ->name('aide.index'); 
 
 //? : Store
+    //* Films
+        Route::post('/films',
+        [FilmsController::class, 'store'])->name('films.store');
+        
     //* Personnes
         Route::post('/personnes',
         [PersonnesController::class, 'store'])->name('personnes.store');
-
-        Route::post('/films',
-        [FilmsController::class, 'store'])->name('films.store');
-
-        Route::delete('/personnes/{id}',
-        [PersonnesController::class, 'destroy'])->name('personnes.destroy');
+    

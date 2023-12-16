@@ -1,119 +1,60 @@
 @extends('layouts.app')
 
-@section('title', 'Création personne')
-
 @section('contenu')
 
+<body class="body">
+	<div class="sign section--bg" data-bg="img/section/section.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="sign__content">
+			<!-- Formulaire -->
+                        <form method="POST" action="{{ route('personnes.store') }}" class="sign__form" enctype="multipart/form-data">
+                            @csrf
+                            <h3 class="section__title">Ajout d'une personne</h3>
 
-<header class="row d-flex justify-content-between fixed-top">
+            <!-- Prénom -->
+                            <div class="sign__group">
+                                <input type="text" class="sign__input" id='prenomPersonne' name="prenom" placeholder="Prénom">
+                            </div>
+            
+            <!-- Nom -->
+							<div class="sign__group">
+                            <input type="text" class="sign__input" id='nomPersonne' name="nom" placeholder="Nom">
+							</div>
 
-    <div class="netflixLogo col-1 d-flex align-items-center justify-content-center p-0">
-        <a id="logo" href="{{ route('films.index') }}">
-            <img src="/img/logo.PNG" alt="Logo Image">
-        </a>
-    </div>      
+            <!-- Date de naissance -->
+							<div class="sign__group">
+                                <input type="date" class="sign__input" id='inDateNaiss' name="dateNaiss" placeholder="Date de naissance">
+							</div>
 
-    <nav class="sub-nav col-1 d-flex align-items-center justify-content-evenly flex-row p-0 m-0">
+            <!-- Sexe-->
+							<div class="sign__group">
+                            <select name="sexe" id="Sexe" class="sign__input" placeholder="Sexe">                                    
+                                        <option value="H" id="choixMasc" selected>Masculin</option>
+                                        <option value="F" id="choixFem">Féminin</option>
+                                        <option value="A" id="choixAutre">Autre</option>                                   
+                                </select>
+							</div>                            
+                            
+            <!-- Lien photo -->
+                            <div class="sign__group">
+                                <input type="file" class="sign__input" id="imageFilm" name="imageID" placeholder="Image de la personne">
+                            </div>
+                            
+            <!-- Boutons -->
+                            <div class="modif_btn_group">
+                                <button class="modif__btn" type="Submit">Ajouter</button>                                
+                                <a href="{{ route('admin.listePers') }}" class="modif__btn">Retour</a>                                
+                            </div>						
 
-        <a href="#" class="d-flex align-items-center"> 
-            <span class="material-symbols-outlined">
-                account_circle 
-            </span> 
-        </a>     
-    </nav>
+						</form>
+						<!-- end authorization form -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 
-</header>
-
-<div class="row h-75 d-flex align-items-center">
-
-    <div class="d-flex align-items-center justify-content-center h-50">
-
-        
-        <div class="col-4 h-100">
-
-            <!-- Titre page -->
-            <div class="row">
-                <div class="col-12">
-                    <h3 class="text-center">Ajout d'une personne</h3>
-                </div>
-            </div>
-
-            <form method="post" action="{{ route('personnes.store') }}" class="h-100">
-
-                @csrf
-
-                <div class="form-group h-100 d-flex justify-content-evenly flex-column">
-
-                    <div class="row">
-
-                        <!-- Nom de la personne -->
-                        <div class="col-6">
-                            <input type="text" name="nom" id="nomPersonne" class="form-control" placeholder="Nom de la personne">
-                        </div>
-
-                        <!-- Prénom de la personne -->
-                        <div class="col-6">
-                            <input type="text" name="prenom" id="prenomPersonne" class="form-control" placeholder="Prénom de la personne">
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-
-                        <!-- Label pour date naissance -->
-                        <div class="col-6 d-flex justify-content-start align-items-center ">
-                            <label for="inDateNaiss">Date de naissance</label>
-                        </div>
-
-                        <!-- Input date naissance -->
-                        <div class="col-6 d-flex justify-content-end align-items-center ">
-                            <input type="date" name="dateNaiss" id="inDateNaiss" class="w-100 form-control " placeholder="Date de naissance">
-                        </div>
-                        
-                    </div>
-
-                    <div class="row">
-
-                        <!-- Radio choix sexe de la personne : HOMME -->
-                        <div class="col-4 d-flex align-items-center justify-content-center flex-column">
-                            <input type="radio" name="sexe" id="sexeM" class="btn-check" autocomplete="off">
-                            <label class="btn btn-secondary " for="sexeM">Homme</label>
-                        </div>
-
-                        <!-- Radio choix sexe de la personne : FEMME -->
-                        <div class="col-4 d-flex align-items-center justify-content-center flex-column">
-                            <input type="radio" name="sexe" id="sexeF" class="btn-check" autocomplete="off">
-                            <label for="sexeF" class="btn btn-secondary">Femme</label>
-                        </div>
-
-                        <!-- Radio choix sexe de la personne : AUTRE -->
-                        <div class="col-4 d-flex align-items-center justify-content-center flex-column">
-                            <input type="radio" name="sexe" id="sexeA" class="btn-check">
-                            <label for="sexeA" class="btn btn-secondary">Autre</label>
-                        </div>
-                    </div>
-
-                    <div class="row">
-
-                        <!-- Input lien imagePers -->
-                        <div class="col-12">
-                            <input type="text" name="inputLienIMG" id="imagePers" class="form-control" placeholder="Lien vers une image de cette personne">
-                        </div>
-
-                    </div>
-
-                    <div class="row d-flex align-items-center justify-content-center">
-                        <div class="d-flex align-items-center justify-content-center">
-                            <button type="submit" class="col-4 btn btn-primary">Enregistrer</button>
-                        </div>
-                    </div>
-                    
-                </div>
-
-            </form>
-
-        </div>
-        
-    </div>
-</div>
 @endsection
