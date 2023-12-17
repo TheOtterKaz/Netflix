@@ -86,7 +86,7 @@ Route::get('/', function () {
 
 //? Usagers
     //* Connexion
-        Route::get('/usagers/login',
+        Route::get('',
         [UsagersController::class, 'showLoginForm']) ->name('usagers.login');
 
     //* Création
