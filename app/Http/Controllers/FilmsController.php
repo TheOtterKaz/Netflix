@@ -46,7 +46,7 @@ class FilmsController extends Controller
     {
         Log::debug("Début store film");
         try{
-            Log::debug("RÉcup infos");
+            Log::debug("Récup infos Films");
             $film = new Film($request->all());
             $uploadedImage = $request->file('imageFilm');
             $nomFichierUnique = str_replace(' ', '_', $request->titre) . '_' . uniqid() . '.' . $uploadedImage->extension();
@@ -98,35 +98,20 @@ class FilmsController extends Controller
     public function update(FilmRequest $request, Film $film)
     {
         Log::debug("Début update film");
-        // Log::debug($request);
+
         try{
-            Log::debug("RÉcup infos");
+            Log::debug("Récup infos Film");
             $film->id = $request->id;
             $film->titre = $request->titre;
             $film->resume = $request->resume;
             $film->brand = $request->brand;
-            $film->type = $request->type;
             $film->cote = $request->cote;          
             $film->rating = $request->rating;
             $film->duree = $request->duree;
             $film->annee = $request->annee;
+            $film->type = $request->type;
+            $film->imageFilm = $request->imageFilm;
 
-            Log::debug("Récup image");
-            $uploadedImage = $request->file('imageFilm');
-            Log::debug("Image : " . $uploadedImage);
-
-            Log::debug("Récup nom image");
-            $nomFichierUnique = str_replace(' ', '_', $request->titre) . '_' . uniqid() . '.' . $uploadedImage->extension();
-            Log::debug("Nom image : " . $nomFichierUnique);
-            try{
-                $request->imageFilm->move(public_path('img/films'), $nomFichierUnique);
-                log::debug('Image téléversée, nom de l\'image : ' . $nomFichierUnique);
-            }
-            catch(FileException $excp){
-                Log::error('Erreur lors du téléversement de l\'image. ', [$excp]);
-            }
-
-            $film->imageFilm = $nomFichierUnique;
             $film->save();
             Log::debug("Le film" . $film->titre . "a bien été modifié");
             return redirect()->route('admin.listeFilms')->with('message', "Modification de " . $film->titre . " réussie");
@@ -134,8 +119,9 @@ class FilmsController extends Controller
         }
         catch(\Throwable $e){
             Log::debug($e);
-            return redirect()->route('admin.listeFilms')->withErrors('message', "Modification de " . $film->titre . " échouée");
+            return redirect()->route('admin.listeFilms')->withErrors('message', "Modification de " . $film->titre . " a échoué");
         }
+        return redirect()->route('admin.listeFilms');
     }
 
     /**
@@ -201,4 +187,6 @@ class FilmsController extends Controller
         }
         return redirect()->route('admin.listeFilms');
     }
+
+    
 }

@@ -10,12 +10,14 @@
 					<div class="sign__content">
 			<!-- Formulaire -->
 						<form method="POST" action="" class="sign__form" enctype="multipart/form-data">
-                            <h3 class="section__title">Modification d'un usager</h3>
-                        @csrf                          
+                            <h3 class="section__title">Modification de l'usager</h3>
+                            <h3 class="section__subtitle">{{ $usager->username}}</h3>
+                            @csrf     
+                            @method('PATCH')                    
 
             <!-- Rôle --->
-                        <div class="sign__group">
-                                <select name="role" id="role" class="modif__input" placeholder="Rôle" value="{{ old('role', $usager->role) }}">                                    
+                        <div class="sign__group form-group">
+                                <select name="role" id="role" class="modif__input form-control" placeholder="Rôle" value="{{ old('role', $usager->role) }}">                                    
                                         <option value="Admin" id="choixAdmin" selected>Admin</option>
                                         <option value="Adulte" id="choixAdulte">Adulte</option>
                                         <option value="Kid" id="choixKid">Enfant</option>                                   
@@ -23,15 +25,15 @@
 							</div>            
            
             <!-- Username ¤ Courriel -->
-                            <div class="sign__group">
-                                <input type="text" name="username" class="modif__input" id="username" placeholder="Username" value="{{ old('nomUsager', $usager->nomUsager) }}">
-                                <input type="email" name="email" class="modif__input" id="email" placeholder="Courriel" value="{{ old('email', $usager->email) }}">
+                            <div class="sign__group form-group">
+                                <input type="text" name="nomUsager" class="modif__input form-control" id="nomUsager" placeholder="Username" value="{{ old('nomUsager', $usager->nomUsager) }}">
+                                <input type="email" name="email" class="modif__input form-control" id="email" placeholder="Courriel" value="{{ old('email', $usager->email) }}">
 							</div>
 
             <!-- Prénom ¤ Nom-->
-                            <div class="sign__group">
-                                <input type="text" class="modif__input" id='Prenom' name="Prenom" placeholder="Prénom" value="{{ old('prenom', $usager->prenom) }}">
-                                <input type="text" class="modif__input" id='Nom' name="Nom" placeholder="Nom" value="{{ old('nom', $usager->nom) }}">
+                            <div class="sign__group form-group">
+                                <input type="text" class="modif__input form-control" id='prenom' name="prenom" placeholder="Prénom" value="{{ old('prenom', $usager->prenom) }}">
+                                <input type="text" class="modif__input form-control" id='nom' name="nom" placeholder="Nom" value="{{ old('nom', $usager->nom) }}">
                             </div>
                                         
             <!-- Boutons -->

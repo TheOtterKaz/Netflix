@@ -9,41 +9,41 @@
 				<div class="col-12">
 					<div class="sign__content">
 			<!-- Formulaire -->
-                        <form method="post" action="" class="sign__form" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('usagers.store')}}" class="sign__form" enctype="multipart/form-data">
                             @csrf
                                 <h3 class="section__title">Ajout d'un usager</h3>
 
             <!-- Role ¤ Username -->
-                            <div class="sign__group">                                
-                                <select name="role" id="role" class="sign__input" placeholder="Rôle">                                    
+                            <div class="sign__group form-group">                                
+                                <select name="role" id="role" class="sign__input form-control" placeholder="Rôle">                                    
                                         <option value="Admin" id="choixAdmin" selected>Admin</option>
                                         <option value="Adulte" id="choixAdulte">Adulte</option>
                                         <option value="Kid" id="choixKid">Enfant</option>                                   
                                 </select>							    
 
-                                <input type="text" class="sign__input" id='Username' name="Username" placeholder="Username">
+                                <input type="text" class="sign__input form-control" id='nomUsager' name="nomUsager" placeholder="Username" value="{{ old('nomUsager') }}">
                             </div>
 
             <!-- Prénom ¤ Nom -->
-                            <div class="sign__group">
-                                <input type="text" class="sign__input" id='Prenom' name="Prenom" placeholder="Prénom">
-                                <input type="text" class="sign__input" id='Nom' name="Nom" placeholder="Nom">
+                            <div class="sign__group form-group">
+                                <input type="text" class="sign__input form-control" id='prenom' name="prenom" placeholder="Prénom" value="{{ old('prenom') }}">
+                                <input type="text" class="sign__input form-control" id='nom' name="nom" placeholder="Nom" value="{{ old('nom') }}">
                             </div>
 
             <!-- Mot de passe ¤ Validation Mot de passe-->
-                            <div class="sign__group">
-                                <input type="password" class="sign__input" id='mdp1' name="mdp1" placeholder="Mot de passe">
-                                <input type="password" class="sign__input" id='mdp2' name="mdp2" placeholder="Validation du mot de passe">
+                            <div class="sign__group form-group">
+                                <input type="password" class="sign__input form-control" id='mdp1' name="mdp1" placeholder="Mot de passe">
+                                <input type="password" class="sign__input form-control" id='mdp2' name="mdp2" placeholder="Validation du mot de passe">
 							</div>        
 
             <!-- Courriel -->
-                            <div class="sign__group">
-                                <input type="email" class="sign__input" id='email' name="email" placeholder="Courriel">
+                            <div class="sign__group form-group">
+                                <input type="email" class="sign__input form-control" id='email' name="email" placeholder="Courriel" value="{{ old('email') }}">
                             </div>                     
                                                      
             <!-- Boutons -->
                             <div class="modif_btn_group">
-                                <button class="modif__btn" type="Submit">Ajouter</button>                                
+                                <button type="submit" class="modif__btn">Ajouter</button>                                
                                 <a href="{{ route('admin.listeUsagers') }}" class="modif__btn">Retour</a>                                
                             </div>						
 

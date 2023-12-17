@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 use App\Models\Personne;
 use App\Models\Film;
 use Illuminate\Contracts\Session\Session;
+use Illuminate\View\View;
 use Illuminate\Support\Facades\Log;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 class PersonnesController extends Controller
 {
@@ -43,7 +45,8 @@ class PersonnesController extends Controller
      */
     public function create()
     {
-        return View('personnes.create');
+        $personnes = Personne::all();
+        return View('personnes.create', compact('personnes'));
     }
 
     /**
@@ -54,34 +57,32 @@ class PersonnesController extends Controller
      */
     public function store(PersonneRequest $request)
     {
-        Log::debug("Entrée dans la fonction store");
+        Log::debug("Début store personne");
+
         try{
-            Log::debug("Entrée dans le try, récup des données");
+            Log::debug("Récup des données Personne");
             $personne = new Personne($request->all());
 
-            $uploadedFile = $request->file('imagePers');
-            $nomFichierUnique = str_replace(' ', '_', $request->nom) . '-' . uniqid() . '.' . $uploadedFile->extension();
+            $uploadedImage = $request->file('imagePers');
+            $nomFichierUnique = str_replace(' ', '_', $request->nom, $request->prenom) . '-' . uniqid() . '.' . $uploadedImage->extension();
 
             try{
                 $request->imagePers->move(public_path('img/Personnes'), $nomFichierUnique);
                 log::debug('Image téléversée, nom de l\'image : ' . $nomFichierUnique);
             }
 
-            catch(\Symfony\Component\HttpFoundation\File\Exception\FileException $e){
+            catch(FileException $e){
                 Log::debug("Erreur lors du téléversement du fichier", [$e]);                
             }
 
             $personne->imagePers = $nomFichierUnique;
-            Log::debug("Image téléversée, nom de l'image : " . $personne->imagePers);
+            Log::debug("Save Personne");
             $personne->save();
-            Log::debug("La personne " . $personne->nom . " " . $personne->prenom . " a été ajoutée avec succès !");
-
-            return redirect()->route('admin.listePers')->with('message', 'La personne nommée ' . $personne->nom . ', ' . $personne->prenom . ' a été ajoutée avec succès !');
+            Log::debug("La personne " . $personne->nom . " " . $personne->prenom . " a été ajoutée!");           
         }
 
         catch(\Throwable $e){
             Log::debug($e);
-            return redirect()->route('admin.listePers')->withErrors(['Impossible d\'ajouter cette personne !']);
         }
 
         return redirect()->route('admin.listePers');
@@ -117,20 +118,17 @@ class PersonnesController extends Controller
         try{
             $personne->nom = $request->nom;
             $personne->prenom = $request->prenom;
-            $personne->id = $request->id;
             $personne->dateNaiss = $request->dateNaiss;
             $personne->sexe = $request->sexe;
-
-            // /* LIGNE QUI POSE PROBLÈME */$personne->imagePers = $request->imagePers;
-
+            $personne->imagePers = $request->imagePers;
 
             $personne->save();
             Log::debug("La personne " . $personne->nom . " " . $personne->prenom . " a été modifiée avec succès !");
-            return redirect()->route('personnes.index')->with('message', 'La personne nommée ' . $personne->nom . ', ' . $personne->prenom . ' as été modifiée avec succès !');
+            return redirect()->route('personnes.index')->with('message', 'Personne modifiée avec succès');
         }
         catch(\Throwable $e){
             Log::debug($e);
-            return redirect()->route('personnes.index')->withErrors(['Impossible de modifier cette personne !']);
+            return redirect()->route('personnes.index')->withErrors(['Impossible de modifier cette personne']);
         }
 
         return redirect()->route('personnes.index');
@@ -139,18 +137,18 @@ class PersonnesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
         try{
             $personne = Personne::findorFail($id);
 
             $personne->delete();
 
-            return redirect()->route('personnes.index')->with('success', 'La personne nommée ' . $personne->nom , $personne->prenom . ' supprimée avec succès !');
+            return redirect()->route('admin.listePers')->with('success', 'Personne supprimée avec succès');
         }
         catch(\Throwable $e){
             Log::debug($e);
-            return redirect()->route('personnes.index')->withErrors(['Impossible de supprimer cette personne !']);
+            return redirect()->route('admin.listePers')->withErrors(['Impossible de supprimer cette personne']);
         }
 
         return redirect()->route('admin.listePers');

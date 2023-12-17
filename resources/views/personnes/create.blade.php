@@ -15,15 +15,15 @@
 
             <!-- Prénom ¤ Nom-->
                             <div class="sign__group form-group">
-                                <input type="text" class="sign__input form-control" id='prenomPersonne' name="prenom" placeholder="Prénom" value="{{ old('prenom') }}">
-                                <input type="text" class="sign__input form-control" id='nomPersonne' name="nom" placeholder="Nom" value="{{ old('nom') }}">
+                                <input type="text" class="sign__input form-control" id='prenom' name="prenom" placeholder="Prénom" value="{{ old('prenom') }}">
+                                <input type="text" class="sign__input form-control" id='nom' name="nom" placeholder="Nom" value="{{ old('nom') }}">
                             </div>            
 
             <!-- Date de naissance ¤ Sexe -->
 							<div class="sign__group form-group">
-                                <input type="date" class="sign__input form-control" id='inDateNaiss' name="dateNaiss" placeholder="Date de naissance" value="{{ old('dateNaiss') }}">
+                                <input type="date" class="sign__input form-control" id='dateNaiss' name="dateNaiss" placeholder="Date de naissance" value="{{ old('dateNaiss') }}">
 
-                                <select name="sexe" id="sexe" class="sign__input" placeholder="Sexe">                                    
+                                <select name="sexe" id="sexe" class="sign__input form-control" placeholder="Sexe">                                    
                                         <option value="H" id="choixMasc" selected>Masculin</option>
                                         <option value="F" id="choixFem">Féminin</option>
                                         <option value="A" id="choixAutre">Autre</option>  
@@ -32,7 +32,7 @@
                             
             <!-- Lien photo -->
                             <div class="sign__group form-group">
-                                <input type="file" class="add__image form-control" id="imageID" name="imagePers" placeholder="Image de la personne" value="{{ old('imagePers') }}">
+                                <input type="file" class="add__image form-control" id="imagePers" name="imagePers" placeholder="Image de la personne" value="{{ old('imagePers') }}">
                             </div>
                             
             <!-- Boutons -->

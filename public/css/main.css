@@ -1037,7 +1037,11 @@ ul {
   color: #fff;
   font-weight: 300;
   font-size: 28px;
-  margin-bottom: 25px;
+}
+.section__subtitle {
+  color: #fff;
+  font-weight: 300;
+  font-size: 25px;
 }
 .section__title b {
   font-weight: 700;
@@ -1133,6 +1137,9 @@ ul {
   .section__title {
     font-size: 30px;
   }
+  .section__subtitle {
+    font-size: 23px;
+  }
 }
 @media (min-width: 768px) {
   .section {
@@ -1140,6 +1147,10 @@ ul {
   }
   .section__title {
     font-size: 32px;
+
+  }
+  .section__subtitle {
+    font-size: 29px;
     margin-bottom: 35px;
   }
   .section__title--no-margin {
@@ -1168,6 +1179,9 @@ ul {
 @media (min-width: 1200px) {
   .section__title {
     font-size: 36px;
+  }
+  .section__subtitle {
+    font-size: 33px;
   }
   .section__title--sidebar {
     font-size: 32px;

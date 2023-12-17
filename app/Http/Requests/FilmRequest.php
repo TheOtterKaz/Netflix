@@ -9,7 +9,7 @@ class FilmRequest extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      */
-    public function authorize(): bool
+    public function authorize()
     {
         return true;
     }
@@ -17,9 +17,9 @@ class FilmRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array
      */
-    public function rules(): array
+    public function rules()
     {
         return [           
             'titre' => 'required|string|max:100', 
@@ -32,7 +32,7 @@ class FilmRequest extends FormRequest
             'realisateur_id' => 'integer', 
             'producteur_id' => 'integer', 
             'type' => 'required|string|max:300', 
-            'imageFilm' => 'required|image|mimes:png,jpeg,jpg,gif|max:4096', 
+            'imageFilm' => 'required|image|mimes:png,jpeg,jpg|max:4096', 
             'lienFilm' => 'string|max:2048',
         ];
     }

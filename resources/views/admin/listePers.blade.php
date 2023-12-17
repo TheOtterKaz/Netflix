@@ -58,7 +58,7 @@
 					<div class="card__listAdmin">
                         <a href="{{ route('personnes.edit', [$personne]) }}" class="admin__btn">Modifier</a>
 
-						<form method="POST" action="{{route('personnes.destroy', [$personne->id])}}">
+						<form method="POST" action="{{route('personnes.destroy', [$personne->id]) }}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="admin__btn">Supprimer</button>

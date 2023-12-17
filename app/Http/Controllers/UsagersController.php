@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\UsagerRequest;
 use Illuminate\Http\Request;
 use App\Models\Usager;
 use Illuminate\Support\Facades\Log;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 class UsagersController extends Controller
 {
@@ -18,8 +21,7 @@ class UsagersController extends Controller
 
     public function indexAdminU()
     {
-        $usagers = Usager::all();
-        
+        $usagers = Usager::all();        
         return View('admin.listeUsagers', compact('usagers'));
     }
     /**
@@ -41,10 +43,24 @@ class UsagersController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * 
+     * @param \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UsagerRequest $request)
     {
-        //
+        Log::debug("Début store usager");
+        try{
+            $usager = new Usager($request->all());
+            Log::debug("usager save");
+            $usager->save();
+        }
+
+        catch(\Throwable $e){
+            Log::debug($e);
+
+        }
+        return redirect()->route('admin.listeUsagers');
     }
 
     /**
@@ -66,17 +82,50 @@ class UsagersController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UsagerRequest $request, Usager $usager)
     {
-        //
+        Log::debug("Début update usager");
+        try{
+            $usager->role = $request->role;
+            $usager->nomUsager = $request->username;
+            $usager->nom = $request->nom;
+            $usager->prenom = $request->prenom;
+            $usager->email = $request->email;
+            $usager->password = $request->password;
+
+            Log::debug("usager save");
+            $usager->save();
+
+            return redirect()->route('admin.listeUsagers')->with('success', 'Usager modifié');
+        }
+
+        catch(\Throwable $e){
+            Log::debug($e);
+            return redirect()->route('admin.listeUsagers')->with('error', 'Erreur lors de la modification');
+        }
+        return redirect()->route('admin.listeUsagers');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        Log::debug("Début suppression usager");
+        try{
+            $usager = Usager::findOrFail($id);
+           
+            $usager->delete();
+
+            return redirect()->route('admin.listeUsagers')->with('success', 'Usager supprimé');
+        }
+
+        catch(\Throwable $e){
+            Log::debug($e);
+            return redirect()->route('admin.listeUsagers')->with('error', 'Erreur lors de la suppression');
+        }
+
+        return redirect()->route('admin.listeUsagers');
     }
 
     /**

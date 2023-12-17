@@ -4,10 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AidesController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PersonnesController;
+use App\Http\Controllers\UsagersController;
 use App\Http\Controllers\FilmsController;
 use App\Http\Controllers\PrixController;
 use App\Http\Controllers\FaqController;
-use App\Http\Controllers\UsagersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ Route::get('/', function () {
         [PersonnesController::class, 'show']) ->name('personnes.show');
 
     //* Suppression
-        Route::delete('/personnes/{id}',
+        Route::delete('/personnes/{personne}',
         [PersonnesController::class, 'destroy'])->name('personnes.destroy');
 
     //* Liste des personnes ADMIN
@@ -93,12 +93,19 @@ Route::get('/', function () {
         Route::get('usagers/creation',
         [UsagersController::class, 'create']) ->name('usagers.create');
 
+        Route::post('/usagers',
+        [UsagersController::class, 'store'])->name('usagers.store');
+
     //* Modification
         Route::get('/usagers/{usager}/modifier',
         [UsagersController::class, 'edit']) ->name('usagers.edit');
 
         Route::patch('/usagers/{usager}/modifier',
         [UsagersController::class, 'update'])->name('usagers.update');
+
+    //* Suppression
+        Route::delete('/usagers/{usager}',
+        [UsagersController::class, 'destroy']) ->name('usagers.destroy');
 
     //* Déconnexion
         Route::get('/usagers/logout',
