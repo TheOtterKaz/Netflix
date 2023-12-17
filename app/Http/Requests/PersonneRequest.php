@@ -32,7 +32,8 @@ class PersonneRequest extends FormRequest
 
     public function messages()
     {
-        return [
+        return 
+        [
             'nom.required' => 'Le nom est requis',
             'prenom.required' => 'Le prénom est requis',
             'dateNaiss.required' => 'La date de naissance est requise',

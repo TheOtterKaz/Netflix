@@ -42,11 +42,12 @@ class FilmsController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FilmRequest $request)
     {
+        Log::debug("Début store film");
         try{
+            Log::debug("RÉcup infos");
             $film = new Film($request->all());
-
             $uploadedImage = $request->file('imageFilm');
             $nomFichierUnique = str_replace(' ', '_', $request->titre) . '_' . uniqid() . '.' . $uploadedImage->extension();
 
@@ -59,6 +60,7 @@ class FilmsController extends Controller
             }
 
             $film->imageFilm = $nomFichierUnique;
+            Log::debug("Save film");
             $film->save();
             Log::debug("Le film" . $film->titre . "a bien été ajouté");
         }

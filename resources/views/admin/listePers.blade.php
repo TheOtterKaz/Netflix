@@ -46,7 +46,12 @@
 				<div class="card">              
         <!-- image -->             
 				    <div class="card__cover">
-            		    <img src="{{$personne->imagePers}}" alt="Photo" style="height:300px; width:255px; overflow-x: hidden;">              
+					@if (file_exists(public_path('img/Personnes/' . $personne->imagePers)))
+                                <img src="{{ asset('img/Personnes/' . $personne->imagePers) }}" alt="{{ $personne->Nom }}" title="{{ $personne->Nom }}" style="height:300px; width:255px; overflow-x: hidden;">
+                            @else
+                                <img src="{{$personne->imagePers}}" alt="{{ $personne->Nom . ',' . $personne->Prenom }}" style="height:300px; width:255px; overflow-x: hidden;">
+                            @endif
+            		    <!-- <img src="{{$personne->imagePers}}" alt="Photo">               -->
 				    </div>               
         
                     <!-- boutons -->            
