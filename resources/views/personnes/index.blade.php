@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('Titre', 'Liste des personnes')
 @section('contenu')
 
 <!-- MAIN CONTAINER -->

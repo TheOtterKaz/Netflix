@@ -26,103 +26,106 @@ Route::get('/', function () {
 
 //? Films
         Route::get('films', 
-        [FilmsController::class, 'index']) ->name('films.index');
+        [FilmsController::class, 'index']) ->name('films.index')->middleware('CheckRole:admin, adulte, enfant');
 
     //* Création
         Route::get('/films/creation',
-        [FilmsController::class, 'create']) ->name('films.create');
+        [FilmsController::class, 'create'])->name('films.create')->middleware('CheckRole:admin');
         
         Route::post('/films',
-        [FilmsController::class, 'store'])->name('films.store');
+        [FilmsController::class, 'store'])->name('films.store')->middleware('CheckRole:admin');
 
     //* Modification
         Route::get('/films/{film}/modifier',
-        [FilmsController::class, 'edit']) ->name('films.edit');
+        [FilmsController::class, 'edit']) ->name('films.edit')->middleware('CheckRole:admin');
 
         Route::patch('/films/{film}/modifier',
-        [FilmsController::class, 'update'])->name('films.update');
+        [FilmsController::class, 'update'])->name('films.update')->middleware('CheckRole:admin');
 
     //* Affichage zoom
         Route::get('/films/{film}/',
-        [FilmsController::class, 'show']) ->name('films.show');
+        [FilmsController::class, 'show']) ->name('films.show')->middleware('CheckRole:admin, adulte, enfant');
 
     //* Suppression
         Route::delete('/films/{film}',
-        [FilmsController::class, 'destroy']) ->name('films.destroy');    
+        [FilmsController::class, 'destroy']) ->name('films.destroy')->middleware('CheckRole:admin');    
 
     //* Liste des films ADMIN
         Route::get('/admin/films',
-        [FilmsController::class, 'indexAdminF']) ->name('admin.listeFilms');
+        [FilmsController::class, 'indexAdminF']) ->name('admin.listeFilms')->middleware('CheckRole:admin');
 
 //? Personnes
         Route::get('personnes',
-        [PersonnesController::class, 'index']) ->name('personnes.index');
+        [PersonnesController::class, 'index']) ->name('personnes.index')->middleware('CheckRole:admin, adulte, enfant');
 
     //* Création
         Route::get('personnes/creation',
-        [PersonnesController::class, 'create']) ->name('personnes.create');
+        [PersonnesController::class, 'create']) ->name('personnes.create')->middleware('CheckRole:admin');
 
         Route::post('/personnes',
-        [PersonnesController::class, 'store'])->name('personnes.store');
+        [PersonnesController::class, 'store'])->name('personnes.store')->middleware('CheckRole:admin');
 
     //* Modification
         Route::get('/personnes/{personne}/modifier',
-        [PersonnesController::class, 'edit']) ->name('personnes.edit');
+        [PersonnesController::class, 'edit']) ->name('personnes.edit')->middleware('CheckRole:admin');
 
         Route::patch('/personnes/{personne}/modifier',
-        [PersonnesController::class, 'update'])->name('personnes.update');
+        [PersonnesController::class, 'update'])->name('personnes.update')->middleware('CheckRole:admin');
 
     //* Affichage zoom    
         Route::get('/personnes/{personne}',
-        [PersonnesController::class, 'show']) ->name('personnes.show');
+        [PersonnesController::class, 'show']) ->name('personnes.show')->middleware('CheckRole:admin, adulte, enfant');
 
     //* Suppression
         Route::delete('/personnes/{personne}',
-        [PersonnesController::class, 'destroy'])->name('personnes.destroy');
+        [PersonnesController::class, 'destroy'])->name('personnes.destroy')->middleware('CheckRole:admin');
 
     //* Liste des personnes ADMIN
         Route::get('/admin/personnes',
-        [PersonnesController::class, 'indexAdminP']) ->name('admin.listePers');
+        [PersonnesController::class, 'indexAdminP']) ->name('admin.listePers')->middleware('CheckRole:admin,');
 
 //? Usagers
     //* Connexion
-        Route::get('',
+        Route::get('/login',
         [UsagersController::class, 'showLoginForm']) ->name('usagers.login');
 
+        Route::post('/login',
+        [UsagersController::class, 'login']);
+
+    //* Déconnexion
+        Route::post('/logout',
+        [UsagersController::class, 'logout']) ->name('usagers.logout')->middleware('CheckRole:admin, adulte, enfant');
+
     //* Création
-        Route::get('usagers/creation',
-        [UsagersController::class, 'create']) ->name('usagers.create');
+        Route::get('/usagers/creation',
+        [UsagersController::class, 'create']) ->name('usagers.create')->middleware('CheckRole:admin');
 
         Route::post('/usagers',
-        [UsagersController::class, 'store'])->name('usagers.store');
+        [UsagersController::class, 'store'])->name('usagers.store')->middleware('CheckRole:admin');
 
     //* Modification
         Route::get('/usagers/{usager}/modifier',
-        [UsagersController::class, 'edit']) ->name('usagers.edit');
+        [UsagersController::class, 'edit']) ->name('usagers.edit')->middleware('CheckRole:admin');
 
         Route::patch('/usagers/{usager}/modifier',
-        [UsagersController::class, 'update'])->name('usagers.update');
+        [UsagersController::class, 'update'])->name('usagers.update')->middleware('CheckRole:admin');
 
     //* Suppression
         Route::delete('/usagers/{usager}',
-        [UsagersController::class, 'destroy']) ->name('usagers.destroy');
-
-    //* Déconnexion
-        Route::get('/usagers/logout',
-        [UsagersController::class, 'logout']) ->name('usagers.logout');
+        [UsagersController::class, 'destroy']) ->name('usagers.destroy')->middleware('CheckRole:admin');
 
     //* Liste des usagers ADMIN
         Route::get('/admin/usagers',
-        [UsagersController::class, 'indexAdminU']) ->name('admin.listeUsagers');
+        [UsagersController::class, 'indexAdminU']) ->name('admin.listeUsagers')->middleware('CheckRole:admin');
 
 //? Autres
     //* Page des prix
         Route::get('prix',
-        [PrixController::class, 'index']) ->name('prix.index'); 
+        [PrixController::class, 'index']) ->name('prix.index')->middleware('CheckRole:admin, adulte, enfant'); 
 
     //* Page de la FAQ
         Route::get('aide',
-        [AidesController::class, 'index']) ->name('aide.index'); 
+        [AidesController::class, 'index']) ->name('aide.index')->middleware('CheckRole:admin, adulte, enfant'); 
 
 
     

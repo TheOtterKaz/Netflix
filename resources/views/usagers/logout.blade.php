@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
-@section('title', 'Page accueil Netflix')
-
+@section('title', 'Deconnexion')
 @section('contenu')
 
 

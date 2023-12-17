@@ -7,6 +7,7 @@ use App\Http\Requests\UsagerRequest;
 use Illuminate\Http\Request;
 use App\Models\Usager;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 class UsagersController extends Controller
@@ -133,7 +134,14 @@ class UsagersController extends Controller
      */
     public function login(Request $request)
     {
+        $reussi = Auth::attempt([ 'email' => $request->email, 'password' => $request->password ]);
 
+        if($reussi){
+            return redirect()->route('films.index') ->with('success', 'Vous êtes connecté');
+        }
+        else{
+            return redirect()->route('login')->withErrors('error', 'Erreur lors de la connexion');
+        }
     }
 
     /**

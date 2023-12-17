@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('Titre', 'Modification film')
 @section('contenu')
 
 

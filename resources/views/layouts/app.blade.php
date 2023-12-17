@@ -58,7 +58,7 @@
 
   <!-- header nav -->
 							<ul class="header__nav">
-
+@role('admin')
 	<!-- Onglet Admin -->
 							  <li class="header__nav-item">
 									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuHome" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
@@ -69,6 +69,7 @@
 										<li><a href="{{ route('admin.listeUsagers') }}">Liste Usagers</a></li>
 									</ul>
 								</li>
+@endrole
   <!-- Onglet films -->
 								<li class="header__nav-item">
 									<a class="dropdown-toggle header__nav-link" href="{{ route('films.index') }}" role="button" id="dropdownMenuFilms">Films</a>
@@ -93,13 +94,15 @@
   <!-- header Connexion -->
 							<div class="header__auth">
 								<a href="{{ route('usagers.login') }}" class="header__sign-in">		
-								<img src="/img/connexion.png" alt="Connexion" style="height: 30px;"> 							
-									
+									<img src="/img/connexion.png" alt="Connexion" style="height: 30px;">																
 								</a>
 
-								<a href="" class="header__sign-in">									
-								<img src="/img/deconnexion.png" alt="Connexion" style="height: 30px;"> 
-								</a>
+							@auth
+								<form method="post" action="{{ route('logout') }}">
+									@csrf
+									<button type="submit" class="header__sign-in"><img src="/img/deconnexion.png" alt="Connexion" style="height: 30px;"></button>
+								</form>
+							@endauth							
 							</div>
 
 						</div>

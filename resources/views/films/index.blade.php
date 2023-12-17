@@ -1,7 +1,8 @@
 @extends('layouts.app')
-
+@section('Titre', 'Liste des films')
 @section('contenu')
-  
+
+@CheckRole
 <!-- MAIN CONTAINER -->
 
   	<!-- Caroussel des nouveautés -->
@@ -271,4 +272,11 @@
 		</div>
 	</section>
 	<!-- end content -->
+
+<!-- si pas connecté  -->
+@else 
+	<h1>Veuillez vous connecter</h1>
+	<a href="{{ route('login') }}" class="modif_btn">Page de connexion</a>
+
+	@endCheckRole
 @endsection

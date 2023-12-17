@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('Titre', 'Connexion')
 @section('contenu')
 
 
@@ -9,7 +9,7 @@
 				<div class="col-12">
 					<div class="sign__content">
 						<!-- authorization form -->
-						<form action="#" class="sign__form">
+						<form method="post" action="{{ route('usagers.login') }}" class="sign__form" enctype="multipart/form-data">
                             <h3 class="section__title">Connexion</h3>
 
 							<div class="sign__group">
@@ -22,7 +22,7 @@
 							
 							<button class="sign__btn" type="button">Se connecter</button>
 
-							<span class="sign__text">Vous n'avez pas encore de compte? <a href="signup.html">S'inscrire</a></span>
+							<!-- <span class="sign__text">Vous n'avez pas encore de compte? <a href="signup.html">S'inscrire</a></span> -->
 
 						</form>
 						<!-- end authorization form -->

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('Titre', 'Ajout usager')
 @section('contenu')
 
 <body class="body">

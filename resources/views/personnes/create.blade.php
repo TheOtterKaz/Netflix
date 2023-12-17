@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('Titre', 'Ajout personne')
 @section('contenu')
 
 <body class="body">
@@ -9,7 +9,7 @@
 				<div class="col-12">
 					<div class="sign__content">
 			<!-- Formulaire -->
-                        <form method="POST" action="{{ route('personnes.store') }}" class="sign__form" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('personnes.store') }}" class="sign__form" enctype="multipart/form-data">
                             @csrf
                             <h3 class="section__title">Ajout d'une personne</h3>
 

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('Titre', 'Prix')
 @section('contenu')
 
 <!-- page title -->
