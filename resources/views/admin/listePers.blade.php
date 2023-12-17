@@ -51,7 +51,7 @@
                             @else
                                 <img src="{{$personne->imagePers}}" alt="{{ $personne->Nom }}" style="height:300px; width:255px; overflow-x: hidden;">
                             @endif
-            		    <!-- <img src="{{$personne->imagePers}}" alt="Photo">               -->
+
 				    </div>               
         
                     <!-- boutons -->            
