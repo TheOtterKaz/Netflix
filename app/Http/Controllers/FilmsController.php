@@ -62,12 +62,12 @@ class FilmsController extends Controller
             $film->imageFilm = $nomFichierUnique;
             Log::debug("Save film");
             $film->save();
-            Log::debug("Le film" . $film->titre . "a bien été ajouté");
+            Log::debug("Le film" . $film->titre . " a bien été ajouté");
         }
         catch(\Throwable $e){
             Log::debug($e);
         }
-        return redirect()->route('films.index');
+        return redirect()->route('admin.listeFilms');
     }
 
     /**
@@ -129,12 +129,12 @@ class FilmsController extends Controller
             $film->imageFilm = $nomFichierUnique;
             $film->save();
             Log::debug("Le film" . $film->titre . "a bien été modifié");
-            return redirect()->route('films.index')->with('message', "Modification de " . $film->titre . " réussie");
+            return redirect()->route('admin.listeFilms')->with('message', "Modification de " . $film->titre . " réussie");
 
         }
         catch(\Throwable $e){
             Log::debug($e);
-            return redirect()->route('films.index')->withErrors('message', "Modification de " . $film->titre . " échouée");
+            return redirect()->route('admin.listeFilms')->withErrors('message', "Modification de " . $film->titre . " échouée");
         }
     }
 
@@ -151,15 +151,15 @@ class FilmsController extends Controller
 
             $film->delete();
 
-            return redirect()->route('films.index')->with('message', "Suppression de " . $film->titre . " réussie");           
+            return redirect()->route('admin.listeFilms')->with('message', "Suppression de " . $film->titre . " réussie");           
         }
 
         catch (\Throwable $e) {
             // Gérer l'erreur
             Log::debug($e);
-            return redirect()->route('films.index')->withErrors('message', "Suppression de " . $film->titre . " échouée");
+            return redirect()->route('admin.listeFilms')->withErrors('message', "Suppression de " . $film->titre . " échouée");
         }
-        return redirect()->route('films.index');
+        return redirect()->route('admin.listeFilms');
     }
 
     public function storeFilmRealisateur(Request $request){
@@ -177,9 +177,9 @@ class FilmsController extends Controller
         }
         catch(\Throwable $e){
             Log::debug($e);
-            return redirect()->route('films.index');
+            return redirect()->route('admin.listeFilms');
         }
-        return redirect()->route('films.index');
+        return redirect()->route('admin.listeFilms');
     }
 
     public function storeFilmProducteur(Request $request){
@@ -197,8 +197,8 @@ class FilmsController extends Controller
         }
         catch(\Throwable $e){
             Log::debug($e);
-            return redirect()->route('films.index');
+            return redirect()->route('admin.listeFilms');
         }
-        return redirect()->route('films.index');
+        return redirect()->route('admin.listeFilms');
     }
 }
