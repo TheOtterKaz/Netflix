@@ -54,7 +54,9 @@ class PersonnesController extends Controller
      */
     public function store(PersonneRequest $request)
     {
+        Log::debug("Entrée dans la fonction store");
         try{
+            Log::debug("Entrée dans le try, récup des données");
             $personne = new Personne($request->all());
 
             $uploadedFile = $request->file('imagePers');
@@ -70,7 +72,7 @@ class PersonnesController extends Controller
             }
 
             $personne->imagePers = $nomFichierUnique;
-            Log::debug($personne);
+            Log::debug("Image téléversée, nom de l'image : " . $personne->imagePers);
             $personne->save();
             Log::debug("La personne " . $personne->nom . " " . $personne->prenom . " a été ajoutée avec succès !");
 

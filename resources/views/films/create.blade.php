@@ -58,9 +58,7 @@
                                 <select class="sign__input" id="producteur_id" name="producteur_id">
                                     <option value="">-- Choisir un producteur --</option>
                                         @foreach($personnes as $personne)
-                                            <option value="{{ $personne->id }}"
-                                                {{ $personne->prenom == old('producteur_id')? 'selected' : null}}
-                                                {{ $personne->nom == old('producteur_id')? 'selected' : null}}> 
+                                            <option value="{{ $personne->id }}">
                                                 {{ $personne->prenom }}
                                                 {{ $personne->nom }}
                                             </option>

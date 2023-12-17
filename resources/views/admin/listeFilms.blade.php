@@ -46,7 +46,12 @@
 				<div class="card">              
         <!-- image -->             
 				    <div class="card__cover">
-            		    <img src="{{$film->imageFilm}}" alt="Affiche Film">              
+							@if (file_exists(public_path('img/films/' . $film->imageFilm)))
+                                <img src="{{ asset('img/films/' . $film->imageFilm) }}" alt="{{ $film->titre }}" title="{{ $film->titre }}">
+                            @else
+                                <img src="{{$film->imageFilm}}" alt="" class="g-0 border border-0 imgFilm card-img">
+                            @endif
+            		    <!-- <img src="{{$film->imageFilm}}" alt="Affiche Film">               -->
 				    </div>               
         
                     <!-- boutons -->            
