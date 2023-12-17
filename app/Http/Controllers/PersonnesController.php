@@ -68,7 +68,7 @@ class PersonnesController extends Controller
             }
 
             catch(\Symfony\Component\HttpFoundation\File\Exception\FileException $e){
-                Log::error("Erreur lors du téléversement du fichier", [$e]);                
+                Log::debug("Erreur lors du téléversement du fichier", [$e]);                
             }
 
             $personne->imagePers = $nomFichierUnique;
