@@ -68,14 +68,7 @@
                             
             <!-- Image ¤ Bande Annonce -->
                             <div class="sign__group">  
-                               
-                                    @if (file_exists(public_path('img/films/' . $film->imageFilm)))
-                                        <img src="{{ asset('img/films/' . $film->imageFilm) }}" alt="{{ $film ->titre }}" title="{{ $film ->titre }}" class="sign__thumb">
-                                    @else 
-                                        <img src="{{ $film->imageFilm }}" alt="AfficheFilm" class="sign__thumb">
-                                    @endif
-                               
-
+                                <input type="file" class="sign__input" id="imageFilm" name="imageFilm" placeholder="Image du film">
                                 <input type="text" class="sign__input" id="lienFilm" name="lienFilm" placeholder="Lien du film">
                             </div>
                             
