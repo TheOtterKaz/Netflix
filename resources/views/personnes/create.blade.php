@@ -23,7 +23,7 @@
 							<div class="sign__group form-group">
                                 <input type="date" class="sign__input form-control" id='inDateNaiss' name="dateNaiss" placeholder="Date de naissance" value="{{ old('dateNaiss') }}">
 
-                                <select name="sexe" id="sexe" class="sign__input" placeholder="Sexe" value="{{ old('sexe') }}">                                    
+                                <select name="sexe" id="sexe" class="sign__input" placeholder="Sexe">                                    
                                         <option value="H" id="choixMasc" selected>Masculin</option>
                                         <option value="F" id="choixFem">Féminin</option>
                                         <option value="A" id="choixAutre">Autre</option>  
@@ -37,7 +37,7 @@
                             
             <!-- Boutons -->
                             <div class="modif_btn_group">
-                                <button class="modif__btn" type="Submit">Ajouter</button>                                
+                                <button type="submit" class="modif__btn">Ajouter</button>                                
                                 <a href="{{ route('admin.listePers') }}" class="modif__btn">Retour</a>                                
                             </div>						
 
