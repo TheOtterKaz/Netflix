@@ -32,7 +32,7 @@
                             
             <!-- Lien photo -->
                             <div class="sign__group form-group">
-                                <input type="file" class="add__image form-control" id="imageID" name="imagePers" placeholder="Image de la personne" value="{{ old('imagePers') }}"
+                                <input type="file" class="add__image form-control" id="imageID" name="imagePers" placeholder="Image de la personne" value="{{ old('imagePers') }}">
                             </div>
                             
             <!-- Boutons -->
