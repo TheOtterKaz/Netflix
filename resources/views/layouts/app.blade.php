@@ -33,6 +33,15 @@
 </head>
 
 <body class="body">
+	<!-- Permet d'afficher les erreurs dans le formulaire -->
+	@if(isset($errors) && $errors->any())
+		<div class="alert alert-danger">
+			@foreach($errors->all() as $error)
+				<p>{{ $error }}</p>
+			@endforeach
+		</div>
+	@endif
+
   <!-- header -->
 	<header class="header">
 		<div class="header__wrap">

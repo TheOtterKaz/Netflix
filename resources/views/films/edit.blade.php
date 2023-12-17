@@ -54,7 +54,7 @@
             
             <!-- Image -->
                             <div class="sign__group">
-                                <input type="file" name="imageFilm" class="modif__image" id="imageFilm" placeholder="Image du film" value="{{ old('imageFilm', $film->imageFilm) }}">
+                                <input type="text" name="imageFilm" class="modif__image" id="imageFilm" placeholder="Image du film" value="{{ old('imageFilm', $film->imageFilm) }}">
 							</div>
             
             <!-- Boutons -->

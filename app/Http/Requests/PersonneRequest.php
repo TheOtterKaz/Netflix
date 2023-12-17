@@ -11,7 +11,7 @@ class PersonneRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,8 +25,8 @@ class PersonneRequest extends FormRequest
             'nom' => 'required|string|max:100',
             'prenom' => 'required|string|max:100',
             'dateNaiss' => 'required|string|max:15',
-            'sexe' => 'required|string|max:1',
-            'imagePers' => 'string|max:2048'
+            'sexe' => 'required|string',
+            'imagePers' => 'required|image|mimes:png, jpeg, jpg, gif|max:4096'
         ];
     }
 
@@ -37,7 +37,8 @@ class PersonneRequest extends FormRequest
             'prenom.required' => 'Le prénom est requis',
             'dateNaiss.required' => 'La date de naissance est requise',
             'sexe.required' => 'Le sexe est requis',
-            'imagePers.required' => 'L\'image est requise'
+            'imagePers.mimes' => 'Le type de fichier n\'est pas reconnu',
+            'imagePers.max' => 'Le fichier ne peut pas dépasser 4096kb'
         ];
     }
 }

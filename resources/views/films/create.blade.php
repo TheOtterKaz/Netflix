@@ -70,13 +70,13 @@
                             
             <!-- Image ¤ Bande Annonce -->
                             <div class="sign__group">                                
-                                <input type="file" class="sign__input" id="imageFilm" name="imageID" placeholder="Image du film">
+                                <input type="file" class="sign__input" id="imageFilm" name="imageFilm" placeholder="Image du film">
                                 <input type="text" class="sign__input" id="lienFilm" name="lienFilm" placeholder="Lien du film">
                             </div>
                             
             <!-- Boutons -->
                             <div class="modif_btn_group">
-                                <button class="modif__btn" type="Submit">Ajouter</button>                                
+                                <button type="submit" class="modif__btn">Ajouter</button>                                                                                            
                                 <a href="{{ route('admin.listeFilms') }}" class="modif__btn">Retour</a>                                
                             </div>						
 

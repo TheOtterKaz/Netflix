@@ -19,7 +19,7 @@ class UsagerSeeder extends Seeder
             //Admin
             [
                 'id' => 1,
-                'role' => 'admin',
+                'role' => 'Admin',
                 'nomUsager' => 'leSuperAdmin',
                 'nom' => 'PerAdmin',
                 'prenom' => 'leSu',
@@ -30,7 +30,7 @@ class UsagerSeeder extends Seeder
             //Normal
             [
                 'id' => 2,
-                'role' => 'normal',
+                'role' => 'Adulte',
                 'nomUsager' => 'leNormalUser',
                 'nom' => 'malUser',
                 'prenom' => 'leNor',
@@ -41,7 +41,7 @@ class UsagerSeeder extends Seeder
             //Kiddo
             [
                 'id' => 3,
-                'role' => 'kid',
+                'role' => 'Enfant',
                 'nomUsager' => 'leKiddoUser',
                 'nom' => 'doUser',
                 'prenom' => 'leKid',

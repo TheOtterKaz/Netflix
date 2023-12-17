@@ -20,9 +20,8 @@
 							<img src="{{$personne->imagePers}}" alt="ImagePers">
 						</div>
 
-                          <!-- Boutons -->                         
-                             
-                             <a href="{{ route('personnes.index') }}" class="zoom__btn"><- Retour</a>                                
+                    <!-- Boutons -->                                                     
+                        <a href="{{ route('personnes.index') }}" class="zoom__btn"><- Retour</a>                                
                          
 					</div> 
 

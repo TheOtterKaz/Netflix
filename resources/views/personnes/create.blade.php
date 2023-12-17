@@ -13,33 +13,26 @@
                             @csrf
                             <h3 class="section__title">Ajout d'une personne</h3>
 
-            <!-- Prénom -->
-                            <div class="sign__group">
-                                <input type="text" class="sign__input" id='prenomPersonne' name="prenom" placeholder="Prénom">
-                            </div>
-            
-            <!-- Nom -->
-							<div class="sign__group">
-                            <input type="text" class="sign__input" id='nomPersonne' name="nom" placeholder="Nom">
-							</div>
+            <!-- Prénom ¤ Nom-->
+                            <div class="sign__group form-group">
+                                <input type="text" class="sign__input form-control" id='prenomPersonne' name="prenom" placeholder="Prénom" value="{{ old('prenom') }}">
+                                <input type="text" class="sign__input form-control" id='nomPersonne' name="nom" placeholder="Nom" value="{{ old('nom') }}">
+                            </div>            
 
-            <!-- Date de naissance -->
-							<div class="sign__group">
-                                <input type="date" class="sign__input" id='inDateNaiss' name="dateNaiss" placeholder="Date de naissance">
-							</div>
+            <!-- Date de naissance ¤ Sexe -->
+							<div class="sign__group form-group">
+                                <input type="date" class="sign__input form-control" id='inDateNaiss' name="dateNaiss" placeholder="Date de naissance" value="{{ old('dateNaiss') }}">
 
-            <!-- Sexe-->
-							<div class="sign__group">
-                            <select name="sexe" id="Sexe" class="sign__input" placeholder="Sexe">                                    
+                                <select name="sexe" id="sexe" class="sign__input" placeholder="Sexe" value="{{ old('sexe') }}">                                    
                                         <option value="H" id="choixMasc" selected>Masculin</option>
                                         <option value="F" id="choixFem">Féminin</option>
-                                        <option value="A" id="choixAutre">Autre</option>                                   
+                                        <option value="A" id="choixAutre">Autre</option>  
                                 </select>
-							</div>                            
+							</div>                           
                             
             <!-- Lien photo -->
-                            <div class="sign__group">
-                                <input type="file" class="sign__input" id="imageFilm" name="imageID" placeholder="Image de la personne">
+                            <div class="sign__group form-group">
+                                <input type="file" class="add__image form-control" id="imageID" name="imagePers" placeholder="Image de la personne" value="{{ old('imagePers') }}"
                             </div>
                             
             <!-- Boutons -->

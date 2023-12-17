@@ -13,25 +13,27 @@
                             <h3 class="section__title">Modification d'un usager</h3>
                         @csrf                          
 
-            <!-- Username-->
-                            <div class="sign__group">
-                                <input type="text" name="username" class="modif__input" id="username" placeholder="Username" value="{{ old('nomUsager', $usager->nomUsager) }}">
-                            </div>        
-            
-            <!-- Rôle -->
-                            <div class="sign__group">
+            <!-- Rôle --->
+                        <div class="sign__group">
                                 <select name="role" id="role" class="modif__input" placeholder="Rôle" value="{{ old('role', $usager->role) }}">                                    
                                         <option value="Admin" id="choixAdmin" selected>Admin</option>
                                         <option value="Adulte" id="choixAdulte">Adulte</option>
                                         <option value="Kid" id="choixKid">Enfant</option>                                   
                                 </select>
-							</div> 
-            
-            <!-- Courriel -->
-							<div class="sign__group">
+							</div>            
+           
+            <!-- Username ¤ Courriel -->
+                            <div class="sign__group">
+                                <input type="text" name="username" class="modif__input" id="username" placeholder="Username" value="{{ old('nomUsager', $usager->nomUsager) }}">
                                 <input type="email" name="email" class="modif__input" id="email" placeholder="Courriel" value="{{ old('email', $usager->email) }}">
 							</div>
-            
+
+            <!-- Prénom ¤ Nom-->
+                            <div class="sign__group">
+                                <input type="text" class="modif__input" id='Prenom' name="Prenom" placeholder="Prénom" value="{{ old('prenom', $usager->prenom) }}">
+                                <input type="text" class="modif__input" id='Nom' name="Nom" placeholder="Nom" value="{{ old('nom', $usager->nom) }}">
+                            </div>
+                                        
             <!-- Boutons -->
                             <div class="modif_btn_group">
                                 <button class="modif__btn" type="submit">Modifier</button>                                

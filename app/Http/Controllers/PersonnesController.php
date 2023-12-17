@@ -52,19 +52,37 @@ class PersonnesController extends Controller
      * @param \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PersonneRequest $request)
     {
         try{
             $personne = new Personne($request->all());
+
+            $uploadedFile = $request->file('imagePers');
+            $nomFichierUnique = str_replace(' ', '_', $request->nom) . '-' . uniqid() . '.' . $uploadedFile->extension();
+
+            try{
+                $request->imagePers->move(public_path('img/Personnes'), $nomFichierUnique);
+                log::debug('Image téléversée, nom de l\'image : ' . $nomFichierUnique);
+            }
+
+            catch(\Symfony\Component\HttpFoundation\File\Exception\FileException $e){
+                Log::error("Erreur lors du téléversement du fichier", [$e]);                
+            }
+
+            $personne->imagePers = $nomFichierUnique;
+            Log::debug($personne);
             $personne->save();
             Log::debug("La personne " . $personne->nom . " " . $personne->prenom . " a été ajoutée avec succès !");
-        }
-        catch(\Throwable $e){
-            Log::debug($e);
-            $errors = "Impossible d'ajouter cette personne !";
+
+            return redirect()->route('admin.listePers')->with('message', 'La personne nommée ' . $personne->nom . ', ' . $personne->prenom . ' a été ajoutée avec succès !');
         }
 
-        return redirect()->route('personnes.index');
+        catch(\Throwable $e){
+            Log::debug($e);
+            return redirect()->route('admin.listePers')->withErrors(['Impossible d\'ajouter cette personne !']);
+        }
+
+        return redirect()->route('admin.listePers');
     }
 
     /**
@@ -133,6 +151,6 @@ class PersonnesController extends Controller
             return redirect()->route('personnes.index')->withErrors(['Impossible de supprimer cette personne !']);
         }
 
-        return redirect()->route('personnes.index');
+        return redirect()->route('admin.listePers');
     }
 }

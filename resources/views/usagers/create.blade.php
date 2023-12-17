@@ -13,35 +13,34 @@
                             @csrf
                                 <h3 class="section__title">Ajout d'un usager</h3>
 
-            <!-- Username -->
-                            <div class="sign__group">
-                                <input type="text" class="sign__input" id='Username' name="Username" placeholder="Username">
-                            </div>
-            
-            <!-- Courriel -->
-                            <div class="sign__group">
-                                <input type="email" class="sign__input" id='email' name="email" placeholder="Courriel">
-                            </div>
-
-            <!-- Mot de passe -->
-							<div class="sign__group">
-                                <input type="password" class="sign__input" id='mdp1' name="mdp1" placeholder="Mot de passe">
-							</div>
-
-            <!-- Validation Mot de passe -->
-                            <div class="sign__group">
-                                <input type="password" class="sign__input" id='mdp2' name="mdp2" placeholder="Validation du mot de passe">
-							</div>                           
-                            
-            <!-- Role -->
-                            <div class="sign__group">
+            <!-- Role ¤ Username -->
+                            <div class="sign__group">                                
                                 <select name="role" id="role" class="sign__input" placeholder="Rôle">                                    
                                         <option value="Admin" id="choixAdmin" selected>Admin</option>
                                         <option value="Adulte" id="choixAdulte">Adulte</option>
                                         <option value="Kid" id="choixKid">Enfant</option>                                   
-                                </select>
-							</div>           
-                            
+                                </select>							    
+
+                                <input type="text" class="sign__input" id='Username' name="Username" placeholder="Username">
+                            </div>
+
+            <!-- Prénom ¤ Nom -->
+                            <div class="sign__group">
+                                <input type="text" class="sign__input" id='Prenom' name="Prenom" placeholder="Prénom">
+                                <input type="text" class="sign__input" id='Nom' name="Nom" placeholder="Nom">
+                            </div>
+
+            <!-- Mot de passe ¤ Validation Mot de passe-->
+                            <div class="sign__group">
+                                <input type="password" class="sign__input" id='mdp1' name="mdp1" placeholder="Mot de passe">
+                                <input type="password" class="sign__input" id='mdp2' name="mdp2" placeholder="Validation du mot de passe">
+							</div>        
+
+            <!-- Courriel -->
+                            <div class="sign__group">
+                                <input type="email" class="sign__input" id='email' name="email" placeholder="Courriel">
+                            </div>                     
+                                                     
             <!-- Boutons -->
                             <div class="modif_btn_group">
                                 <button class="modif__btn" type="Submit">Ajouter</button>                                

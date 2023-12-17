@@ -23,6 +23,9 @@
 						<div class="card__cover">
 							<img src="{{$film->imageFilm}}" alt="Affiche">
 						</div>
+
+					<!-- Boutons -->                                                     
+						<a href="{{ route('films.index') }}" class="zoom2__btn"><- Retour</a> 
 					</div> 
 
     <!-- infos -->

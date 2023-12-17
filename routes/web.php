@@ -31,6 +31,9 @@ Route::get('/', function () {
     //* Création
         Route::get('/films/creation',
         [FilmsController::class, 'create']) ->name('films.create');
+        
+        Route::post('/films',
+        [FilmsController::class, 'store'])->name('films.store');
 
     //* Modification
         Route::get('/films/{film}/modifier',
@@ -58,6 +61,9 @@ Route::get('/', function () {
     //* Création
         Route::get('personnes/creation',
         [PersonnesController::class, 'create']) ->name('personnes.create');
+
+        Route::post('/personnes',
+        [PersonnesController::class, 'store'])->name('personnes.store');
 
     //* Modification
         Route::get('/personnes/{personne}/modifier',
@@ -111,12 +117,5 @@ Route::get('/', function () {
         Route::get('aide',
         [AidesController::class, 'index']) ->name('aide.index'); 
 
-//? : Store
-    //* Films
-        Route::post('/films',
-        [FilmsController::class, 'store'])->name('films.store');
-        
-    //* Personnes
-        Route::post('/personnes',
-        [PersonnesController::class, 'store'])->name('personnes.store');
+
     
