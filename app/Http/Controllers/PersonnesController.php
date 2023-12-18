@@ -114,24 +114,39 @@ class PersonnesController extends Controller
      */
     public function update(PersonneRequest $request, Personne $personne)
     {
-        Log::debug($request);
+        Log::debug("Début update personne");
         try{
+            $personne->id = $request->id;            
             $personne->nom = $request->nom;
             $personne->prenom = $request->prenom;
             $personne->dateNaiss = $request->dateNaiss;
             $personne->sexe = $request->sexe;
-            $personne->imagePers = $request->imagePers;
 
+            $uploadedImage = $request->file('imagePers');
+            $nomFichierUnique = str_replace(' ', '_', $request->nom . $request->prenom) . '-' . uniqid() . '.' . $uploadedImage->extension();
+
+            try{
+                $request->imagePers->move(public_path('img/personnes'), $nomFichierUnique);
+                log::debug('Image téléversée, nom de l\'image : ' . $nomFichierUnique);
+            }
+
+            catch(FileException $e){
+                Log::debug("Erreur lors du téléversement du fichier", [$e]);                
+            }
+
+            $personne->imagePers = $nomFichierUnique;
+            Log::debug("Save personne");
             $personne->save();
-            Log::debug("La personne " . $personne->nom . " " . $personne->prenom . " a été modifiée avec succès !");
-            return redirect()->route('personnes.index')->with('message', 'Personne modifiée avec succès');
+            
+            Log::debug("La personne a été modifiée avec succès !");
+            return redirect()->route('admin.listePers')->with('message', 'Personne modifiée avec succès');
         }
         catch(\Throwable $e){
             Log::debug($e);
-            return redirect()->route('personnes.index')->withErrors(['Impossible de modifier cette personne']);
+            return redirect()->route('admin.listePers')->withErrors(['Impossible de modifier cette personne']);
         }
 
-        return redirect()->route('personnes.index');
+        return redirect()->route('admin.listePers');
     }
 
     /**

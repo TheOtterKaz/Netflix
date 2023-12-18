@@ -19,9 +19,13 @@
 				    <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
 					    <div class="card">
 					        <a href="{{ route('personnes.show', [$acteur]) }}">
-						        <div class="card__cover">
-                	  		        <img src="{{$acteur->imagePers}}" alt="PhotoActeur" style="height:200px; width:160px; overflow-x: hidden;">
-						        </div>
+								<div class="card__pers">
+									@if (file_exists(public_path('img/personnes/' . $acteur->imagePers)))
+                                		<img src="{{ asset('img/personnes/' . $acteur->imagePers) }}" alt="{{ $acteur->prenom }}" title="{{ $acteur->prenom }}">
+                            		@else
+                                		<img src="{{$acteur->imagePers}}" alt="PhotoActeur">
+                            		@endif             
+				    			</div>  
                 	        </a>
 
 						    <div class="card__content">
@@ -45,9 +49,13 @@
 				    <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
 					    <div class="card">
 					        <a href="{{ route('personnes.show', [$realisateur]) }}">
-						        <div class="card__cover">
-                	  		        <img src="{{$realisateur->imagePers}}" alt="PhotoActeur" style="height:200px; width:160px; overflow-x: hidden;">
-						        </div>
+								<div class="card__pers">
+									@if (file_exists(public_path('img/personnes/' . $realisateur->imagePers)))
+                                		<img src="{{ asset('img/personnes/' . $realisateur->imagePers) }}" alt="{{ $realisateur->prenom }}" title="{{ $realisateur->prenom }}">
+                            		@else
+                                		<img src="{{$realisateur->imagePers}}" alt="PhotoRealisateur">
+                            		@endif             
+				    			</div>
                 	        </a>
 
 						    <div class="card__content">
@@ -71,10 +79,13 @@
 				    <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
 					    <div class="card">
 					        <a href="{{ route('personnes.show', [$producteur]) }}">
-						        <div class="card__cover">
-                	  		        <img src="{{$producteur->imagePers}}" alt="PhotoActeur" style="height:200px; width:160px; overflow-x: hidden;">
-						        </div>
-                	        </a>
+								<div class="card__pers">
+									@if (file_exists(public_path('img/personnes/' . $producteur->imagePers)))
+                                		<img src="{{ asset('img/personnes/' . $producteur->imagePers) }}" alt="{{ $producteur->prenom }}" title="{{ $producteur->prenom }}">
+                            		@else
+                                		<img src="{{$producteur->imagePers}}" alt="PhotoProducteur">
+                            		@endif             
+				    			</div>    
 
 						    <div class="card__content">
 						    	<h3 class="card__title"><a href="#">{{$producteur->prenom}} {{$producteur->nom}}</a></h3>

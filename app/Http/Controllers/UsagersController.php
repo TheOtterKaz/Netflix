@@ -89,8 +89,9 @@ class UsagersController extends Controller
     {
         Log::debug("Début update usager");
         try{
+            $usager->id = $request->id;
             $usager->role = $request->role;
-            $usager->nomUsager = $request->username;
+            $usager->nomUsager = $request->nomUsager;
             $usager->nom = $request->nom;
             $usager->prenom = $request->prenom;
             $usager->email = $request->email;

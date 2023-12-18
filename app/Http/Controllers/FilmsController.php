@@ -62,7 +62,7 @@ class FilmsController extends Controller
             $film->imageFilm = $nomFichierUnique;
             Log::debug("Save film");
             $film->save();
-            Log::debug("Le film" . $film->titre . " a bien été ajouté");
+            Log::debug("Le film a été ajouté");
         }
         catch(\Throwable $e){
             Log::debug($e);
@@ -110,17 +110,28 @@ class FilmsController extends Controller
             $film->duree = $request->duree;
             $film->annee = $request->annee;
             $film->type = $request->type;
-            $film->imageFilm = $request->imageFilm;
 
+            $uploadedImage = $request->file('imageFilm');
+            $nomFichierUnique = str_replace(' ', '_', $request->titre) . '_' . uniqid() . '.' . $uploadedImage->extension();
+
+            try{
+                $request->imageFilm->move(public_path('img/films'), $nomFichierUnique);
+                log::debug('Image téléversée, nom de l\'image : ' . $nomFichierUnique);
+            }
+            catch(FileException $e){
+                Log::error('Erreur lors du téléversement de l\image. ', [$e]);
+            }
+
+            $film->imageFilm = $nomFichierUnique;
             Log::debug("Save Film");
             $film->save();
-            Log::debug("Le film" . $film->titre . "a bien été modifié");
-            return redirect()->route('admin.listeFilms')->with('message', "Modification de " . $film->titre . " réussie");
+            Log::debug("Le film a bien été modifié");
+            return redirect()->route('admin.listeFilms')->with('message', "Modification réussie");
 
         }
         catch(\Throwable $e){
             Log::debug($e);
-            return redirect()->route('admin.listeFilms')->withErrors('message', "Modification de " . $film->titre . " a échoué");
+            return redirect()->route('admin.listeFilms')->withErrors('message', "Modification a échoué");
         }
         return redirect()->route('admin.listeFilms');
     }
@@ -138,13 +149,13 @@ class FilmsController extends Controller
 
             $film->delete();
 
-            return redirect()->route('admin.listeFilms')->with('message', "Suppression de " . $film->titre . " réussie");           
+            return redirect()->route('admin.listeFilms')->with('message', "Suppression réussie");           
         }
 
         catch (\Throwable $e) {
             // Gérer l'erreur
             Log::debug($e);
-            return redirect()->route('admin.listeFilms')->withErrors('message', "Suppression de " . $film->titre . " échouée");
+            return redirect()->route('admin.listeFilms')->withErrors('message', "Suppression échouée");
         }
         return redirect()->route('admin.listeFilms');
     }

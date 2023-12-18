@@ -56,7 +56,6 @@
                 <a href="{{ route('usagers.edit', [$usager]) }}" class="admin__btn">Modifier</a>
 
                 <form method="POST" action="{{route('usagers.destroy', [$usager->id]) }}">
-
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="admin__btn">Supprimer</button>

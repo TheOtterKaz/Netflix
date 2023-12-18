@@ -1037,6 +1037,7 @@ ul {
   color: #fff;
   font-weight: 300;
   font-size: 28px;
+  margin-top: 40px;
 }
 .section__subtitle {
   color: #fff;
@@ -4115,4 +4116,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .card__films img {
   width: 255px;
   height: 365px;
+}
+
+.card__pers img {
+  width: 160px;
+  height: 175px;
 }

@@ -229,6 +229,7 @@
           @endif
         @endforeach
       @endif 
+
 <!-- fin card Pixar-->
 					</div>
 				</div>
@@ -264,7 +265,9 @@
           @endif
         @endforeach
       @endif 
+
 <!-- fin card Disney -->
+	
 					</div>
 				</div>
 			</div>
@@ -274,3 +277,4 @@
 	<!-- end content -->
 
 @endsection
+

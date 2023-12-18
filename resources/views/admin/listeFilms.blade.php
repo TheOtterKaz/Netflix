@@ -50,8 +50,7 @@
                                 <img src="{{ asset('img/films/' . $film->imageFilm) }}" alt="{{ $film->titre }}" title="{{ $film->titre }}">
                             @else
                                 <img src="{{$film->imageFilm}}" alt="" >
-                            @endif
-             
+                            @endif             
 				    </div>               
         
                     <!-- boutons -->            

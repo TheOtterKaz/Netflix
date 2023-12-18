@@ -93,7 +93,7 @@ Route::get('/', function () {
         [UsagersController::class, 'login'])->name('loginAuth')->middleware('CheckRole:Admin, Adulte, Enfant');
 
     //* Déconnexion
-        Route::post('/logout',
+        Route::get('/logout',
         [UsagersController::class, 'logout']) ->name('logout');
 
     //* Création

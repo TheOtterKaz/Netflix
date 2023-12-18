@@ -10,8 +10,8 @@
 					<div class="sign__content">
 			<!-- Formulaire -->
 						<form method="POST" action="" class="sign__form" enctype="multipart/form-data">
-                            <h3 class="section__title">Modification de l'usager</h3>
-                            <h3 class="section__subtitle">{{ $usager->username}}</h3>
+                            <h3 class="section__title">Modification de </h3>
+                            <h3 class="section__subtitle">{{ $usager->nomUsager}}</h3>
                             @csrf     
                             @method('PATCH')                    
 
@@ -26,14 +26,14 @@
            
             <!-- Username ¤ Courriel -->
                             <div class="sign__group form-group">
-                                <input type="text" name="nomUsager" class="modif__input form-control" id="nomUsager" placeholder="Username" value="{{ old('nomUsager', $usager->nomUsager) }}">
-                                <input type="email" name="email" class="modif__input form-control" id="email" placeholder="Courriel" value="{{ old('email', $usager->email) }}">
+                                <input type="text" name="nomUsager" id="nomUsager" class="modif__input form-control" placeholder="Username" value="{{ old('nomUsager', $usager->nomUsager) }}">
+                                <input type="email" name="email" id="email" class="modif__input form-control" placeholder="Courriel" value="{{ old('email', $usager->email) }}">
 							</div>
 
             <!-- Prénom ¤ Nom-->
                             <div class="sign__group form-group">
-                                <input type="text" class="modif__input form-control" id='prenom' name="prenom" placeholder="Prénom" value="{{ old('prenom', $usager->prenom) }}">
-                                <input type="text" class="modif__input form-control" id='nom' name="nom" placeholder="Nom" value="{{ old('nom', $usager->nom) }}">
+                                <input type="text" name="prenom" id='prenom' class="modif__input form-control" placeholder="Prénom" value="{{ old('prenom', $usager->prenom) }}">
+                                <input type="text" name="nom" id='nom' class="modif__input form-control" placeholder="Nom" value="{{ old('nom', $usager->nom) }}">
                             </div>
                                         
             <!-- Boutons -->

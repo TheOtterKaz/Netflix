@@ -45,14 +45,13 @@
 		    <div class="col-6 col-sm-4 col-lg-3 col-xl-3">
 				<div class="card">              
         <!-- image -->             
-				    <div class="card__cover">
-							@if (file_exists(public_path('img/Personnes/' . $personne->imagePers)))
-                                <img src="{{ asset('img/Personnes/' . $personne->imagePers) }}" alt="{{ $personne->Nom }}" title="{{ $personne->Nom }}" style="height:300px; width:255px; overflow-x: hidden;">
+					<div class="card__films">
+							@if (file_exists(public_path('img/personnes/' . $personne->imagePers)))
+                                <img src="{{ asset('img/personnes/' . $personne->imagePers) }}" alt="{{ $personne->prenom }}" title="{{ $personne->prenom }}">
                             @else
-                                <img src="{{$personne->imagePers}}" alt="{{ $personne->Nom }}" style="height:300px; width:255px; overflow-x: hidden;">
-                            @endif
-
-				    </div>               
+                                <img src="{{ $personne->imagePers }}" alt="PersonneImage" >
+                            @endif             
+				    </div>                 
         
                     <!-- boutons -->            
 					<div class="card__listAdmin">
