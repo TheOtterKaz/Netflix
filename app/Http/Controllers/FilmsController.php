@@ -112,6 +112,7 @@ class FilmsController extends Controller
             $film->type = $request->type;
             $film->imageFilm = $request->imageFilm;
 
+            Log::debug("Save Film");
             $film->save();
             Log::debug("Le film" . $film->titre . "a bien été modifié");
             return redirect()->route('admin.listeFilms')->with('message', "Modification de " . $film->titre . " réussie");

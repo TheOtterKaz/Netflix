@@ -32,7 +32,7 @@ class FilmRequest extends FormRequest
             'realisateur_id' => 'integer', 
             'producteur_id' => 'integer', 
             'type' => 'required|string|max:300', 
-            'imageFilm' => 'required|image|mimes:png,jpeg,jpg|max:4096', 
+            'imageFilm' => 'required|URL', 
             'lienFilm' => 'string|max:2048',
         ];
     }

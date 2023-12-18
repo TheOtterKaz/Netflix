@@ -47,7 +47,7 @@
 							@if (file_exists(public_path('img/films/' . $film->imageFilm)))
                                 <img src="{{ asset('img/films/' . $film->imageFilm) }}" alt="{{ $film->titre }}" title="{{ $film->titre }}">
                             @else
-                                <img src="{{$film->imageFilm}}" alt="" class="g-0 border border-0 imgFilm card-img">
+                                <img src="{{$film->imageFilm}}" alt="">
                             @endif           
 				</div>
             </a>                

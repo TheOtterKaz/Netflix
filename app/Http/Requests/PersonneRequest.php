@@ -21,7 +21,7 @@ class PersonneRequest extends FormRequest
             'prenom' => 'required|string|max:100',
             'dateNaiss' => 'required|string|max:15',
             'sexe' => 'required|string',
-            'imagePers' => 'required|image|mimes:png,jpeg,jpg,gif,JPG,JPEG|max:4096'
+            'imagePers' => 'required|image|mimes:png,jpeg,jpg,gif,webp,JPG,JPEG|max:4096'
         ];
     }
 

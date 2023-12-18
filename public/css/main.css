@@ -4111,3 +4111,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   opacity: 1;
   color: #fff;
 }
+
+.card__films img {
+  width: 255px;
+  height: 365px;
+}
