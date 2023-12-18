@@ -90,7 +90,7 @@ Route::get('/', function () {
         [UsagersController::class, 'showLoginForm']) ->name('usagers.login');
 
         Route::post('/login',
-        [UsagersController::class, 'login']);
+        [UsagersController::class, 'login']) ->name('login');
 
     //* Déconnexion
         Route::post('/logout',
