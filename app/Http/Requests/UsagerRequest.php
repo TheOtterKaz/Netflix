@@ -20,7 +20,7 @@ class UsagerRequest extends FormRequest
             'nom' => 'required|min:2|max:50',
             'prenom' => 'required|min:2|max:50',
             'nomUsager' => 'required|min:2|max:50', 
-            'email' => 'required|email|unique',
+            'email' => 'required|email|unique:usagers',
             'password' => 'required|min:8|max:255',
             'password_confirmation' => 'required|same:password',
             'role' => 'required',

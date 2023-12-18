@@ -18,7 +18,7 @@
                                 <select name="role" id="role" class="sign__input form-control" placeholder="Rôle">                                    
                                         <option value="Admin" id="choixAdmin" selected>Admin</option>
                                         <option value="Adulte" id="choixAdulte">Adulte</option>
-                                        <option value="Kid" id="choixKid">Enfant</option>                                   
+                                        <option value="Enfant" id="choixKid">Enfant</option>                                   
                                 </select>							    
 
                                 <input type="text" class="sign__input form-control" id='nomUsager' name="nomUsager" placeholder="Username" value="{{ old('nomUsager') }}">
@@ -32,8 +32,8 @@
 
             <!-- Mot de passe ¤ Validation Mot de passe-->
                             <div class="sign__group form-group">
-                                <input type="password" class="sign__input form-control" id='mdp1' name="mdp1" placeholder="Mot de passe">
-                                <input type="password" class="sign__input form-control" id='mdp2' name="mdp2" placeholder="Validation du mot de passe">
+                                <input type="password" class="sign__input form-control" id='password' name="password" placeholder="Mot de passe">
+                                <input type="password" class="sign__input form-control" id='password_confirmation' name="password_confirmation" placeholder="Validation du mot de passe">
 							</div>        
 
             <!-- Courriel -->

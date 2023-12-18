@@ -33,15 +33,6 @@
 </head>
 
 <body class="body">
-	<!-- Permet d'afficher les erreurs dans le formulaire -->
-	@if(isset($errors) && $errors->any())
-		<div class="alert alert-danger">
-			@foreach($errors->all() as $error)
-				<p>{{ $error }}</p>
-			@endforeach
-		</div>
-	@endif
-
   <!-- header -->
 	<header class="header">
 		<div class="header__wrap">
@@ -58,7 +49,7 @@
 
   <!-- header nav -->
 							<ul class="header__nav">
-@role('admin')
+@role('Admin')
 	<!-- Onglet Admin -->
 							  <li class="header__nav-item">
 									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuHome" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
@@ -93,7 +84,7 @@
 
   <!-- header Connexion -->
 							<div class="header__auth">
-								<a href="{{ route('usagers.login') }}" class="header__sign-in">		
+								<a href="{{ route('login') }}" class="header__sign-in">		
 									<img src="/img/connexion.png" alt="Connexion" style="height: 30px;">																
 								</a>
 
@@ -126,6 +117,15 @@
 
 	</header>
 	<!-- Fin du header -->
+
+	<!-- Permet d'afficher les erreurs dans le formulaire -->
+	@if(isset($errors) && $errors->any())
+		<div class="alert alert-danger">
+			@foreach($errors->all() as $error)
+				<h1>{{ $error }}</h1>
+			@endforeach
+		</div>
+	@endif
 
     @yield('contenu')
 

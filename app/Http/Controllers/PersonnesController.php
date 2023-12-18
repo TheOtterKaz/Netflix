@@ -64,7 +64,7 @@ class PersonnesController extends Controller
             $personne = new Personne($request->all());
 
             $uploadedImage = $request->file('imagePers');
-            $nomFichierUnique = str_replace(' ', '_', $request->nom, $request->prenom) . '-' . uniqid() . '.' . $uploadedImage->extension();
+            $nomFichierUnique = str_replace(' ', '_', $request->nom . $request->prenom) . '-' . uniqid() . '.' . $uploadedImage->extension();
 
             try{
                 $request->imagePers->move(public_path('img/Personnes'), $nomFichierUnique);

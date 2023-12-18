@@ -30,9 +30,9 @@ class CheckRole
 
         else 
         {
-            // Vérifie le role de l'utilisateur
+            // Vérifie si le role de l'utilisateur est autorisé
             if (!in_array($user->role, $roles)) {               
-                return redirect()->route('login');
+                return redirect()->route('loginAuth');
             }
         }
 

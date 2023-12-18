@@ -27,7 +27,7 @@ class UsagerSeeder extends Seeder
                 'password' => Hash::make('asdf1234'),
             ],
 
-            //Normal
+            //Adulte
             [
                 'id' => 2,
                 'role' => 'Adulte',
