@@ -115,8 +115,8 @@ class PersonnesController extends Controller
     public function update(PersonneRequest $request, Personne $personne)
     {
         Log::debug("Début update personne");
-        try{
-            $personne->id = $request->id;            
+        try{      
+            Log::debug("Récup infos Personne");  
             $personne->nom = $request->nom;
             $personne->prenom = $request->prenom;
             $personne->dateNaiss = $request->dateNaiss;

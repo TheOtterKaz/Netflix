@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AidesController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PersonnesController;
+use App\Http\Controllers\AccueilsController;
 use App\Http\Controllers\UsagersController;
 use App\Http\Controllers\FilmsController;
 use App\Http\Controllers\PrixController;
@@ -24,9 +25,13 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
+//? Accueil - Page présentation
+    Route::get('',
+    [AccueilsController::class, 'index']) ->name('accueil.index');
+
 //? Films
         Route::get('films', 
-        [FilmsController::class, 'index']) ->name('films.index')->middleware('CheckRole:Admin, Adulte, Enfant');
+        [FilmsController::class, 'index']) ->name('films.index')->middleware('CheckRole:Admin,Adulte,Enfant');
 
     //* Création
         Route::get('/films/creation',
@@ -44,7 +49,7 @@ Route::get('/', function () {
 
     //* Affichage zoom
         Route::get('/films/{film}/',
-        [FilmsController::class, 'show']) ->name('films.show')->middleware('CheckRole:Admin, Adulte, Enfant');
+        [FilmsController::class, 'show']) ->name('films.show')->middleware('CheckRole:Admin,Adulte,Enfant');
 
     //* Suppression
         Route::delete('/films/{film}',
@@ -56,7 +61,7 @@ Route::get('/', function () {
 
 //? Personnes
         Route::get('personnes',
-        [PersonnesController::class, 'index']) ->name('personnes.index')->middleware('CheckRole:Admin, Adulte, Enfant');
+        [PersonnesController::class, 'index']) ->name('personnes.index')->middleware('CheckRole:Admin,Adulte,Enfant');
 
     //* Création
         Route::get('personnes/creation',
@@ -74,7 +79,7 @@ Route::get('/', function () {
 
     //* Affichage zoom    
         Route::get('/personnes/{personne}',
-        [PersonnesController::class, 'show']) ->name('personnes.show')->middleware('CheckRole:Admin, Adulte, Enfant');
+        [PersonnesController::class, 'show']) ->name('personnes.show')->middleware('CheckRole:Admin,Adulte,Enfant');
 
     //* Suppression
         Route::delete('/personnes/{personne}',
@@ -87,14 +92,14 @@ Route::get('/', function () {
 //? Usagers
     //* Connexion
         Route::get('/login',
-        [UsagersController::class, 'showLoginForm']) ->name('login')->middleware('CheckRole:Admin, Adulte, Enfant');
+        [UsagersController::class, 'showLoginForm']) ->name('login');
 
         Route::post('/login',
-        [UsagersController::class, 'login'])->name('loginAuth')->middleware('CheckRole:Admin, Adulte, Enfant');
+        [UsagersController::class, 'login'])->name('loginAuth');
 
     //* Déconnexion
-        Route::get('/logout',
-        [UsagersController::class, 'logout']) ->name('logout');
+        Route::post('/logout',
+        [UsagersController::class, 'logout']) ->name('logout')->middleware('CheckRole:Admin,Adulte,Enfant');
 
     //* Création
         Route::get('/usagers/creation',
@@ -121,11 +126,11 @@ Route::get('/', function () {
 //? Autres
     //* Page des prix
         Route::get('prix',
-        [PrixController::class, 'index']) ->name('prix.index')->middleware('CheckRole:Admin, Adulte, Enfant'); 
+        [PrixController::class, 'index']) ->name('prix.index');
 
     //* Page de la FAQ
         Route::get('aide',
-        [AidesController::class, 'index']) ->name('aide.index')->middleware('CheckRole:Admin, Adulte, Enfant'); 
+        [AidesController::class, 'index']) ->name('aide.index'); 
 
 
     

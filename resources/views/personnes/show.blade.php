@@ -17,7 +17,11 @@
     <!-- image  -->
                     <div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-5">
 						<div class="card__cover">
-							<img src="{{$personne->imagePers}}" alt="ImagePers">
+                        @if (file_exists(public_path('img/personnes/' . $personne->imagePers)))
+                                <img src="{{ asset('img/personnes/' . $personne->imagePers) }}" alt="{{ $personne->prenom }}" title="{{ $personne->prenom }}">
+                            @else
+                                <img src="{{ $personne->imagePers }}" alt="PersonneImage" >
+                            @endif 
 						</div>
 
                     <!-- Boutons -->                                                     
