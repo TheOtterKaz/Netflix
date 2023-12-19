@@ -9,10 +9,10 @@
 	<section class="home">
 		<!-- images background -->
 		<div class="owl-carousel home__bg">
-			<div class="item home__cover" data-bg="img/home/home__bg.jpg"></div>
-			<div class="item home__cover" data-bg="img/home/home__bg2.jpg"></div>
-			<div class="item home__cover" data-bg="img/home/home__bg3.jpg"></div>
-			<div class="item home__cover" data-bg="img/home/home__bg4.jpg"></div>
+			<div class="item home__cover" data-bg=" {{ asset('img/home/home__bg.jpg ') }}"></div>
+			<div class="item home__cover" data-bg=" {{ asset('img/home/home__bg2.jpg') }}"></div>
+			<div class="item home__cover" data-bg=" {{ asset('img/home/home__bg3.jpg') }}"></div>
+			<div class="item home__cover" data-bg=" {{ asset('img/home/home__bg4.jpg') }}"></div>
 		</div>
 		<!-- fin images background -->
 
