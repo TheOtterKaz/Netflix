@@ -4,7 +4,7 @@
 
 <!-- MAIN CONTAINER -->
 
-<section class="section section--bg" data-bg="img/section/section.jpg">
+<section class="section section--bg" data-bg="{{ asset('img/section/section.jpg') }}">
     <div class="container">
         <div class="row">
 <!-- acteurs -->

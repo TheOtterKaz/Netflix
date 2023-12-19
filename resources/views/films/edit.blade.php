@@ -4,7 +4,7 @@
 
 
 <body class="body">
-	<div class="sign section--bg" data-bg="img/section/section.jpg">
+	<div class="sign section--bg" data-bg="{{ asset('img/section/section.jpg') }}">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -55,7 +55,7 @@
             
             <!-- Image -->
                             <div class="sign__group form-group">
-                                <input type="text" name="imageFilm" id="imageFilm" class="modif__image form-control" placeholder="Image du film" value="{{ old('imageFilm', $film->imageFilm) }}">
+                                <input type="file" name="imageFilm" id="imageFilm" class="modif__image form-control" placeholder="Image du film" value="{{ old('imageFilm', $film->imageFilm) }}">
 							</div>
             
             <!-- Boutons -->
