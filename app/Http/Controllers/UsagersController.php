@@ -136,16 +136,26 @@ class UsagersController extends Controller
      * Connecte de user
      */
     public function login(Request $request)
-    {Log::debug("Début login usager" . $request->email ."". $request->password);
-        $reussi = Auth::attempt([ 'email' => $request->email, 'password' => $request->password ]);
+    {
+        Log::debug("Début login usager" . $request->email ."". $request->password);
 
-        if($reussi){
-            return redirect()->route('films.index') ->with('message', 'Vous êtes connecté');
+        if($request->email == null || $request->password == null){
+            return redirect()->route('login')->withErrors('Merci de remplir tous les champs');
         }
         else{
-            Log::debug("Erreur lors de la connexion");
-            return redirect()->route('login')->withErrors('Erreur lors de la connexion');
+            $reussi = Auth::attempt([ 'email' => $request->email, 'password' => $request->password ]);
+
+            if($reussi){
+                return redirect()->route('films.index') ->with('message', 'Vous êtes connecté');
+            }
+            else{
+                Log::debug("Erreur lors de la connexion");
+                Log::debug($request->email ."". $request->password);
+                return redirect()->route('login')->withErrors('Erreur lors de la connexion');
+            }
         }
+
+
     }
 
     /**

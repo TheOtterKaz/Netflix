@@ -174,6 +174,9 @@
 
     @if(session()->has('message'))
         <script>
+			document.getElementById('dialog').style.display = "block";
+			document.getElementById('dialog').style.visibility = "visible";
+			document.getElementById('dialog').showModal();
             document.getElementById('hTitre').innerHTML = "Succès";
             document.getElementById('containerErrors').innerHTML += "<p class=\"text-wrap\">{{ session()->get('message') }}</p>";
             // openDialog();
