@@ -85,14 +85,14 @@
 
   <!-- header Connexion -->
 							<div class="header__auth">
-								<a href="{{ route('login') }}" class="header__sign-in">		
+								<a href="{{ route('login') }}" class="header__sign-in" title="Connexion">		
 									<img src="{{ asset('img/connexion.png') }}" alt="Connexion" style="height: 30px;">																
 								</a>
 
 							@auth
 								<form method="post" action="{{ route('logout') }}">
 									@csrf
-									<button type="submit" class="header__sign-in"><img src="{{ asset('img/deconnexion.png') }}" alt="Connexion" style="height: 30px;"></button>
+									<button type="submit" class="header__sign-in" title="Déconnexion"><img src="{{ asset('img/deconnexion.png') }}" alt="Connexion" style="height: 30px;"></button>
 								</form>
 							@endauth							
 							</div>
