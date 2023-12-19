@@ -38,7 +38,9 @@ class FilmsController extends Controller
      */
     public function store(Request $request)
     {
+        Log::debug("Début store film");
         try{
+            Log::debug("RÉcup infos");
             $film = new Film($request->all());
 
             $uploadedImage = $request->file('imageFilm');
@@ -53,6 +55,7 @@ class FilmsController extends Controller
             }
 
             $film->imageFilm = $nomFichierUnique;
+            Log::debug("Save film");
             $film->save();
             Log::debug("Le film" . $film->titre . "a bien été ajouté");
         }

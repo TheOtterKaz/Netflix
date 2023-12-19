@@ -40,7 +40,8 @@ class FilmRequest extends FormRequest
 
     public function messages()
     {
-        return [
+        return 
+        [
             'titre.required' => 'Le titre est requis',
             'resume.required' => 'Le résumé est requis',
             'brand.required' => 'La marque est requise',
