@@ -89,12 +89,11 @@ class UsagersController extends Controller
     {
         Log::debug("Début update usager");
         try{
-            $usager->id = $request->id;
+            Log::debug("Récup infos Usager");
             $usager->role = $request->role;
             $usager->nomUsager = $request->nomUsager;
             $usager->nom = $request->nom;
             $usager->prenom = $request->prenom;
-            $usager->email = $request->email;
             $usager->password = $request->password;
 
             Log::debug("usager save");

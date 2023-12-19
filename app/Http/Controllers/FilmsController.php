@@ -101,7 +101,6 @@ class FilmsController extends Controller
 
         try{
             Log::debug("Récup infos Film");
-            $film->id = $request->id;
             $film->titre = $request->titre;
             $film->resume = $request->resume;
             $film->brand = $request->brand;

@@ -4142,3 +4142,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   width: 160px;
   height: 175px;
 }
+
+
+.card__filmsMini img {
+  width: 155px;
+  height: 225px;
+}

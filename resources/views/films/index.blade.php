@@ -4,7 +4,7 @@
 
 
 <!-- MAIN CONTAINER -->
-
+@role('Admin', 'Adulte')
   	<!-- Caroussel des nouveautés -->
 	<section class="home">
 		<!-- images background -->
@@ -72,6 +72,7 @@
 			</div>
 		</div>
 	</section>
+@endrole
 
   <!-- parties des onglets -->
   <section class="content">
@@ -79,27 +80,28 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-
   <!-- titre du contenu -->
             <h2 class="content__title">Films en vedette</h2>
 
             <!-- onglets du navigateur -->
             <ul class="nav nav-tabs content__tabs" id="content__tabs" role="tablist">
+							
 							<li class="nav-item">
-								<a class="nav-link active" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Marvel</a>
+								<a class="nav-link active" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="false">Disney</a>
+							</li>
+							
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Pixar</a>
+							</li>
+							@role('Admin', 'Adulte')
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">DC</a>
 							</li>
 
 							<li class="nav-item">
-								<a class="nav-link" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">DC</a>
+								<a class="nav-link " data-toggle="tab" href="#tab-4" role="tab" aria-controls="tab-4" aria-selected="true">Marvel</a>
 							</li>
-
-							<li class="nav-item">
-								<a class="nav-link" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Pixar</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link" data-toggle="tab" href="#tab-4" role="tab" aria-controls="tab-4" aria-selected="false">Disney</a>
-							</li>
+							@endrole
 						</ul>
 
             <!-- partie mobile des onglets -->
@@ -111,40 +113,40 @@
 
 							<div class="content__mobile-tabs-menu dropdown-menu" aria-labelledby="mobile-tabs">
 								<ul class="nav nav-tabs" role="tablist">
-									<li class="nav-item"><a class="nav-link active" id="1-tab" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Marvel</a></li>
-
-									<li class="nav-item"><a class="nav-link" id="2-tab" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">DC</a></li>
-
-									<li class="nav-item"><a class="nav-link" id="3-tab" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Pixar</a></li>
-
-									<li class="nav-item"><a class="nav-link" id="4-tab" data-toggle="tab" href="#tab-4" role="tab" aria-controls="tab-4" aria-selected="false">Disney</a></li>
+									<li class="nav-item"><a class="nav-link active" id="1-tab" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="false">Disney</a></li>
+									
+									<li class="nav-item"><a class="nav-link" id="2-tab" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Pixar</a></li>
+									@role('Admin', 'Adulte')
+									<li class="nav-item"><a class="nav-link" id="3-tab" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">DC</a></li>
+									
+									<li class="nav-item"><a class="nav-link" id="4-tab" data-toggle="tab" href="#tab-4" role="tab" aria-controls="tab-4" aria-selected="true">Marvel</a></li>
+									@endrole
 								</ul>
 							</div>
 						</div>
-
 
     <div class="container">
 			<!-- content tabs -->
 			<div class="tab-content" id="myTabContent">
 				<div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="1-tab">
 					<div class="row">
-    
-<!-- card marvel -->
-      @if(count($films))
-        @foreach($films as $film)
-          @if($film->brand == 'Marvel')
 
-          <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
-				<div class="card">
-					<a href="{{ route('films.show', [$film]) }}">
-						<div class="card__cover">
-							@if (file_exists(public_path('img/films/' . $film->imageFilm)))
-                                <img src="{{ asset('img/films/' . $film->imageFilm) }}" alt="{{ $film->titre }}" title="{{ $film->titre }}">
-                            @else
-                                <img src="{{$film->imageFilm}}" alt="" class="g-0 border border-0 imgFilm card-img">
-                            @endif
-						</div>
-                	</a>
+		<!-- card Disney -->
+		@if(count($films))
+        	@foreach($films as $film)
+          		@if($film->brand == 'Disney')
+
+          		<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+					<div class="card">
+						<a href="{{ route('films.show', [$film]) }}">
+							<div class="card__filmsMini">
+								@if (file_exists(public_path('img/films/' . $film->imageFilm)))
+                    	            <img src="{{ asset('img/films/' . $film->imageFilm) }}" alt="{{ $film->titre }}" title="{{ $film->titre }}">
+                    	        @else
+                                	<img src="{{$film->imageFilm}}" alt="">
+                            	@endif
+							</div>
+				  		</a>
 
 					<div class="card__content">
 						<h3 class="card__title">{{$film->titre}}</h3>
@@ -154,33 +156,68 @@
 				</div>
 			</div>
 
-          @endif
-        @endforeach
-      @endif 
-<!-- fin card marvel-->
+          		@endif
+        	@endforeach
+      	@endif   
+		<!-- fin card Disney --> 
+	</div>
+</div>
 
+	<div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="2-tab">
+		<div class="row">
+	<!-- card Pixar -->
+		@if(count($films))
+        	@foreach($films as $film)
+          		@if($film->brand == 'Pixar')
+
+          		<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+					<div class="card">
+						<a href="{{ route('films.show', [$film]) }}">
+							<div class="card__filmsMini">
+								@if (file_exists(public_path('img/films/' . $film->imageFilm)))
+                            	    <img src="{{ asset('img/films/' . $film->imageFilm) }}" alt="{{ $film->titre }}" title="{{ $film->titre }}">
+                            	@else
+                            	    <img src="{{$film->imageFilm}}" alt="">
+                            	@endif
+							</div>
+                		</a>
+
+					<div class="card__content">
+						<h3 class="card__title">{{$film->titre}}</h3>
+						<span class="card__category"><b>{{$film->type}}</b></span>
+						<span class="card__rate"><i class="icon ion-ios-star"></i>{{$film->cote}}</span>
+					</div>
 					</div>
 				</div>
 
-				<div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="2-tab">
-					<div class="row">
+          		@endif
+        	@endforeach
+      	@endif 
+<!-- fin card Pixar-->
+		</div>
+	</div>
+
+	<div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="3-tab">
+		<div class="row">
+
+@role('Admin', 'Adulte', 'Enfant')
 
 <!-- card DC -->
-      @if(count($films))
-        @foreach($films as $film)
-          @if($film->brand == 'DC')
+		@if(count($films))
+        	@foreach($films as $film)
+          		@if($film->brand == 'DC')
 
-          <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
-				<div class="card">
-					<a href="{{ route('films.show', [$film]) }}">
-						<div class="card__cover">
-							@if (file_exists(public_path('img/films/' . $film->imageFilm)))
-                                <img src="{{ asset('img/films/' . $film->imageFilm) }}" alt="{{ $film->titre }}" title="{{ $film->titre }}">
-                            @else
-                                <img src="{{$film->imageFilm}}" alt="" class="g-0 border border-0 imgFilm card-img">
-                            @endif
-						</div>
-                	</a>
+          		<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+					<div class="card">
+						<a href="{{ route('films.show', [$film]) }}">
+							<div class="card__filmsMini">
+								@if (file_exists(public_path('img/films/' . $film->imageFilm)))
+                    	            <img src="{{ asset('img/films/' . $film->imageFilm) }}" alt="{{ $film->titre }}" title="{{ $film->titre }}">
+                    	        @else
+                    	            <img src="{{$film->imageFilm}}" alt="">
+                    	        @endif
+							</div>
+                		</a>
 
 					<div class="card__content">
 						<h3 class="card__title">{{$film->titre}}</h3>
@@ -190,91 +227,52 @@
 				</div>
 			</div>
 
-          @endif
-        @endforeach
-      @endif 
+          		@endif
+        	@endforeach
+      	@endif 
 <!-- fin card DC-->
+		</div>
+	</div>
 
-					</div>
-				</div>
+	<div class="tab-pane fade" id="tab-4" role="tabpanel" aria-labelledby="4-tab">
+		<div class="row">
 
-				<div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="3-tab">
-					<div class="row">
+		<!-- card marvel -->
+		@if(count($films))
+        	@foreach($films as $film)
+          		@if($film->brand == 'Marvel')
 
-<!-- card Pixar -->
-      @if(count($films))
-        @foreach($films as $film)
-          @if($film->brand == 'Pixar')
-
-          <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
-				<div class="card">
-					<a href="{{ route('films.show', [$film]) }}">
-						<div class="card__cover">
-							@if (file_exists(public_path('img/films/' . $film->imageFilm)))
-                                <img src="{{ asset('img/films/' . $film->imageFilm) }}" alt="{{ $film->titre }}" title="{{ $film->titre }}">
-                            @else
-                                <img src="{{$film->imageFilm}}" alt="" class="g-0 border border-0 imgFilm card-img">
-                            @endif
-						</div>
-                	</a>
-
-					<div class="card__content">
-						<h3 class="card__title">{{$film->titre}}</h3>
-						<span class="card__category"><b>{{$film->type}}</b></span>
-						<span class="card__rate"><i class="icon ion-ios-star"></i>{{$film->cote}}</span>
-					</div>
-				</div>
-			</div>
-
-          @endif
-        @endforeach
-      @endif 
-
-<!-- fin card Pixar-->
-					</div>
-				</div>
-
-				<div class="tab-pane fade" id="tab-4" role="tabpanel" aria-labelledby="4-tab">
-					<div class="row">
-
-<!-- card Disney -->
-      @if(count($films))
-        @foreach($films as $film)
-          @if($film->brand == 'Disney')
-
-          <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
-				<div class="card">
-					<a href="{{ route('films.show', [$film]) }}">
-						<div class="card__cover">
-							@if (file_exists(public_path('img/films/' . $film->imageFilm)))
-                                <img src="{{ asset('img/films/' . $film->imageFilm) }}" alt="{{ $film->titre }}" title="{{ $film->titre }}">
-                            @else
-                                <img src="{{$film->imageFilm}}" alt="" class="g-0 border border-0 imgFilm card-img">
-                            @endif
-						</div>
-				  	</a>
+          		<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+					<div class="card">
+						<a href="{{ route('films.show', [$film]) }}">
+							<div class="card__filmsMini">
+								@if (file_exists(public_path('img/films/' . $film->imageFilm)))
+                    	            <img src="{{ asset('img/films/' . $film->imageFilm) }}" alt="{{ $film->titre }}" title="{{ $film->titre }}">
+                    	        @else
+                    	            <img src="{{$film->imageFilm}}" alt="">
+                    	        @endif
+							</div>
+                		</a>
 
 					<div class="card__content">
 						<h3 class="card__title">{{$film->titre}}</h3>
 						<span class="card__category"><b>{{$film->type}}</b></span>
 						<span class="card__rate"><i class="icon ion-ios-star"></i>{{$film->cote}}</span>
 					</div>
-				</div>
-			</div>
-
-          @endif
-        @endforeach
-      @endif 
-
-<!-- fin card Disney -->
-	
 					</div>
 				</div>
+
+          		@endif
+        	@endforeach
+      	@endif 
+<!-- fin card marvel-->	
+	</div>
+		</div>
 			</div>
 			<!-- end content tabs -->
 		</div>
 	</section>
 	<!-- end content -->
-
+@endrole
 @endsection
 
