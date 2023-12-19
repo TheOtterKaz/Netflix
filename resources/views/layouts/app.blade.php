@@ -119,13 +119,69 @@
 	<!-- Fin du header -->
 
 	<!-- Permet d'afficher les erreurs dans le formulaire -->
-	@if(isset($errors) && $errors->any())
+	<!-- @if(isset($errors) && $errors->any())
 		<div class="alert alert-danger">
 			@foreach($errors->all() as $error)
 				<h1>{{ $error }}</h1>
 			@endforeach
 		</div>
-	@endif
+	@endif -->
+
+	<dialog id="dialog" class="card__cover">
+            <div class="row">
+                <div class="col-4 d-flex align-items-center justify-content-center">
+                    <h3 id="hTitre">Erreur(s)</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" id="containerErrors"></div>
+            </div>
+        </dialog>
+
+    <script>
+        var dialog = document.getElementById('dialog');
+
+        function openDialog() {
+            dialog.showModal();
+
+            dialog.querySelector('.btn-close').addEventListener('click', function() {
+                dialog.close();
+            });
+        }
+        function closeDialog() {
+            dialog.close();
+            document.getElementById('containerErrors').innerHTML = "";
+            sessionStorage.removeItem('message');
+        }
+
+    </script>
+
+        
+    @if(isset($errors) && count($errors) > 0)
+        
+        @foreach($errors->all() as $error)
+            <script>
+                document.getElementById('hTitre').innerHTML = "Erreur(s)";
+                document.getElementById('containerErrors').innerHTML += "<p>{{$error}}</p>";
+            </script>
+        @endforeach
+        <script>
+            openDialog();
+        </script>
+    @elseif(isset($errors) && count($errors) <= 0)
+
+        <script>
+            closeDialog();
+        </script>
+    @endif
+
+    @if(session()->has('message'))
+        <script>
+            document.getElementById('hTitre').innerHTML = "Succès";
+            document.getElementById('containerErrors').innerHTML += "<p class=\"text-wrap\">{{ session()->get('message') }}</p>";
+            openDialog();
+        </script>
+    @endif
 
     @yield('contenu')
 
