@@ -163,6 +163,6 @@ class UsagersController extends Controller
     public function logout()
     {
        Auth::logout();
-       return redirect()->route('login')->withErrors('Erreur lors de la connexion');
+       return redirect()->route('login')->with('message', 'Vous avez bien été déconnecté');
     }
 }
